@@ -1,7 +1,7 @@
 platform :ios, '8.0'
 use_frameworks!
 
-# When using more than one target in your project
-# link_with 'Demo', 'Tests' 
-
-# pod 'Sample'
+pod 'Cache', git: 'https://github.com/hyperoslo/Cache'
+pod 'Fakery'
+pod 'Nimble'
+pod 'Quick'
