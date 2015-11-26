@@ -48,7 +48,7 @@ class FeedTableViewCell: UITableViewCell {
     generalImageView.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
 
     separator.widthAnchor.constraintEqualToAnchor(widthAnchor).active = true
-    separator.heightAnchor.constraintEqualToConstant(7.5).active = true
+    separator.heightAnchor.constraintEqualToConstant(5).active = true
     separator.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
     separator.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
   }
