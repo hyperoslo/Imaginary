@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
 		3DC06D2B49771C58328EA769 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03606A2285FA47EBF17B73CE /* Pods.framework */; };
+		D55F5BD91C0702A700B36AE5 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F5BD81C0702A700B36AE5 /* ImageFetcher.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		14C1365C1AB784BC00B7B07A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4D1AB4D830DC39709EDE630C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5C5DAA11713EB623F6AD0C30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D55F5BD81C0702A700B36AE5 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				14C1365C1AB784BC00B7B07A /* .gitkeep */,
+				D55F5BD81C0702A700B36AE5 /* ImageFetcher.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
+				D55F5BD91C0702A700B36AE5 /* ImageFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
