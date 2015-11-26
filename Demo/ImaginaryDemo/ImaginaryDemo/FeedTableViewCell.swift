@@ -4,11 +4,15 @@ class FeedTableViewCell: UITableViewCell {
 
   lazy var generalImageView: UIImageView = {
     let imageView = UIImageView()
+    imageView.backgroundColor = UIColor.blackColor()
+    
     return imageView
     }()
 
   lazy var separator: UIView = {
     let view = UIView()
+    view.backgroundColor = UIColor.whiteColor()
+
     return view
     }()
 
@@ -30,12 +34,12 @@ class FeedTableViewCell: UITableViewCell {
 
   func setupConstraints() {
     generalImageView.topAnchor.constraintEqualToAnchor(topAnchor)
-    generalImageView.bottomAnchor.constraintEqualToAnchor(bottomAnchor)
+    generalImageView.bottomAnchor.constraintEqualToAnchor(separator.topAnchor)
     generalImageView.leftAnchor.constraintEqualToAnchor(leftAnchor)
     generalImageView.rightAnchor.constraintEqualToAnchor(rightAnchor)
 
     separator.widthAnchor.constraintEqualToAnchor(widthAnchor)
-    separator.heightAnchor
+    separator.heightAnchor.constraintEqualToConstant(4)
     separator.leftAnchor.constraintEqualToAnchor(leftAnchor)
     separator.bottomAnchor.constraintEqualToAnchor(bottomAnchor)
   }
