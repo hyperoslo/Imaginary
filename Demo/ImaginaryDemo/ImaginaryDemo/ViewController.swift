@@ -6,6 +6,12 @@ class ViewController: UITableViewController {
     super.viewDidLoad()
 
     view.backgroundColor = UIColor.whiteColor()
+
+    tableView.registerClass(FeedTableViewCell.self,
+      forCellReuseIdentifier: FeedTableViewCell.reusableIdentifier)
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.separatorStyle = .None
   }
 }
 
@@ -14,7 +20,7 @@ class ViewController: UITableViewController {
 extension ViewController {
 
   override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 50
+    return 250
   }
 }
 
@@ -27,6 +33,11 @@ extension ViewController {
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    guard let cell = tableView.dequeueReusableCellWithIdentifier(
+      FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
+
+    cell.configureCell(UIImage())
+
+    return cell
   }
 }
