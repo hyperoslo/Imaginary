@@ -6,24 +6,27 @@ class FeedTableViewCell: UITableViewCell {
 
   lazy var generalImageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.backgroundColor = UIColor.blackColor()
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    
+    imageView.contentMode = .ScaleAspectFill
+
     return imageView
     }()
 
   lazy var separator: UIView = {
     let view = UIView()
-    view.backgroundColor = UIColor.whiteColor()
-    view.translatesAutoresizingMaskIntoConstraints = false
-
     return view
     }()
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    [generalImageView, separator].forEach { addSubview($0) }
+    [generalImageView, separator].forEach {
+      $0.translatesAutoresizingMaskIntoConstraints = false
+      $0.opaque = true
+      $0.backgroundColor = UIColor.whiteColor()
+      $0.layer.drawsAsynchronously = true
+
+      addSubview($0)
+    }
 
     selectionStyle = .None
 
@@ -45,7 +48,7 @@ class FeedTableViewCell: UITableViewCell {
     generalImageView.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
 
     separator.widthAnchor.constraintEqualToAnchor(widthAnchor).active = true
-    separator.heightAnchor.constraintEqualToConstant(4).active = true
+    separator.heightAnchor.constraintEqualToConstant(7.5).active = true
     separator.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
     separator.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
   }
