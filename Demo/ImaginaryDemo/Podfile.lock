@@ -1,0 +1,14 @@
+PODS:
+  - Imaginary (0.1.0)
+
+DEPENDENCIES:
+  - Imaginary (from `../../`)
+
+EXTERNAL SOURCES:
+  Imaginary:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  Imaginary: 8450909043573d9867859212c7be9faf68b34016
+
+COCOAPODS: 0.39.0.beta.4
