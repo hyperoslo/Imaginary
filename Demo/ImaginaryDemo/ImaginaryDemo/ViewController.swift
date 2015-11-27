@@ -15,7 +15,7 @@ class ViewController: UITableViewController {
 
     for i in 0..<Constants.imageNumber {
       if let imageURL = NSURL(
-        string: "http://lorempixel.com/\(Constants.width)/\(Constants.height)/?type=attachment&id=\(i)\(50)") {
+        string: "http://lorempixel.com/\(Constants.imageWidth)/\(Constants.imageHeight)/?type=attachment&id=\(i)\(50)") {
         array.append(imageURL)
       }
     }
