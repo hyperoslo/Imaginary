@@ -7,7 +7,7 @@ class ViewController: UITableViewController {
   struct Constants {
     static let imageWidth = 500
     static let imageHeight = 500
-    static let imageNumber = 20
+    static let imageNumber = 60
   }
 
   lazy var imaginaryArray: [NSData] = { [unowned self] in
@@ -67,7 +67,13 @@ extension ViewController {
     guard let cell = tableView.dequeueReusableCellWithIdentifier(
       FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
 
-    cell.configureCell(Decompressor.decompress(imaginaryArray[indexPath.row]))
+    // TODO: Move the dispatch code to the fetcher class, this will call the decompressor in the background.
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), { [unowned self] in
+      let image = Decompressor.decompress(self.imaginaryArray[indexPath.row])
+      dispatch_async(dispatch_get_main_queue(), {
+        cell.configureCell(image)
+        })
+    })
 
     return cell
   }
