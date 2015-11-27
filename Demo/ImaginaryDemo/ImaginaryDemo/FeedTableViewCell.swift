@@ -7,12 +7,15 @@ class FeedTableViewCell: UITableViewCell {
   lazy var generalImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .ScaleAspectFill
+    imageView.backgroundColor = UIColor.blackColor()
 
     return imageView
     }()
 
   lazy var separator: UIView = {
     let view = UIView()
+    view.backgroundColor = UIColor.whiteColor()
+
     return view
     }()
 
@@ -22,7 +25,6 @@ class FeedTableViewCell: UITableViewCell {
     [generalImageView, separator].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       $0.opaque = true
-      $0.backgroundColor = UIColor.whiteColor()
       $0.layer.drawsAsynchronously = true
 
       addSubview($0)

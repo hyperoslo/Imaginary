@@ -3,18 +3,19 @@ import Fakery
 
 class ViewController: UITableViewController {
 
-  struct ImageDimensions {
-    static let width = 500
-    static let height = 500
+  struct Constants {
+    static let imageWidth = 500
+    static let imageHeight = 500
+    static let imageNumber = 20
   }
 
   lazy var imaginaryArray: [NSURL] = {
     let faker = Faker()
     var array = [NSURL]()
 
-    for i in 0..<20 {
+    for i in 0..<Constants.imageNumber {
       if let imageURL = NSURL(
-        string: "http://lorempixel.com/\(ImageDimensions.width)/\(ImageDimensions.height)/?type=attachment&id=\(i)\(50)") {
+        string: "http://lorempixel.com/\(Constants.width)/\(Constants.height)/?type=attachment&id=\(i)\(50)") {
         array.append(imageURL)
       }
     }
@@ -29,17 +30,17 @@ class ViewController: UITableViewController {
 
     view.backgroundColor = UIColor.whiteColor()
 
-    tableView.registerClass(FeedTableViewCell.self,
-      forCellReuseIdentifier: FeedTableViewCell.reusableIdentifier)
-    tableView.delegate = self
-    tableView.dataSource = self
-    tableView.separatorStyle = .None
+    setupTableView()
   }
 
   // MARK: - Setup tableView
 
   func setupTableView() {
-
+    tableView.registerClass(FeedTableViewCell.self,
+      forCellReuseIdentifier: FeedTableViewCell.reusableIdentifier)
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.separatorStyle = .None
   }
 }
 
@@ -64,6 +65,7 @@ extension ViewController {
     guard let cell = tableView.dequeueReusableCellWithIdentifier(
       FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
 
+    // TODO: Pass the imaginaryArray with the imageFromURL()
     cell.configureCell(UIImage())
 
     return cell
