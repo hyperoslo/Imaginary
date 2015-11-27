@@ -5,4 +5,3 @@ inhibit_all_warnings!
 
 pod 'Imaginary', path: '../../'
 pod 'Fakery'
-pod 'Sugar', git: 'https://github.com/hyperoslo/Sugar'
