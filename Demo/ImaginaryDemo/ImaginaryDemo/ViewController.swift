@@ -1,5 +1,6 @@
 import UIKit
 import Fakery
+import Imaginary
 
 class ViewController: UITableViewController {
 
@@ -64,10 +65,12 @@ extension ViewController {
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCellWithIdentifier(
-      FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
+      FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell,
+      data = NSData(contentsOfURL: imaginaryArray[indexPath.row]) else { return UITableViewCell() }
 
-    // TODO: Pass the imaginaryArray with the imageFromURL()
-    cell.configureCell(UIImage())
+    Decompressor.decompress(data, completion: { image in
+      cell.configureCell(image)
+    })
 
     return cell
   }

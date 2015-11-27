@@ -2,7 +2,7 @@ import UIKit
 
 public struct Decompressor {
 
-  public func decompress(data: NSData, scale: CGFloat = 1, completion: (image: UIImage) -> Void) {
+  public static func decompress(data: NSData, scale: CGFloat = 1, completion: (image: UIImage) -> Void) {
     autoreleasepool({
       dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
         guard let image = UIImage(data: data) else { completion(image: UIImage()); return }
