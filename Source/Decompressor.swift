@@ -2,29 +2,24 @@ import UIKit
 
 public struct Decompressor {
 
-  public static func decompress(data: NSData, scale: CGFloat = 1, completion: (image: UIImage) -> Void) {
-    autoreleasepool({
-      dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
-        guard let image = UIImage(data: data) else { completion(image: UIImage()); return }
+  public static func decompress(data: NSData, scale: CGFloat = 1) -> UIImage {
+    guard let image = UIImage(data: data) else { return UIImage() }
 
-        let reference = image.CGImage
+    let reference = image.CGImage
 
-        if CGImageGetAlphaInfo(reference) != .None { dispatch_async(dispatch_get_main_queue(), { completion(image: image) }) }
+    if CGImageGetAlphaInfo(reference) != .None { return image }
 
-        let context = CGBitmapContextCreate(nil,
-          Int(image.size.width), Int(image.size.height), CGImageGetBitsPerComponent(reference),
-          0, CGColorSpaceCreateDeviceRGB(), CGImageAlphaInfo.None.rawValue)
-        CGContextDrawImage(context, CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height), reference)
+    UIGraphicsBeginImageContextWithOptions(image.size, true, scale)
 
-        var blendedImage = UIImage()
-        if let referenceImage = CGBitmapContextCreateImage(context) {
-          blendedImage = UIImage(CGImage: referenceImage, scale: scale, orientation: image.imageOrientation)
-        }
+    let context = UIGraphicsGetCurrentContext()
+    CGContextSetRGBFillColor(context, 1, 1, 1, 1)
+    CGContextFillRect(context, CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+    CGContextSaveGState(context)
 
-        UIGraphicsEndImageContext()
+    let blendedImage = UIGraphicsGetImageFromCurrentImageContext()
 
-        dispatch_async(dispatch_get_main_queue(), { completion(image: blendedImage) })
-      })
-    })
+    UIGraphicsEndImageContext()
+
+    return blendedImage
   }
 }

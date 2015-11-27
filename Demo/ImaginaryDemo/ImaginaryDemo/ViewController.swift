@@ -10,15 +10,15 @@ class ViewController: UITableViewController {
     static let imageNumber = 20
   }
 
-  lazy var imaginaryArray: [NSURL] = { [unowned self] in
+  lazy var imaginaryArray: [NSData] = { [unowned self] in
     let faker = Faker()
-    var array = [NSURL]()
+    var array = [NSData]()
 
     for i in 0..<Constants.imageNumber {
       if let imageURL = NSURL(
         string: faker.internet.image(width: Constants.imageWidth, height: Constants.imageHeight)
-          + "?type=attachment&id=(i)(50)!") {
-        array.append(imageURL)
+          + "?type=attachment&id=(i)(50)!"), data = NSData(contentsOfURL: imageURL) {
+            array.append(data)
       }
     }
 
@@ -65,12 +65,9 @@ extension ViewController {
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCellWithIdentifier(
-      FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell,
-      data = NSData(contentsOfURL: imaginaryArray[indexPath.row]) else { return UITableViewCell() }
+      FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
 
-    Decompressor.decompress(data, completion: { image in
-      cell.configureCell(image)
-    })
+    cell.configureCell(Decompressor.decompress(imaginaryArray[indexPath.row]))
 
     return cell
   }
