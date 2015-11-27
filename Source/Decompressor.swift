@@ -11,9 +11,16 @@ public struct Decompressor {
 
         if CGImageGetAlphaInfo(reference) != .None { dispatch_async(dispatch_get_main_queue(), { completion(image: image) }) }
 
-        UIGraphicsBeginImageContextWithOptions(image.size, true, scale)
-        image.drawInRect(CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-        let blendedImage = UIGraphicsGetImageFromCurrentImageContext()
+        let context = CGBitmapContextCreate(nil,
+          Int(image.size.width), Int(image.size.height), CGImageGetBitsPerComponent(reference),
+          0, CGColorSpaceCreateDeviceRGB(), CGImageAlphaInfo.None.rawValue)
+        CGContextDrawImage(context, CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height), reference)
+
+        var blendedImage = UIImage()
+        if let referenceImage = CGBitmapContextCreateImage(context) {
+          blendedImage = UIImage(CGImage: referenceImage, scale: scale, orientation: image.imageOrientation)
+        }
+
         UIGraphicsEndImageContext()
 
         dispatch_async(dispatch_get_main_queue(), { completion(image: blendedImage) })
