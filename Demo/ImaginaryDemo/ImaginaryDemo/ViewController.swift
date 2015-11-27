@@ -9,13 +9,14 @@ class ViewController: UITableViewController {
     static let imageNumber = 20
   }
 
-  lazy var imaginaryArray: [NSURL] = {
+  lazy var imaginaryArray: [NSURL] = { [unowned self] in
     let faker = Faker()
     var array = [NSURL]()
 
     for i in 0..<Constants.imageNumber {
       if let imageURL = NSURL(
-        string: "http://lorempixel.com/\(Constants.imageWidth)/\(Constants.imageHeight)/?type=attachment&id=\(i)\(50)") {
+        string: faker.internet.image(width: Constants.imageWidth, height: Constants.imageHeight)
+          + "?type=attachment&id=(i)(50)!") {
         array.append(imageURL)
       }
     }
