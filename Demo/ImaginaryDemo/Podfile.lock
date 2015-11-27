@@ -2,19 +2,29 @@ PODS:
   - Fakery (1.1.0):
     - SwiftyJSON
   - Imaginary (0.1.0)
+  - Sugar (0.1.0)
   - SwiftyJSON (2.3.1)
 
 DEPENDENCIES:
   - Fakery
   - Imaginary (from `../../`)
+  - Sugar (from `https://github.com/hyperoslo/Sugar`)
 
 EXTERNAL SOURCES:
   Imaginary:
     :path: ../../
+  Sugar:
+    :git: https://github.com/hyperoslo/Sugar
+
+CHECKOUT OPTIONS:
+  Sugar:
+    :commit: a0e393888f13948d9178984bb6762ca7afccf122
+    :git: https://github.com/hyperoslo/Sugar
 
 SPEC CHECKSUMS:
   Fakery: 593389814fb7c42fe7f0801e76c8ae55b95505e7
   Imaginary: 8450909043573d9867859212c7be9faf68b34016
+  Sugar: d33f2a3ae10e40c14eb49a2e859f12e82e614817
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
 
 COCOAPODS: 0.39.0.beta.4
