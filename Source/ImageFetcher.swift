@@ -17,7 +17,7 @@ public class ImageFetcher {
 
   public let URL: NSURL
   var task: NSURLSessionDataTask?
-  var active = true
+  var active = false
 
   public var session: NSURLSession {
     return NSURLSession.sharedSession()
