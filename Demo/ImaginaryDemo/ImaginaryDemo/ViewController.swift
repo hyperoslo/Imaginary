@@ -1,23 +1,24 @@
 import UIKit
 import Fakery
+import Imaginary
 
 class ViewController: UITableViewController {
 
   struct Constants {
     static let imageWidth = 500
     static let imageHeight = 500
-    static let imageNumber = 20
+    static let imageNumber = 60
   }
 
-  lazy var imaginaryArray: [NSURL] = { [unowned self] in
+  lazy var imaginaryArray: [NSData] = { [unowned self] in
     let faker = Faker()
-    var array = [NSURL]()
+    var array = [NSData]()
 
     for i in 0..<Constants.imageNumber {
       if let imageURL = NSURL(
         string: faker.internet.image(width: Constants.imageWidth, height: Constants.imageHeight)
-          + "?type=attachment&id=(i)(50)!") {
-        array.append(imageURL)
+          + "?type=attachment&id=(i)(50)!"), data = NSData(contentsOfURL: imageURL) {
+            array.append(data)
       }
     }
 
@@ -66,8 +67,13 @@ extension ViewController {
     guard let cell = tableView.dequeueReusableCellWithIdentifier(
       FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
 
-    // TODO: Pass the imaginaryArray with the imageFromURL()
-    cell.configureCell(UIImage())
+    // TODO: Move the dispatch code to the fetcher class, this will call the decompressor in the background.
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), { [unowned self] in
+      let image = Decompressor.decompress(self.imaginaryArray[indexPath.row])
+      dispatch_async(dispatch_get_main_queue(), {
+        cell.configureCell(image)
+        })
+    })
 
     return cell
   }

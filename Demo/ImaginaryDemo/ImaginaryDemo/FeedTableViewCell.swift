@@ -7,7 +7,8 @@ class FeedTableViewCell: UITableViewCell {
   lazy var generalImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .ScaleAspectFill
-    imageView.backgroundColor = UIColor.blackColor()
+    imageView.backgroundColor = UIColor.whiteColor()
+    imageView.clipsToBounds = true
 
     return imageView
     }()
