@@ -4,9 +4,11 @@ extension UIImageView {
 
   public func setRemoteImage(URL: NSURL, placeholder: UIImage? = nil) {
     let key = URL.absoluteString
-    let imageAddress = "\(unsafeAddressOf(self))"
 
-    print(imageAddress)
+    if let fetcher = fetcher {
+      fetcher.cancel()
+      self.fetcher = nil
+    }
 
     image = placeholder
 
@@ -20,8 +22,10 @@ extension UIImageView {
         return
       }
 
-      dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
-        ImageFetcher.fetch(URL, imageAddress: imageAddress) { [weak self] result in
+      weakSelf.fetcher = ImageFetcher(URL: URL)
+
+      dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) { [weak self] result in
+        weakSelf.fetcher?.start { [weak self] result in
           guard let weakSelf = self else { return }
 
           switch result {
@@ -33,6 +37,22 @@ extension UIImageView {
           }
         }
       }
+    }
+  }
+
+  var fetcher: ImageFetcher? {
+    get {
+      let wrapper = objc_getAssociatedObject(self, &Capsule.ObjectKey) as? Capsule
+      let fetcher = wrapper?.value as? ImageFetcher
+      return fetcher
+    }
+    set (fetcher) {
+      var wrapper : Capsule?
+      if let fetcher = fetcher {
+        wrapper = Capsule(value: fetcher)
+      }
+      objc_setAssociatedObject(self, &Capsule.ObjectKey,
+        wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
   }
 }
