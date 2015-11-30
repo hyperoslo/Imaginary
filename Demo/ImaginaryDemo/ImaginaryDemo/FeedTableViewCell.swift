@@ -42,12 +42,6 @@ class FeedTableViewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
-  // MARK: - Configuration
-
-  func configureCell(image: UIImage) {
-    generalImageView.image = image
-  }
-
   // MARK: - Setup
 
   func setupConstraints() {
