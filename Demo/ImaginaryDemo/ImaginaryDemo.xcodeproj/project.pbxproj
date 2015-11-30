@@ -12,7 +12,7 @@
 		295D77401C07122700C43B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295D773F1C07122700C43B07 /* Assets.xcassets */; };
 		295D77431C07122700C43B07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295D77411C07122700C43B07 /* LaunchScreen.storyboard */; };
 		29FC0C2B1C07268100B66E11 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FC0C2A1C07268100B66E11 /* FeedTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		BAB39ABAE63B94795ED8F3CD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A3FBC34DFEEC7A04F84F11 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BAB39ABAE63B94795ED8F3CD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A3FBC34DFEEC7A04F84F11 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
