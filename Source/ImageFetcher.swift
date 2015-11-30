@@ -31,7 +31,7 @@ struct ImageFetcher {
 
       let task = session.dataTaskWithURL(URL) { data, response, error -> Void in
         if let error = error {
-          complete("") { completion(result: .Failure(error)) }
+          complete() { completion(result: .Failure(error)) }
           return
         }
 
@@ -63,9 +63,12 @@ struct ImageFetcher {
     }
   }
 
-  static func complete(imageAddress: String, closure: () -> Void) {
+  static func complete(imageAddress: String? = nil, closure: () -> Void) {
     dispatch_async(dispatch_get_main_queue()) {
-      imageAddresses.removeValueForKey(imageAddress)
+      if let imageAddress = imageAddress {
+        imageAddresses.removeValueForKey(imageAddress)
+      }
+
       closure()
     }
   }
