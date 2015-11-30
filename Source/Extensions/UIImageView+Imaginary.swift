@@ -6,8 +6,6 @@ extension UIImageView {
     let key = URL.absoluteString
     let imageAddress = "\(unsafeAddressOf(self))"
 
-    print(imageAddress)
-
     image = placeholder
 
     imageCache.object(key) { [weak self] object in
