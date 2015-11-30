@@ -24,9 +24,11 @@ struct ImageFetcher {
   // MARK: - Fetching
 
   static func fetch(URL: NSURL, imageAddress: String, completion: (result: Result) -> Void) {
-    imageAddresses[imageAddress]??.cancel()
+    dispatch_async(dispatch_get_main_queue()) {
+      imageAddresses[imageAddress]??.cancel()
+    }
 
-    imageAddresses[imageAddress] = session.dataTaskWithURL(URL) { data, response, error -> Void in
+    let task = session.dataTaskWithURL(URL) { data, response, error -> Void in
       if let error = error {
         complete(imageAddress) { completion(result: .Failure(error)) }
         return
@@ -55,7 +57,10 @@ struct ImageFetcher {
       complete(imageAddress) { completion(result: Result.Success(image)) }
     }
 
-    imageAddresses[imageAddress]??.resume()
+    dispatch_async(dispatch_get_main_queue()) {
+      imageAddresses[imageAddress] = task
+      task.resume()
+    }
   }
 
   static func complete(imageAddress: String, closure: () -> Void) {

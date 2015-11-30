@@ -17,7 +17,7 @@ class ViewController: UITableViewController {
     for i in 0..<Constants.imageNumber {
       if let imageURL = NSURL(
         string: faker.internet.image(width: Constants.imageWidth, height: Constants.imageHeight)
-          + "?type=attachment&id=(\(i))(50)!") {
+          + "?type=attachment&id=(\(i))(50)") {
             array.append(imageURL)
       }
     }
