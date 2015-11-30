@@ -22,28 +22,26 @@ extension UIImageView {
         return
       }
 
-      weakSelf.fetcher = ImageFetcher(URL: URL)
+      weakSelf.fetcher = Fetcher(URL: URL)
 
-      dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) { [weak self] result in
-        weakSelf.fetcher?.start { [weak self] result in
-          guard let weakSelf = self else { return }
+      weakSelf.fetcher?.start { [weak self] result in
+        guard let weakSelf = self else { return }
 
-          switch result {
-          case let .Success(image):
-            weakSelf.image = image
-            imageCache.add(key, object: image)
-          default:
-            break
-          }
+        switch result {
+        case let .Success(image):
+          weakSelf.image = image
+          imageCache.add(key, object: image)
+        default:
+          break
         }
       }
     }
   }
 
-  var fetcher: ImageFetcher? {
+  var fetcher: Fetcher? {
     get {
       let wrapper = objc_getAssociatedObject(self, &Capsule.ObjectKey) as? Capsule
-      let fetcher = wrapper?.value as? ImageFetcher
+      let fetcher = wrapper?.value as? Fetcher
       return fetcher
     }
     set (fetcher) {

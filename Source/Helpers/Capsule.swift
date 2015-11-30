@@ -1,6 +1,7 @@
 import Foundation
 
 class Capsule : NSObject {
+
   static var ObjectKey = 0
   let value: Any
 

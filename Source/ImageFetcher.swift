@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-class ImageFetcher {
+class Fetcher {
 
   enum Result {
     case Success(UIImage)
@@ -35,42 +35,48 @@ class ImageFetcher {
   func start(completion: (result: Result) -> Void) {
     active = true
 
-    fetchTask = session.dataTaskWithURL(URL) { [weak self] data, response, error -> Void in
+    BackgroundTask(processing: { [weak self] in
       guard let weakSelf = self where weakSelf.active else { return }
 
-      if let error = error {
-        weakSelf.complete { completion(result: .Failure(error)) }
-        return
-      }
+      weakSelf.fetchTask = weakSelf.session.dataTaskWithURL(weakSelf.URL) {
+        [weak self] data, response, error -> Void in
 
-      guard let httpResponse = response as? NSHTTPURLResponse else {
-        weakSelf.complete { completion(result: .Failure(Error.InvalidResponse)) }
-        return
-      }
-
-      guard httpResponse.statusCode == 200 else {
-        weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
-        return
-      }
-
-      guard let data = data where httpResponse.validateLength(data) else {
-        weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
-        return
-      }
-
-      weakSelf.decompressionTask = BackgroundTask(processing: { [weak self] in
         guard let weakSelf = self where weakSelf.active else { return }
 
-        guard let image = UIImage.decode(data) else {
-          weakSelf.complete { completion(result: .Failure(Error.ConvertionError)) }
+        if let error = error {
+          weakSelf.complete { completion(result: .Failure(error)) }
           return
         }
 
-        weakSelf.complete { completion(result: Result.Success(image)) }
-      }).start()
-    }
+        guard let httpResponse = response as? NSHTTPURLResponse else {
+          weakSelf.complete { completion(result: .Failure(Error.InvalidResponse)) }
+          return
+        }
 
-    fetchTask?.resume()
+        guard httpResponse.statusCode == 200 else {
+          weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
+          return
+        }
+
+        guard let data = data where httpResponse.validateLength(data) else {
+          weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
+          return
+        }
+
+        weakSelf.decompressionTask = BackgroundTask(processing: { [weak self] in
+          guard let weakSelf = self where weakSelf.active else { return }
+
+          guard let image = UIImage.decode(data) else {
+            weakSelf.complete { completion(result: .Failure(Error.ConvertionError)) }
+            return
+          }
+
+          weakSelf.complete { completion(result: Result.Success(image)) }
+        }).start()
+      }
+
+      weakSelf.fetchTask?.resume()
+    }).start()
   }
 
   func cancel() {

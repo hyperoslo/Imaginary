@@ -1,8 +1,8 @@
 import UIKit
 
-public struct Decompressor {
+struct Decompressor {
 
-  public static func decompress(data: NSData, scale: CGFloat = 1) -> UIImage {
+  static func decompress(data: NSData, scale: CGFloat = 1) -> UIImage {
     guard let image = UIImage(data: data) else { return UIImage() }
 
     let reference = image.CGImage
@@ -21,25 +21,5 @@ public struct Decompressor {
     UIGraphicsEndImageContext()
 
     return blendedImage
-  }
-}
-
-public class BackgroundTask {
-
-  private var block: dispatch_block_t
-
-  init(processing: () -> Void) {
-    block = dispatch_block_create(DISPATCH_BLOCK_INHERIT_QOS_CLASS) {
-      processing()
-    }
-  }
-
-  func start() -> BackgroundTask {
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), block)
-    return self
-  }
-
-  func cancel() {
-    dispatch_block_cancel(block)
   }
 }
