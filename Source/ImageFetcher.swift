@@ -15,67 +15,50 @@ public class ImageFetcher {
     case ConvertionError
   }
 
-  public let URL: NSURL
-  var task: NSURLSessionDataTask?
-  var active = false
+  static var task: NSURLSessionDataTask?
 
-  public var session: NSURLSession {
+  static var session: NSURLSession {
     return NSURLSession.sharedSession()
-  }
-
-  // MARK: - Initialization
-
-  public init(URL: NSURL) {
-    self.URL = URL
   }
 
   // MARK: - Fetching
 
-  public func start(completion: (result: Result) -> Void) {
-    active = true
-
-    task = session.dataTaskWithURL(URL) { [weak self] data, response, error -> Void in
-      guard let weakSelf = self where weakSelf.active else { return }
-
+  public static func fetch(URL: NSURL, completion: (result: Result) -> Void) -> NSURLSessionDataTask? {
+    let task = session.dataTaskWithURL(URL) { data, response, error -> Void in
       if let error = error {
-        weakSelf.complete { completion(result: .Failure(error)) }
+        complete { completion(result: .Failure(error)) }
         return
       }
 
       guard let httpResponse = response as? NSHTTPURLResponse else {
-        weakSelf.complete { completion(result: .Failure(Error.InvalidResponse)) }
+        complete { completion(result: .Failure(Error.InvalidResponse)) }
         return
       }
 
       guard httpResponse.statusCode == 200 else {
-        weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
+        complete { completion(result: .Failure(Error.InvalidStatusCode)) }
         return
       }
 
       guard let data = data where httpResponse.validateLength(data) else {
-        weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
+        complete { completion(result: .Failure(Error.InvalidStatusCode)) }
         return
       }
 
       guard let image = UIImage.decode(data) else {
-        weakSelf.complete { completion(result: .Failure(Error.ConvertionError)) }
+        complete { completion(result: .Failure(Error.ConvertionError)) }
         return
       }
 
-      weakSelf.complete { completion(result: Result.Success(image)) }
+      complete { completion(result: Result.Success(image)) }
     }
 
-    task?.resume()
+    task.resume()
+
+    return task
   }
 
-  public func cancel() {
-    task?.cancel()
-    active = false
-  }
-
-  func complete(closure: () -> Void) {
-    active = false
-    
+  static func complete(closure: () -> Void) {
     dispatch_async(dispatch_get_main_queue()) {
       closure()
     }
