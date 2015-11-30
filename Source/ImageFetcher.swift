@@ -31,7 +31,7 @@ struct ImageFetcher {
 
       let task = session.dataTaskWithURL(URL) { data, response, error -> Void in
         if let error = error {
-          complete(imageAddress) { completion(result: .Failure(error)) }
+          complete("") { completion(result: .Failure(error)) }
           return
         }
 
