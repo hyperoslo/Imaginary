@@ -6,12 +6,14 @@ extension UIImageView {
     let key = URL.absoluteString
     image = placeholder
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
       imageCache.object(key) { [weak self] object in
         guard let weakSelf = self else { return }
 
-        if let object = object {
-          weakSelf.image = object
+        if let image = object {
+          dispatch_async(dispatch_get_main_queue()) {
+            weakSelf.image = image
+          }
           return
         }
 
@@ -22,7 +24,9 @@ extension UIImageView {
 
           switch result {
           case let .Success(image):
-            weakSelf.image = image
+            dispatch_async(dispatch_get_main_queue()) {
+              weakSelf.image = image
+            }
             imageCache.add(key, object: image)
           default:
             break
