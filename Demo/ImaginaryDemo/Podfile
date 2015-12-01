@@ -5,3 +5,4 @@ inhibit_all_warnings!
 
 pod 'Imaginary', path: '../../'
 pod 'Fakery'
+pod 'Cache', git: 'https://github.com/hyperoslo/Cache'
