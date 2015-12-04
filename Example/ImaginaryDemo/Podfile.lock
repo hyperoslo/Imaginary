@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Cache:
-    :commit: 508728a9b540e25e21a9c721a32d2a74aa63bee9
+    :commit: d30fb21cf1ac136b876dc09976b54125d1ae364b
     :git: https://github.com/hyperoslo/Cache
 
 SPEC CHECKSUMS:
