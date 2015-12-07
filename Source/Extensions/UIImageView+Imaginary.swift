@@ -2,15 +2,17 @@ import UIKit
 
 extension UIImageView {
 
-  public func setRemoteImage(URL: NSURL, placeholder: UIImage? = nil) {
+  public func setImage(URL: NSURL?, placeholder: UIImage? = nil) {
+    image = placeholder
+
+    guard let URL = URL else { return }
+
     let key = URL.absoluteString
 
     if let fetcher = fetcher {
       fetcher.cancel()
       self.fetcher = nil
     }
-
-    image = placeholder
 
     imageCache.object(key) { [weak self] object in
       guard let weakSelf = self else { return }
