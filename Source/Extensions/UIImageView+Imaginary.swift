@@ -29,6 +29,7 @@ extension UIImageView {
         return
       }
 
+      Imaginary.preConfigure?(imageView: weakSelf)
       weakSelf.fetcher = Fetcher(URL: URL)
 
       weakSelf.fetcher?.start { [weak self] result in
