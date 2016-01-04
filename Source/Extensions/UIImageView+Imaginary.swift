@@ -1,5 +1,10 @@
 import UIKit
 
+public struct Imaginary {
+  public static var preConfigure: ((imageView: UIImageView) -> Void)?
+  public static var postConfigure: ((imageView: UIImageView) -> Void)?
+}
+
 extension UIImageView {
 
   public func setImage(URL: NSURL?, placeholder: UIImage? = nil) {
