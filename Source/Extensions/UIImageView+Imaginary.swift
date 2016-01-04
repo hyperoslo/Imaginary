@@ -42,6 +42,7 @@ extension UIImageView {
         default:
           break
         }
+        Imaginary.postConfigure?(imageView: weakSelf)
       }
     }
   }
