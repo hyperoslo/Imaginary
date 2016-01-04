@@ -1,5 +1,10 @@
 import Cache
 
+public struct Imaginary {
+  public static var preConfigure: ((imageView: UIImageView) -> Void)?
+  public static var postConfigure: ((imageView: UIImageView) -> Void)?
+}
+
 public var imageCache: Cache<UIImage> {
   struct Static {
     static let config = Config(

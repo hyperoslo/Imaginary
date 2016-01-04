@@ -24,6 +24,7 @@ extension UIImageView {
         return
       }
 
+      Imaginary.preConfigure?(imageView: weakSelf)
       weakSelf.fetcher = Fetcher(URL: URL)
 
       weakSelf.fetcher?.start { [weak self] result in
@@ -36,6 +37,7 @@ extension UIImageView {
         default:
           break
         }
+        Imaginary.postConfigure?(imageView: weakSelf)
       }
     }
   }
