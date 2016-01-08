@@ -1,7 +1,0 @@
-platform :ios, '8.0'
-use_frameworks!
-
-pod 'Cache', git: 'https://github.com/hyperoslo/Cache'
-pod 'Fakery'
-pod 'Nimble'
-pod 'Quick'
