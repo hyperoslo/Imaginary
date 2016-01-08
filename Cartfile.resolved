@@ -1,0 +1,3 @@
+github "Quick/Nimble" "v3.0.0"
+github "Quick/Quick" "v0.8.0"
+github "hyperoslo/Cache" "ae5f3ceb0124a4183d4d2ecfa59652109612906c"
