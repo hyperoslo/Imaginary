@@ -1,3 +1,4 @@
+import UIKit
 import Cache
 
 public struct Imaginary {

@@ -14,6 +14,7 @@
 		D5DF75AE1C403E1000BF1AB6 /* UIImage+Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A61C403E1000BF1AB6 /* UIImage+Cachable.swift */; };
 		D5DF75AF1C403E1000BF1AB6 /* UIImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A71C403E1000BF1AB6 /* UIImageView+Imaginary.swift */; };
 		D5DF75B01C403E1000BF1AB6 /* Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A81C403E1000BF1AB6 /* Imaginary.swift */; };
+		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D5DF75A61C403E1000BF1AB6 /* UIImage+Cachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Cachable.swift"; sourceTree = "<group>"; };
 		D5DF75A71C403E1000BF1AB6 /* UIImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Imaginary.swift"; sourceTree = "<group>"; };
 		D5DF75A81C403E1000BF1AB6 /* Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imaginary.swift; sourceTree = "<group>"; };
+		D5DF75B11C403FBF00BF1AB6 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/iOS/Cache.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 		D5DF75871C403D8200BF1AB6 = {
 			isa = PBXGroup;
 			children = (
+				D5DF75B11C403FBF00BF1AB6 /* Cache.framework */,
 				D5DF759C1C403E1000BF1AB6 /* Imaginary */,
 				D5DF759F1C403E1000BF1AB6 /* Source */,
 				D5DF75921C403D8200BF1AB6 /* Products */,
@@ -123,6 +127,7 @@
 				D5DF758D1C403D8200BF1AB6 /* Frameworks */,
 				D5DF758E1C403D8200BF1AB6 /* Headers */,
 				D5DF758F1C403D8200BF1AB6 /* Resources */,
+				D5DF75B31C403FC700BF1AB6 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -173,6 +178,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D5DF75B31C403FC700BF1AB6 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Cache.framework",
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D5DF758C1C403D8200BF1AB6 /* Sources */ = {
@@ -288,6 +311,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -305,6 +332,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
