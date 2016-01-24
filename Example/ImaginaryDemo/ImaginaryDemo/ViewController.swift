@@ -40,8 +40,6 @@ class ViewController: UITableViewController {
   func setupTableView() {
     tableView.registerClass(FeedTableViewCell.self,
       forCellReuseIdentifier: FeedTableViewCell.reusableIdentifier)
-    tableView.delegate = self
-    tableView.dataSource = self
     tableView.separatorStyle = .None
   }
 }
