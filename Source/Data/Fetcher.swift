@@ -12,7 +12,7 @@ class Fetcher {
     case InvalidResponse
     case InvalidStatusCode
     case InvalidData
-    case ConvertionError
+    case ConversionError
   }
 
   let URL: NSURL
@@ -63,7 +63,7 @@ class Fetcher {
         }
 
         guard let image = UIImage.decode(data) else {
-          weakSelf.complete { completion(result: .Failure(Error.ConvertionError)) }
+          weakSelf.complete { completion(result: .Failure(Error.ConversionError)) }
           return
         }
 
