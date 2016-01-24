@@ -12,6 +12,7 @@ class Fetcher {
     case InvalidResponse
     case InvalidStatusCode
     case InvalidData
+    case InvalidContentLength
     case ConversionError
   }
 
@@ -58,7 +59,7 @@ class Fetcher {
         }
 
         guard let data = data where httpResponse.validateLength(data) else {
-          weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
+          weakSelf.complete { completion(result: .Failure(Error.InvalidContentLength)) }
           return
         }
 
