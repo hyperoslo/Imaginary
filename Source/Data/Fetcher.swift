@@ -12,7 +12,8 @@ class Fetcher {
     case InvalidResponse
     case InvalidStatusCode
     case InvalidData
-    case ConvertionError
+    case InvalidContentLength
+    case ConversionError
   }
 
   let URL: NSURL
@@ -58,12 +59,12 @@ class Fetcher {
         }
 
         guard let data = data where httpResponse.validateLength(data) else {
-          weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
+          weakSelf.complete { completion(result: .Failure(Error.InvalidContentLength)) }
           return
         }
 
         guard let image = UIImage.decode(data) else {
-          weakSelf.complete { completion(result: .Failure(Error.ConvertionError)) }
+          weakSelf.complete { completion(result: .Failure(Error.ConversionError)) }
           return
         }
 
