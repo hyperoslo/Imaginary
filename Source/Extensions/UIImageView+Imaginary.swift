@@ -37,7 +37,7 @@ extension UIImageView {
 
         switch result {
         case let .Success(image):
-          weakSelf.image = image
+          Imaginary.transitionClosure(imageView: weakSelf, image: image)
           imageCache.add(key, object: image)
           completion?()
         default:
