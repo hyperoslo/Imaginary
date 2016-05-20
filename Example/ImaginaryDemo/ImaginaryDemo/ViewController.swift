@@ -65,7 +65,7 @@ extension ViewController {
     guard let cell = tableView.dequeueReusableCellWithIdentifier(
       FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
 
-    cell.generalImageView.setImage(imaginaryArray[indexPath.row])
+    cell.generalImageView.setImage(imaginaryArray[indexPath.row], placeholder: UIImage(named: "placeholder"))
 
     return cell
   }
