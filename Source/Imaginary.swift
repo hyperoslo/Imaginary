@@ -4,13 +4,16 @@ import Cache
 public struct Imaginary {
 
   public static var preConfigure: ((imageView: UIImageView) -> Void)? = { imageView in
-    imageView.alpha = 0.0
+    imageView.layer.opacity = 0.0
+  }
   }
 
   public static var postConfigure: ((imageView: UIImageView) -> Void)? = { imageView in
-    UIView.animateWithDuration(0.3) {
-      imageView.alpha = 1.0
-    }
+    let animation = CABasicAnimation(keyPath: "opacity")
+    animation.fromValue = imageView.layer.opacity
+    animation.toValue = 1.0
+    imageView.layer.addAnimation(animation, forKey: "fadeAnimation")
+    imageView.layer.opacity = 1.0
   }
 }
 
