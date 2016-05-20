@@ -1,21 +1,17 @@
 PODS:
   - Cache (0.1.0)
-  - Fakery (1.1.0):
-    - SwiftyJSON
   - Imaginary (0.1.0):
     - Cache
-  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Cache (from `https://github.com/hyperoslo/Cache`)
-  - Fakery
   - Imaginary (from `../../`)
 
 EXTERNAL SOURCES:
   Cache:
     :git: https://github.com/hyperoslo/Cache
   Imaginary:
-    :path: ../../
+    :path: "../../"
 
 CHECKOUT OPTIONS:
   Cache:
@@ -24,10 +20,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Cache: 59ea9dbb71dfa1ba68a6efe295e907603b3066da
-  Fakery: 593389814fb7c42fe7f0801e76c8ae55b95505e7
   Imaginary: 5317b8d2dc8ecf20455232226bf8a277abdd37d5
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 59255a311bdb21b53b1b9dfeb7eb5bf8d64ddc1f
+PODFILE CHECKSUM: eeff3e5a8f20502e24b1eaa68f2a4c9eeece699d
 
 COCOAPODS: 1.0.0

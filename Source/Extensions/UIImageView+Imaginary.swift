@@ -26,7 +26,10 @@ extension UIImageView {
         return
       }
 
-      Imaginary.preConfigure?(imageView: weakSelf)
+      if placeholder == nil {
+        Imaginary.preConfigure?(imageView: weakSelf)
+      }
+
       weakSelf.fetcher = Fetcher(URL: URL)
 
       weakSelf.fetcher?.start { [weak self] result in
@@ -34,7 +37,7 @@ extension UIImageView {
 
         switch result {
         case let .Success(image):
-          weakSelf.image = image
+          Imaginary.transitionClosure(imageView: weakSelf, image: image)
           imageCache.add(key, object: image)
           completion?()
         default:

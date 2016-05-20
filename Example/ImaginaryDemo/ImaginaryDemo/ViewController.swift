@@ -1,5 +1,4 @@
 import UIKit
-import Fakery
 import Imaginary
 
 class ViewController: UITableViewController {
@@ -11,13 +10,11 @@ class ViewController: UITableViewController {
   }
 
   lazy var imaginaryArray: [NSURL] = { [unowned self] in
-    let faker = Faker()
     var array = [NSURL]()
 
     for i in 0..<Constants.imageNumber {
       if let imageURL = NSURL(
-        string: faker.internet.image(width: Constants.imageWidth, height: Constants.imageHeight)
-          + "?type=attachment&id=(\(i))(50)") {
+        string: "https://unsplash.it/600/300/?image=\(i)") {
             array.append(imageURL)
       }
     }
