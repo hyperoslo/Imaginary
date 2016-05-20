@@ -1,5 +1,4 @@
 import UIKit
-import Fakery
 import Imaginary
 
 class ViewController: UITableViewController {
@@ -11,7 +10,6 @@ class ViewController: UITableViewController {
   }
 
   lazy var imaginaryArray: [NSURL] = { [unowned self] in
-    let faker = Faker()
     var array = [NSURL]()
 
     for i in 0..<Constants.imageNumber {
