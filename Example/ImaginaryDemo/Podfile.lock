@@ -1,5 +1,7 @@
 PODS:
-  - Cache (0.1.0)
+  - Cache (1.3.0):
+    - CryptoSwift
+  - CryptoSwift (0.4.1)
   - Imaginary (0.1.0):
     - Cache
 
@@ -15,11 +17,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Cache:
-    :commit: d30fb21cf1ac136b876dc09976b54125d1ae364b
+    :commit: 5b2cdfc5ce9e6d9e3b36059231fd78b89bc9979f
     :git: https://github.com/hyperoslo/Cache
 
 SPEC CHECKSUMS:
-  Cache: 59ea9dbb71dfa1ba68a6efe295e907603b3066da
+  Cache: b8abf7795a6d72f9d5b924d1367624a53fe777a9
+  CryptoSwift: 25b5aff3f260967391f8fff2e9abe4254d2c6fd5
   Imaginary: 5317b8d2dc8ecf20455232226bf8a277abdd37d5
 
 PODFILE CHECKSUM: eeff3e5a8f20502e24b1eaa68f2a4c9eeece699d
