@@ -31,6 +31,7 @@ public struct Imaginary {
 }
 
 public var imageCache: Cache<UIImage> {
+
   struct Static {
     static let config = Config(
       frontKind: .Memory,
