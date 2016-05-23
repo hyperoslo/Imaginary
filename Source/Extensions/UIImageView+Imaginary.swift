@@ -55,7 +55,7 @@ extension UIImageView {
       return fetcher
     }
     set (fetcher) {
-      var wrapper : Capsule?
+      var wrapper: Capsule?
       if let fetcher = fetcher {
         wrapper = Capsule(value: fetcher)
       }

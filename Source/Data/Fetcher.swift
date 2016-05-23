@@ -84,7 +84,7 @@ class Fetcher {
 
   func complete(closure: () -> Void) {
     active = false
-    
+
     dispatch_async(dispatch_get_main_queue()) {
       closure()
     }
