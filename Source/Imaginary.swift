@@ -6,7 +6,7 @@ public struct Imaginary {
   public static var preConfigure: ((imageView: UIImageView) -> Void)? = { imageView in
     imageView.layer.opacity = 0.0
   }
-  
+
   public static var transitionClosure: ((imageView: UIImageView, image: UIImage) -> Void) = { imageView, newImage in
     guard let oldImage = imageView.image else {
       imageView.image = newImage
@@ -31,14 +31,16 @@ public struct Imaginary {
 }
 
 public var imageCache: Cache<UIImage> {
+
   struct Static {
     static let config = Config(
       frontKind: .Memory,
       backKind: .Disk,
       expiry: .Date(NSDate().dateByAddingTimeInterval(60 * 60 * 24 * 3)),
-      maxSize: 0)
+      maxSize: 0,
+      maxObjects: 10)
 
-    static let cache = Cache<UIImage>(name: "Imaginary")
+    static let cache = Cache<UIImage>(name: "Imaginary", config: config)
   }
 
   return Static.cache
