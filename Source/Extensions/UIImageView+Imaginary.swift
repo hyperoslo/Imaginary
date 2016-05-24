@@ -2,8 +2,11 @@ import UIKit
 
 extension UIImageView {
 
-  public func setImage(URL: NSURL?, placeholder: UIImage? = nil, completion: (() -> ())? = nil) {
-    image = placeholder
+  public func setImage(URL: NSURL?, placeholder: UIImage? = nil, options: Option = [], completion: (() -> ())? = nil) {
+
+    if image == nil || !options.contains(.DelayPlaceholder) {
+      image = placeholder
+    }
 
     guard let URL = URL else { return }
 
@@ -26,7 +29,9 @@ extension UIImageView {
         return
       }
 
-      if placeholder == nil {
+      if let placeholder = placeholder where options.contains(.DelayPlaceholder) {
+        weakSelf.image = placeholder
+      } else {
         Imaginary.preConfigure?(imageView: weakSelf)
       }
 

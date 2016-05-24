@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D23CD0A01CF5004A00FDCB23 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23CD09F1CF5004A00FDCB23 /* Option.swift */; };
 		D5DF75AA1C403E1000BF1AB6 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A11C403E1000BF1AB6 /* Capsule.swift */; };
 		D5DF75AB1C403E1000BF1AB6 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A21C403E1000BF1AB6 /* Decompressor.swift */; };
 		D5DF75AC1C403E1000BF1AB6 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A31C403E1000BF1AB6 /* Fetcher.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D23CD09F1CF5004A00FDCB23 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		D5DF75911C403D8200BF1AB6 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DF759E1C403E1000BF1AB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DF75A11C403E1000BF1AB6 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				D5DF75A11C403E1000BF1AB6 /* Capsule.swift */,
 				D5DF75A21C403E1000BF1AB6 /* Decompressor.swift */,
 				D5DF75A31C403E1000BF1AB6 /* Fetcher.swift */,
+				D23CD09F1CF5004A00FDCB23 /* Option.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23CD0A01CF5004A00FDCB23 /* Option.swift in Sources */,
 				D5DF75AF1C403E1000BF1AB6 /* UIImageView+Imaginary.swift in Sources */,
 				D5DF75AA1C403E1000BF1AB6 /* Capsule.swift in Sources */,
 				D5DF75AD1C403E1000BF1AB6 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
