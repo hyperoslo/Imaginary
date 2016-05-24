@@ -29,9 +29,7 @@ extension UIImageView {
         return
       }
 
-      if let placeholder = placeholder where options.contains(.DelayPlaceholder) {
-        weakSelf.image = placeholder
-      } else {
+      if placeholder == nil {
         Imaginary.preConfigure?(imageView: weakSelf)
       }
 
@@ -46,8 +44,11 @@ extension UIImageView {
           imageCache.add(key, object: image)
           completion?()
         default:
-          break
+          if let placeholder = placeholder where options.contains(.DelayPlaceholder) {
+            weakSelf.image = placeholder
+          }
         }
+
         Imaginary.postConfigure?(imageView: weakSelf)
       }
     }
