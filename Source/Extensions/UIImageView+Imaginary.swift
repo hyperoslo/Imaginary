@@ -2,7 +2,7 @@ import UIKit
 
 extension UIImageView {
 
-  public func setImage(URL: NSURL?, placeholder: UIImage? = nil, completion: (() -> ())? = nil) {
+  public func setImage(URL: NSURL?, placeholder: UIImage? = nil, completion: ((UIImage?) -> ())? = nil) {
     image = placeholder
 
     guard let URL = URL else { return }
@@ -20,7 +20,7 @@ extension UIImageView {
       if let image = object {
         dispatch_async(dispatch_get_main_queue()) {
           weakSelf.image = image
-          completion?()
+          completion?(image)
         }
 
         return
@@ -39,7 +39,7 @@ extension UIImageView {
         case let .Success(image):
           Imaginary.transitionClosure(imageView: weakSelf, image: image)
           imageCache.add(key, object: image)
-          completion?()
+          completion?(image)
         default:
           break
         }
