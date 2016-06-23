@@ -8,13 +8,15 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/hyperoslo/Imaginary.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/hyperoslo'
   
-  s.requires_arc = true
-  s.source_files = 'Source/**/*'
-
   s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.9'
+  s.osx.deployment_target = '10.10'
   s.tvos.deployment_target = '9.2'
 
-  s.frameworks = 'UIKit'
+  s.requires_arc = true
+  s.ios.source_files = 'Sources/{iOS,Shared}/**/*'
+  s.osx.source_files = 'Sources/{Mac,Shared}/**/*'
+  s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
+
+  s.frameworks = 'Foundation'
   s.dependency 'Cache'
 end
