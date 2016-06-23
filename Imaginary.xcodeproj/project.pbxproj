@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD936FA11D1C0861006BB76B /* NSImage+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD936F9F1D1C07F3006BB76B /* NSImage+CGImage.swift */; };
+		BD936FA31D1C094C006BB76B /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD936FA21D1C094C006BB76B /* NSImageView.swift */; };
+		BD936FA51D1C096F006BB76B /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD936FA41D1C096F006BB76B /* Fetcher.swift */; };
 		BDE8FBDB1D1BFA4F00C5A212 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBCF1D1BFA4F00C5A212 /* Decompressor.swift */; };
 		BDE8FBDC1D1BFA4F00C5A212 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD01D1BFA4F00C5A212 /* Fetcher.swift */; };
 		BDE8FBDD1D1BFA4F00C5A212 /* UIImage+Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD21D1BFA4F00C5A212 /* UIImage+Cachable.swift */; };
@@ -17,10 +20,16 @@
 		BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */; };
 		BDE8FBF71D1BFCF000C5A212 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD81D1BFA4F00C5A212 /* Capsule.swift */; };
 		BDE8FBF81D1BFCF000C5A212 /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBDA1D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift */; };
+		BDE8FBFA1D1BFD4200C5A212 /* Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBF91D1BFD4200C5A212 /* Imaginary.swift */; };
+		BDE8FBFC1D1BFD6A00C5A212 /* NSImage+Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBFB1D1BFD6A00C5A212 /* NSImage+Cachable.swift */; };
+		BDE8FBFE1D1BFD9600C5A212 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBFD1D1BFD9600C5A212 /* Decompressor.swift */; };
 		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD936F9F1D1C07F3006BB76B /* NSImage+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+CGImage.swift"; sourceTree = "<group>"; };
+		BD936FA21D1C094C006BB76B /* NSImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImageView.swift; sourceTree = "<group>"; };
+		BD936FA41D1C096F006BB76B /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		BDE8FBCF1D1BFA4F00C5A212 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		BDE8FBD01D1BFA4F00C5A212 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		BDE8FBD21D1BFA4F00C5A212 /* UIImage+Cachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Cachable.swift"; sourceTree = "<group>"; };
@@ -31,6 +40,9 @@
 		BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE8FBF41D1BFC7C00C5A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/Mac/Cache.framework; sourceTree = "<group>"; };
+		BDE8FBF91D1BFD4200C5A212 /* Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imaginary.swift; sourceTree = "<group>"; };
+		BDE8FBFB1D1BFD6A00C5A212 /* NSImage+Cachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+Cachable.swift"; sourceTree = "<group>"; };
+		BDE8FBFD1D1BFD9600C5A212 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D5DF75911C403D8200BF1AB6 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DF759E1C403E1000BF1AB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DF75B11C403FBF00BF1AB6 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/iOS/Cache.framework; sourceTree = "<group>"; };
@@ -97,6 +109,7 @@
 		BDE8FBD51D1BFA4F00C5A212 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				BDE8FBF91D1BFD4200C5A212 /* Imaginary.swift */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -114,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				BDE8FBD81D1BFA4F00C5A212 /* Capsule.swift */,
+				BDE8FBFD1D1BFD9600C5A212 /* Decompressor.swift */,
+				BD936FA41D1C096F006BB76B /* Fetcher.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -122,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				BDE8FBDA1D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift */,
+				BDE8FBFB1D1BFD6A00C5A212 /* NSImage+Cachable.swift */,
+				BD936F9F1D1C07F3006BB76B /* NSImage+CGImage.swift */,
+				BD936FA21D1C094C006BB76B /* NSImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -347,6 +365,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDE8FBF71D1BFCF000C5A212 /* Capsule.swift in Sources */,
+				BD936FA51D1C096F006BB76B /* Fetcher.swift in Sources */,
+				BD936FA31D1C094C006BB76B /* NSImageView.swift in Sources */,
+				BDE8FBFE1D1BFD9600C5A212 /* Decompressor.swift in Sources */,
+				BD936FA11D1C0861006BB76B /* NSImage+CGImage.swift in Sources */,
+				BDE8FBFA1D1BFD4200C5A212 /* Imaginary.swift in Sources */,
+				BDE8FBFC1D1BFD6A00C5A212 /* NSImage+Cachable.swift in Sources */,
 				BDE8FBF81D1BFCF000C5A212 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +585,7 @@
 				BDE8FBF01D1BFB9F00C5A212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5DF758B1C403D8200BF1AB6 /* Build configuration list for PBXProject "Imaginary" */ = {
 			isa = XCConfigurationList;
