@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
   s.osx.source_files = 'Sources/{Mac,Shared}/**/*'
   s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
 
-  s.frameworks = 'UIKit'
+  s.frameworks = 'Foundation'
   s.dependency 'Cache'
 end
