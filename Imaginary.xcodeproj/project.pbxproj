@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D5DF75AA1C403E1000BF1AB6 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A11C403E1000BF1AB6 /* Capsule.swift */; };
-		D5DF75AB1C403E1000BF1AB6 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A21C403E1000BF1AB6 /* Decompressor.swift */; };
-		D5DF75AC1C403E1000BF1AB6 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A31C403E1000BF1AB6 /* Fetcher.swift */; };
-		D5DF75AD1C403E1000BF1AB6 /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A51C403E1000BF1AB6 /* NSHTTPURLResponse+Imaginary.swift */; };
-		D5DF75AE1C403E1000BF1AB6 /* UIImage+Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A61C403E1000BF1AB6 /* UIImage+Cachable.swift */; };
-		D5DF75AF1C403E1000BF1AB6 /* UIImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A71C403E1000BF1AB6 /* UIImageView+Imaginary.swift */; };
-		D5DF75B01C403E1000BF1AB6 /* Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF75A81C403E1000BF1AB6 /* Imaginary.swift */; };
+		BDE8FBDB1D1BFA4F00C5A212 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBCF1D1BFA4F00C5A212 /* Decompressor.swift */; };
+		BDE8FBDC1D1BFA4F00C5A212 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD01D1BFA4F00C5A212 /* Fetcher.swift */; };
+		BDE8FBDD1D1BFA4F00C5A212 /* UIImage+Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD21D1BFA4F00C5A212 /* UIImage+Cachable.swift */; };
+		BDE8FBDE1D1BFA4F00C5A212 /* UIImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD31D1BFA4F00C5A212 /* UIImageView+Imaginary.swift */; };
+		BDE8FBDF1D1BFA4F00C5A212 /* Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD41D1BFA4F00C5A212 /* Imaginary.swift */; };
+		BDE8FBE01D1BFA4F00C5A212 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD81D1BFA4F00C5A212 /* Capsule.swift */; };
+		BDE8FBE11D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBDA1D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift */; };
 		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BDE8FBCF1D1BFA4F00C5A212 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
+		BDE8FBD01D1BFA4F00C5A212 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		BDE8FBD21D1BFA4F00C5A212 /* UIImage+Cachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Cachable.swift"; sourceTree = "<group>"; };
+		BDE8FBD31D1BFA4F00C5A212 /* UIImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Imaginary.swift"; sourceTree = "<group>"; };
+		BDE8FBD41D1BFA4F00C5A212 /* Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imaginary.swift; sourceTree = "<group>"; };
+		BDE8FBD81D1BFA4F00C5A212 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
+		BDE8FBDA1D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSHTTPURLResponse+Imaginary.swift"; sourceTree = "<group>"; };
 		D5DF75911C403D8200BF1AB6 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DF759E1C403E1000BF1AB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5DF75A11C403E1000BF1AB6 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
-		D5DF75A21C403E1000BF1AB6 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
-		D5DF75A31C403E1000BF1AB6 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		D5DF75A51C403E1000BF1AB6 /* NSHTTPURLResponse+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSHTTPURLResponse+Imaginary.swift"; sourceTree = "<group>"; };
-		D5DF75A61C403E1000BF1AB6 /* UIImage+Cachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Cachable.swift"; sourceTree = "<group>"; };
-		D5DF75A71C403E1000BF1AB6 /* UIImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Imaginary.swift"; sourceTree = "<group>"; };
-		D5DF75A81C403E1000BF1AB6 /* Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imaginary.swift; sourceTree = "<group>"; };
 		D5DF75B11C403FBF00BF1AB6 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/iOS/Cache.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,12 +42,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BDE8FBCC1D1BFA4F00C5A212 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBCD1D1BFA4F00C5A212 /* iOS */,
+				BDE8FBD51D1BFA4F00C5A212 /* Mac */,
+				BDE8FBD61D1BFA4F00C5A212 /* Shared */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BDE8FBCD1D1BFA4F00C5A212 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBCE1D1BFA4F00C5A212 /* Data */,
+				BDE8FBD11D1BFA4F00C5A212 /* Extensions */,
+				BDE8FBD41D1BFA4F00C5A212 /* Imaginary.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		BDE8FBCE1D1BFA4F00C5A212 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBCF1D1BFA4F00C5A212 /* Decompressor.swift */,
+				BDE8FBD01D1BFA4F00C5A212 /* Fetcher.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BDE8FBD11D1BFA4F00C5A212 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBD21D1BFA4F00C5A212 /* UIImage+Cachable.swift */,
+				BDE8FBD31D1BFA4F00C5A212 /* UIImageView+Imaginary.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BDE8FBD51D1BFA4F00C5A212 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		BDE8FBD61D1BFA4F00C5A212 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBD71D1BFA4F00C5A212 /* Data */,
+				BDE8FBD91D1BFA4F00C5A212 /* Extensions */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		BDE8FBD71D1BFA4F00C5A212 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBD81D1BFA4F00C5A212 /* Capsule.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BDE8FBD91D1BFA4F00C5A212 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBDA1D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D5DF75871C403D8200BF1AB6 = {
 			isa = PBXGroup;
 			children = (
+				BDE8FBCC1D1BFA4F00C5A212 /* Sources */,
 				D5DF75B11C403FBF00BF1AB6 /* Cache.framework */,
 				D5DF759C1C403E1000BF1AB6 /* Imaginary */,
-				D5DF759F1C403E1000BF1AB6 /* Source */,
 				D5DF75921C403D8200BF1AB6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,36 +144,6 @@
 				D5DF759E1C403E1000BF1AB6 /* Info.plist */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		D5DF759F1C403E1000BF1AB6 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				D5DF75A01C403E1000BF1AB6 /* Data */,
-				D5DF75A41C403E1000BF1AB6 /* Extensions */,
-				D5DF75A81C403E1000BF1AB6 /* Imaginary.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		D5DF75A01C403E1000BF1AB6 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				D5DF75A11C403E1000BF1AB6 /* Capsule.swift */,
-				D5DF75A21C403E1000BF1AB6 /* Decompressor.swift */,
-				D5DF75A31C403E1000BF1AB6 /* Fetcher.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		D5DF75A41C403E1000BF1AB6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D5DF75A51C403E1000BF1AB6 /* NSHTTPURLResponse+Imaginary.swift */,
-				D5DF75A61C403E1000BF1AB6 /* UIImage+Cachable.swift */,
-				D5DF75A71C403E1000BF1AB6 /* UIImageView+Imaginary.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,13 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DF75AF1C403E1000BF1AB6 /* UIImageView+Imaginary.swift in Sources */,
-				D5DF75AA1C403E1000BF1AB6 /* Capsule.swift in Sources */,
-				D5DF75AD1C403E1000BF1AB6 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
-				D5DF75AB1C403E1000BF1AB6 /* Decompressor.swift in Sources */,
-				D5DF75AC1C403E1000BF1AB6 /* Fetcher.swift in Sources */,
-				D5DF75B01C403E1000BF1AB6 /* Imaginary.swift in Sources */,
-				D5DF75AE1C403E1000BF1AB6 /* UIImage+Cachable.swift in Sources */,
+				BDE8FBDF1D1BFA4F00C5A212 /* Imaginary.swift in Sources */,
+				BDE8FBE01D1BFA4F00C5A212 /* Capsule.swift in Sources */,
+				BDE8FBE11D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
+				BDE8FBDB1D1BFA4F00C5A212 /* Decompressor.swift in Sources */,
+				BDE8FBDD1D1BFA4F00C5A212 /* UIImage+Cachable.swift in Sources */,
+				BDE8FBDE1D1BFA4F00C5A212 /* UIImageView+Imaginary.swift in Sources */,
+				BDE8FBDC1D1BFA4F00C5A212 /* Fetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
