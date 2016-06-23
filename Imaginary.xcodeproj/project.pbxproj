@@ -14,6 +14,9 @@
 		BDE8FBDF1D1BFA4F00C5A212 /* Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD41D1BFA4F00C5A212 /* Imaginary.swift */; };
 		BDE8FBE01D1BFA4F00C5A212 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD81D1BFA4F00C5A212 /* Capsule.swift */; };
 		BDE8FBE11D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBDA1D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift */; };
+		BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */; };
+		BDE8FBF71D1BFCF000C5A212 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBD81D1BFA4F00C5A212 /* Capsule.swift */; };
+		BDE8FBF81D1BFCF000C5A212 /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8FBDA1D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift */; };
 		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,12 +28,23 @@
 		BDE8FBD41D1BFA4F00C5A212 /* Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imaginary.swift; sourceTree = "<group>"; };
 		BDE8FBD81D1BFA4F00C5A212 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
 		BDE8FBDA1D1BFA4F00C5A212 /* NSHTTPURLResponse+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSHTTPURLResponse+Imaginary.swift"; sourceTree = "<group>"; };
+		BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDE8FBF41D1BFC7C00C5A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/Mac/Cache.framework; sourceTree = "<group>"; };
 		D5DF75911C403D8200BF1AB6 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DF759E1C403E1000BF1AB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DF75B11C403FBF00BF1AB6 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/iOS/Cache.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BDE8FBE51D1BFB9F00C5A212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5DF758D1C403D8200BF1AB6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,10 +126,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BDE8FBF31D1BFC7C00C5A212 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBF41D1BFC7C00C5A212 /* Info.plist */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
 		D5DF75871C403D8200BF1AB6 = {
 			isa = PBXGroup;
 			children = (
 				BDE8FBCC1D1BFA4F00C5A212 /* Sources */,
+				BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */,
 				D5DF75B11C403FBF00BF1AB6 /* Cache.framework */,
 				D5DF759C1C403E1000BF1AB6 /* Imaginary */,
 				D5DF75921C403D8200BF1AB6 /* Products */,
@@ -126,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D5DF75911C403D8200BF1AB6 /* Imaginary.framework */,
+				BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +157,7 @@
 		D5DF759C1C403E1000BF1AB6 /* Imaginary */ = {
 			isa = PBXGroup;
 			children = (
+				BDE8FBF31D1BFC7C00C5A212 /* Mac */,
 				D5DF759D1C403E1000BF1AB6 /* iOS */,
 			);
 			path = Imaginary;
@@ -149,6 +174,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		BDE8FBE61D1BFB9F00C5A212 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5DF758E1C403D8200BF1AB6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,6 +191,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		BDE8FBE81D1BFB9F00C5A212 /* Imaginary-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDE8FBEE1D1BFB9F00C5A212 /* Build configuration list for PBXNativeTarget "Imaginary-Mac" */;
+			buildPhases = (
+				BDE8FBE41D1BFB9F00C5A212 /* Sources */,
+				BDE8FBE51D1BFB9F00C5A212 /* Frameworks */,
+				BDE8FBE61D1BFB9F00C5A212 /* Headers */,
+				BDE8FBE71D1BFB9F00C5A212 /* Resources */,
+				BDE8FBF21D1BFBB300C5A212 /* ShellScript */,
+				BDE8FBF11D1BFBAB00C5A212 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Imaginary-Mac";
+			productName = "Imaginary-Mac";
+			productReference = BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D5DF75901C403D8200BF1AB6 /* Imaginary-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5DF75991C403D8200BF1AB6 /* Build configuration list for PBXNativeTarget "Imaginary-iOS" */;
@@ -188,6 +240,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
+					BDE8FBE81D1BFB9F00C5A212 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					D5DF75901C403D8200BF1AB6 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -206,11 +261,19 @@
 			projectRoot = "";
 			targets = (
 				D5DF75901C403D8200BF1AB6 /* Imaginary-iOS */,
+				BDE8FBE81D1BFB9F00C5A212 /* Imaginary-Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BDE8FBE71D1BFB9F00C5A212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5DF758F1C403D8200BF1AB6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +297,33 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		BDE8FBF11D1BFBAB00C5A212 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		BDE8FBF21D1BFBB300C5A212 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Cache.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		D5DF75B31C403FC700BF1AB6 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +342,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BDE8FBE41D1BFB9F00C5A212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE8FBF71D1BFCF000C5A212 /* Capsule.swift in Sources */,
+				BDE8FBF81D1BFCF000C5A212 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5DF758C1C403D8200BF1AB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +368,58 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		BDE8FBEF1D1BFB9F00C5A212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-Mac";
+				PRODUCT_NAME = Imaginary;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BDE8FBF01D1BFB9F00C5A212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-Mac";
+				PRODUCT_NAME = Imaginary;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		D5DF75971C403D8200BF1AB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -403,6 +554,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BDE8FBEE1D1BFB9F00C5A212 /* Build configuration list for PBXNativeTarget "Imaginary-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDE8FBEF1D1BFB9F00C5A212 /* Debug */,
+				BDE8FBF01D1BFB9F00C5A212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D5DF758B1C403D8200BF1AB6 /* Build configuration list for PBXProject "Imaginary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
