@@ -22,8 +22,8 @@
 		D2E649A41D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */; };
 		D2E649A61D210CD4002F9730 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A51D210CD4002F9730 /* Decompressor.swift */; };
 		D2E649A81D210CDE002F9730 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A71D210CDE002F9730 /* Decompressor.swift */; };
-		D2E649AA1D210E37002F9730 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A91D210E37002F9730 /* Config.swift */; };
-		D2E649AB1D210E37002F9730 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A91D210E37002F9730 /* Config.swift */; };
+		D2E649AA1D210E37002F9730 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A91D210E37002F9730 /* Configuration.swift */; };
+		D2E649AB1D210E37002F9730 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A91D210E37002F9730 /* Configuration.swift */; };
 		D54225231D1D7A9300AF0046 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54225211D1D7A9300AF0046 /* Capsule.swift */; };
 		D54225241D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54225221D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift */; };
 		D54225251D1D7A9600AF0046 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54225211D1D7A9300AF0046 /* Capsule.swift */; };
@@ -45,7 +45,7 @@
 		D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+Imaginary.swift"; sourceTree = "<group>"; };
 		D2E649A51D210CD4002F9730 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D2E649A71D210CDE002F9730 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
-		D2E649A91D210E37002F9730 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D2E649A91D210E37002F9730 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		D54225211D1D7A9300AF0046 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
 		D54225221D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSHTTPURLResponse+Imaginary.swift"; sourceTree = "<group>"; };
 		D54225291D1D7ABD00AF0046 /* NSImage+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+CGImage.swift"; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				D2E649961D2108F6002F9730 /* ImageView.swift */,
 				D2E6499F1D210A74002F9730 /* Image+Cache.swift */,
 				D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */,
-				D2E649A91D210E37002F9730 /* Config.swift */,
+				D2E649A91D210E37002F9730 /* Configuration.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 				D2E649A41D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */,
 				D2E649981D2108F6002F9730 /* ImageView.swift in Sources */,
 				D54225251D1D7A9600AF0046 /* Capsule.swift in Sources */,
-				D2E649AB1D210E37002F9730 /* Config.swift in Sources */,
+				D2E649AB1D210E37002F9730 /* Configuration.swift in Sources */,
 				D2E649951D2108EA002F9730 /* Image.swift in Sources */,
 				D2E6499E1D2109A2002F9730 /* Fetcher.swift in Sources */,
 				BDE8FBFA1D1BFD4200C5A212 /* Imaginary.swift in Sources */,
@@ -371,7 +371,7 @@
 				BDE8FBDF1D1BFA4F00C5A212 /* Imaginary.swift in Sources */,
 				D2E649971D2108F6002F9730 /* ImageView.swift in Sources */,
 				D2E649A01D210A74002F9730 /* Image+Cache.swift in Sources */,
-				D2E649AA1D210E37002F9730 /* Config.swift in Sources */,
+				D2E649AA1D210E37002F9730 /* Configuration.swift in Sources */,
 				D54225231D1D7A9300AF0046 /* Capsule.swift in Sources */,
 				D2E6499D1D2109A2002F9730 /* Fetcher.swift in Sources */,
 			);
