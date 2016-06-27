@@ -1,9 +1,9 @@
-import UIKit
+import Foundation
 import Cache
 
-extension UIImage {
+extension Image {
 
-  public typealias CacheType = UIImage
+  public typealias CacheType = Image
 
   public static func decode(data: NSData) -> CacheType? {
     return Decompressor.decompress(data)

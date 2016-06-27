@@ -1,8 +1,8 @@
-import UIKit
+import Foundation
 
-extension UIImageView {
+extension ImageView {
 
-  public func setImage(URL: NSURL?, placeholder: UIImage? = nil, completion: ((UIImage?) -> ())? = nil) {
+  public func setImage(URL: NSURL?, placeholder: Image? = nil, completion: ((Image?) -> ())? = nil) {
     image = placeholder
 
     guard let URL = URL else { return }
@@ -14,7 +14,7 @@ extension UIImageView {
       self.fetcher = nil
     }
 
-    imageCache.object(key) { [weak self] object in
+    Configuration.imageCache.object(key) { [weak self] object in
       guard let weakSelf = self else { return }
 
       if let image = object {
@@ -27,7 +27,7 @@ extension UIImageView {
       }
 
       if placeholder == nil {
-        Imaginary.preConfigure?(imageView: weakSelf)
+        Configuration.preConfigure?(imageView: weakSelf)
       }
 
       weakSelf.fetcher = Fetcher(URL: URL)
@@ -37,13 +37,13 @@ extension UIImageView {
 
         switch result {
         case let .Success(image):
-          Imaginary.transitionClosure(imageView: weakSelf, image: image)
-          imageCache.add(key, object: image)
+          Configuration.transitionClosure(imageView: weakSelf, image: image)
+          Configuration.imageCache.add(key, object: image)
           completion?(image)
         default:
           break
         }
-        Imaginary.postConfigure?(imageView: weakSelf)
+        Configuration.postConfigure?(imageView: weakSelf)
       }
     }
   }
@@ -60,7 +60,7 @@ extension UIImageView {
         wrapper = Capsule(value: fetcher)
       }
       objc_setAssociatedObject(self, &Capsule.ObjectKey,
-        wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                               wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
   }
 }
