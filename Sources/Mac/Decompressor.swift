@@ -26,11 +26,12 @@ struct Decompressor {
                                         bytesPerRow,
                                         colorSpaceRef,
                                         CGBitmapInfo.ByteOrderDefault.rawValue)
-    CGContextDrawImage(context, CGRectMake(0, 0, CGFloat(width), CGFloat(height)), imageRef)
+    CGContextDrawImage(context, CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height)), imageRef)
 
     guard let imageRefWithoutAlpha = CGBitmapContextCreateImage(context) else {
       return NSImage()
     }
+
     let blendedImage = NSImage(CGImage: imageRefWithoutAlpha, size: NSSize(width: CGFloat(width), height: CGFloat(height)))
 
     return blendedImage

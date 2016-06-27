@@ -1,8 +1,8 @@
-import UIKit
+import Foundation
 
-extension UIImageView {
+extension ImageView {
 
-  public func setImage(URL: NSURL?, placeholder: UIImage? = nil, completion: ((UIImage?) -> ())? = nil) {
+  public func setImage(URL: NSURL?, placeholder: Image? = nil, completion: ((Image?) -> ())? = nil) {
     image = placeholder
 
     guard let URL = URL else { return }
@@ -60,7 +60,7 @@ extension UIImageView {
         wrapper = Capsule(value: fetcher)
       }
       objc_setAssociatedObject(self, &Capsule.ObjectKey,
-        wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                               wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
   }
 }

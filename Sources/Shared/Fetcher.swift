@@ -1,10 +1,9 @@
-import Cocoa
 import Foundation
 
 class Fetcher {
 
   enum Result {
-    case Success(NSImage)
+    case Success(Image)
     case Failure(ErrorType)
   }
 
@@ -63,7 +62,7 @@ class Fetcher {
           return
         }
 
-        guard let image = NSImage.decode(data) else {
+        guard let image = Image.decode(data) else {
           weakSelf.complete { completion(result: .Failure(Error.ConversionError)) }
           return
         }

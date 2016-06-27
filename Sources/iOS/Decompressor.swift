@@ -2,8 +2,8 @@ import UIKit
 
 struct Decompressor {
 
-  static func decompress(data: NSData, scale: CGFloat = 1) -> UIImage {
-    guard let image = UIImage(data: data) else { return UIImage() }
+  static func decompress(data: NSData, scale: CGFloat = 1) -> Image {
+    guard let image = Image(data: data) else { return Image() }
 
     let reference = image.CGImage
 
