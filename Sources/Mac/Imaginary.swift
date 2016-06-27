@@ -1,7 +1,7 @@
 import Cocoa
 import Cache
 
-public struct Imaginary {
+public extension Configuration {
 
   public static var preConfigure: ((imageView: NSImageView) -> Void)? = { imageView in
     imageView.layer?.opacity = 0.0
@@ -30,18 +30,3 @@ public struct Imaginary {
   }
 }
 
-public var imageCache: Cache<NSImage> {
-
-  struct Static {
-    static let config = Config(
-      frontKind: .Memory,
-      backKind: .Disk,
-      expiry: .Date(NSDate().dateByAddingTimeInterval(60 * 60 * 24 * 3)),
-      maxSize: 0,
-      maxObjects: 10)
-
-    static let cache = Cache<NSImage>(name: "Imaginary", config: config)
-  }
-
-  return Static.cache
-}

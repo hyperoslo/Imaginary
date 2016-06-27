@@ -1,7 +1,7 @@
 import UIKit
 import Cache
 
-public struct Imaginary {
+public extension Configuration {
 
   public static var preConfigure: ((imageView: UIImageView) -> Void)? = { imageView in
     imageView.layer.opacity = 0.0
@@ -28,20 +28,4 @@ public struct Imaginary {
     imageView.layer.addAnimation(animation, forKey: "fadeAnimation")
     imageView.layer.opacity = 1.0
   }
-}
-
-public var imageCache: Cache<UIImage> {
-
-  struct Static {
-    static let config = Config(
-      frontKind: .Memory,
-      backKind: .Disk,
-      expiry: .Date(NSDate().dateByAddingTimeInterval(60 * 60 * 24 * 3)),
-      maxSize: 0,
-      maxObjects: 10)
-
-    static let cache = Cache<UIImage>(name: "Imaginary", config: config)
-  }
-
-  return Static.cache
 }

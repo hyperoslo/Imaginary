@@ -14,7 +14,7 @@ extension ImageView {
       self.fetcher = nil
     }
 
-    imageCache.object(key) { [weak self] object in
+    Configuration.imageCache.object(key) { [weak self] object in
       guard let weakSelf = self else { return }
 
       if let image = object {
@@ -27,7 +27,7 @@ extension ImageView {
       }
 
       if placeholder == nil {
-        Imaginary.preConfigure?(imageView: weakSelf)
+        Configuration.preConfigure?(imageView: weakSelf)
       }
 
       weakSelf.fetcher = Fetcher(URL: URL)
@@ -37,13 +37,13 @@ extension ImageView {
 
         switch result {
         case let .Success(image):
-          Imaginary.transitionClosure(imageView: weakSelf, image: image)
-          imageCache.add(key, object: image)
+          Configuration.transitionClosure(imageView: weakSelf, image: image)
+          Configuration.imageCache.add(key, object: image)
           completion?(image)
         default:
           break
         }
-        Imaginary.postConfigure?(imageView: weakSelf)
+        Configuration.postConfigure?(imageView: weakSelf)
       }
     }
   }
