@@ -7,5 +7,3 @@ import Foundation
   import UIKit
   public typealias Image = UIImage
 #endif
-
-

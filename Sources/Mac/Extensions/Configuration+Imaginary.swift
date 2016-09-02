@@ -29,4 +29,3 @@ public extension Configuration {
     imageView.layer?.opacity = 1.0
   }
 }
-
