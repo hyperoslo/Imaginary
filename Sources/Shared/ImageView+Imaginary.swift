@@ -1,8 +1,13 @@
 import Foundation
 
+public typealias Preprocess = Image -> Image
+
 extension ImageView {
 
-  public func setImage(URL: NSURL?, placeholder: Image? = nil, completion: ((Image?) -> ())? = nil) {
+  public func setImage(URL: NSURL?,
+                       placeholder: Image? = nil,
+                       preprocess: Preprocess = { image in return image },
+                       completion: ((Image?) -> ())? = nil) {
     image = placeholder
 
     guard let URL = URL else { return }
@@ -32,7 +37,7 @@ extension ImageView {
 
       weakSelf.fetcher = Fetcher(URL: URL)
 
-      weakSelf.fetcher?.start { [weak self] result in
+      weakSelf.fetcher?.start(preprocess) { [weak self] result in
         guard let weakSelf = self else { return }
 
         switch result {

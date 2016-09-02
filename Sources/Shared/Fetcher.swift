@@ -31,7 +31,7 @@ class Fetcher {
 
   // MARK: - Fetching
 
-  func start(completion: (result: Result) -> Void) {
+  func start(preprocess: Preprocess, completion: (result: Result) -> Void) {
     active = true
 
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) { [weak self] in
@@ -62,10 +62,12 @@ class Fetcher {
           return
         }
 
-        guard let image = Image.decode(data) else {
+        guard let decodedImage = Image.decode(data) else {
           weakSelf.complete { completion(result: .Failure(Error.ConversionError)) }
           return
         }
+
+        let image = preprocess(decodedImage)
 
         if weakSelf.active {
           weakSelf.complete { completion(result: Result.Success(image)) }
