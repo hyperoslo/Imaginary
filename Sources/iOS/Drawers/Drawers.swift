@@ -1,8 +1,5 @@
 import UIKit
 
-public protocol ImageDrawer {
-  func draw(image: UIImage, context: CGContext, rect: CGRect)
-}
 
 // MARK: - Tint effect
 

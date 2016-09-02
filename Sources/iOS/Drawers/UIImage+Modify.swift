@@ -2,7 +2,7 @@ import UIKit
 
 public extension UIImage {
 
-  func modify(with drawers: ImageDrawer...) -> UIImage? {
+  func modify(with drawers: [ImageDrawer]) -> UIImage? {
     UIGraphicsBeginImageContextWithOptions(size, false, scale)
 
     guard let context = UIGraphicsGetCurrentContext() else {

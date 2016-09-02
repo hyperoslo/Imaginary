@@ -6,7 +6,7 @@ extension ImageView {
 
   public func setImage(URL: NSURL?,
                        placeholder: Image? = nil,
-                       preprocess: Preprocess = { image in return image },
+                       drawers: [ImageDrawer] = [],
                        completion: ((Image?) -> ())? = nil) {
     image = placeholder
 
@@ -36,6 +36,18 @@ extension ImageView {
       }
 
       weakSelf.fetcher = Fetcher(URL: URL)
+
+      let preprocess: Preprocess = { image in
+        guard !drawers.isEmpty else {
+          return image
+        }
+
+        guard let modifiedImage = image.modify(with: drawers) else {
+          return image
+        }
+
+        return modifiedImage
+      }
 
       weakSelf.fetcher?.start(preprocess) { [weak self] result in
         guard let weakSelf = self else { return }
