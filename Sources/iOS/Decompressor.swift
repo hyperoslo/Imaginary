@@ -5,32 +5,30 @@ struct Decompressor {
   static func decompress(data: NSData, scale: CGFloat = 1) -> Image {
     guard let image = Image(data: data) else { return Image() }
 
-    let reference = image.CGImage
+    let imageRef = image.CGImage
 
-    if CGImageGetAlphaInfo(reference) != .None { return image }
+    if CGImageGetAlphaInfo(imageRef) != .None { return image }
 
-    UIGraphicsBeginImageContextWithOptions(image.size, true, scale)
+    let colorSpaceRef = CGImageGetColorSpace(imageRef)
+    let width = CGImageGetWidth(imageRef)
+    let height = CGImageGetHeight(imageRef)
+    let bytesPerPixel: Int = 4
+    let bytesPerRow: Int = bytesPerPixel * width
+    let bitsPerComponent: Int = 8
 
-    let bitmapInfo = CGImageGetBitmapInfo(reference)
-    let colorSpace = CGColorSpaceCreateDeviceRGB()
+    let context = CGBitmapContextCreate(nil,
+                                        width,
+                                        height,
+                                        bitsPerComponent,
+                                        bytesPerRow,
+                                        colorSpaceRef,
+                                        CGBitmapInfo.ByteOrderDefault.rawValue)
+    CGContextDrawImage(context, CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height)), imageRef)
 
-    let pixelWidth = Int(ceil(image.size.width * image.scale))
-    let pixelHeight = Int(ceil(image.size.height * image.scale))
+    guard let imageRefWithoutAlpha = CGBitmapContextCreateImage(context) else {
+      return image
+    }
 
-    guard let context = CGBitmapContextCreate(
-      nil, pixelWidth, pixelHeight,
-      CGImageGetBitsPerComponent(reference),
-      0, colorSpace, bitmapInfo.rawValue)
-      else { return image }
-
-    CGContextSetRGBFillColor(context, 1, 1, 1, 1)
-    CGContextFillRect(context, CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-    CGContextSaveGState(context)
-
-    let blendedImage = UIGraphicsGetImageFromCurrentImageContext()
-
-    UIGraphicsEndImageContext()
-
-    return blendedImage
+    return Image(CGImage: imageRefWithoutAlpha)
   }
 }
