@@ -56,13 +56,13 @@ extension ImageView {
   var fetcher: Fetcher? {
     get {
       let wrapper = objc_getAssociatedObject(self, &Capsule.ObjectKey) as? Capsule
-      let fetcher = wrapper?.value as? Fetcher
+      let fetcher = wrapper?.concept as? Fetcher
       return fetcher
     }
     set (fetcher) {
       var wrapper: Capsule?
       if let fetcher = fetcher {
-        wrapper = Capsule(value: fetcher)
+        wrapper = Capsule(concept: fetcher)
       }
       objc_setAssociatedObject(self, &Capsule.ObjectKey,
                                wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
