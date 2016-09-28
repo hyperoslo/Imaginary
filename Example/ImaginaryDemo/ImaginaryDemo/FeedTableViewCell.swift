@@ -6,8 +6,8 @@ class FeedTableViewCell: UITableViewCell {
 
   lazy var generalImageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.contentMode = .ScaleAspectFill
-    imageView.backgroundColor = UIColor.whiteColor()
+    imageView.contentMode = .scaleAspectFill
+    imageView.backgroundColor = UIColor.white
     imageView.clipsToBounds = true
 
     return imageView
@@ -15,7 +15,7 @@ class FeedTableViewCell: UITableViewCell {
 
   lazy var separator: UIView = {
     let view = UIView()
-    view.backgroundColor = UIColor.whiteColor()
+    view.backgroundColor = UIColor.white
 
     return view
     }()
@@ -27,13 +27,13 @@ class FeedTableViewCell: UITableViewCell {
 
     [generalImageView, separator].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
-      $0.opaque = true
+      $0.isOpaque = true
       $0.layer.drawsAsynchronously = true
 
       addSubview($0)
     }
 
-    selectionStyle = .None
+    selectionStyle = .none
 
     setupConstraints()
   }
@@ -45,14 +45,14 @@ class FeedTableViewCell: UITableViewCell {
   // MARK: - Setup
 
   func setupConstraints() {
-    generalImageView.topAnchor.constraintEqualToAnchor(topAnchor).active = true
-    generalImageView.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
-    generalImageView.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
-    generalImageView.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
+    generalImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+    generalImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    generalImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+    generalImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
 
-    separator.widthAnchor.constraintEqualToAnchor(widthAnchor).active = true
-    separator.heightAnchor.constraintEqualToConstant(5).active = true
-    separator.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
-    separator.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
+    separator.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+    separator.heightAnchor.constraint(equalToConstant: 5).isActive = true
+    separator.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+    separator.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
   }
 }

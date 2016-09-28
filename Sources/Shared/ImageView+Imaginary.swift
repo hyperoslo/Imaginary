@@ -1,12 +1,12 @@
 import Foundation
 
-public typealias Preprocess = Image -> Image
+public typealias Preprocess = (Image) -> Image
 
 extension ImageView {
 
-  public func setImage(URL: NSURL?,
+  public func setImage(_ URL: Foundation.URL?,
                        placeholder: Image? = nil,
-                       preprocess: Preprocess = { image in return image },
+                       preprocess: @escaping Preprocess = { image in return image },
                        completion: ((Image?) -> ())? = nil) {
     image = placeholder
 
@@ -23,7 +23,7 @@ extension ImageView {
       guard let weakSelf = self else { return }
 
       if let image = object {
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
           weakSelf.image = image
           completion?(image)
         }
@@ -32,7 +32,7 @@ extension ImageView {
       }
 
       if placeholder == nil {
-        Configuration.preConfigure?(imageView: weakSelf)
+        Configuration.preConfigure?(weakSelf)
       }
 
       weakSelf.fetcher = Fetcher(URL: URL)
@@ -41,14 +41,14 @@ extension ImageView {
         guard let weakSelf = self else { return }
 
         switch result {
-        case let .Success(image):
-          Configuration.transitionClosure(imageView: weakSelf, image: image)
+        case let .success(image):
+          Configuration.transitionClosure(weakSelf, image)
           Configuration.imageCache.add(key, object: image)
           completion?(image)
         default:
           break
         }
-        Configuration.postConfigure?(imageView: weakSelf)
+        Configuration.postConfigure?(weakSelf)
       }
     }
   }

@@ -1,10 +1,10 @@
 import Foundation
 
-extension NSHTTPURLResponse {
+extension HTTPURLResponse {
 
-  func validateLength(data: NSData) -> Bool {
+  func validateLength(_ data: Data) -> Bool {
     return expectedContentLength > -1
-      ? (Int64(data.length) >= expectedContentLength)
+      ? (Int64(data.count) >= expectedContentLength)
       : true
   }
 }

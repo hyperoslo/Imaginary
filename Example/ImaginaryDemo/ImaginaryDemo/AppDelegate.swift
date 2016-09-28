@@ -7,9 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     let navigationController = UINavigationController(rootViewController: viewController)
-    viewController.title = "Imaginary".uppercaseString
+    viewController.title = "Imaginary".uppercased()
 
     window = UIWindow()
     window?.rootViewController = navigationController

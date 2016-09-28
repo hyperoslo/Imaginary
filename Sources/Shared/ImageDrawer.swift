@@ -5,5 +5,5 @@
 #endif
 
 public protocol ImageDrawer {
-  func draw(image: Image, context: CGContext, rect: CGRect)
+  func draw(_ image: Image, context: CGContext, rect: CGRect)
 }

@@ -11,8 +11,8 @@ public extension UIImage {
 
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
 
-    CGContextTranslateCTM(context, 0, size.height)
-    CGContextScaleCTM(context, 1.0, -1.0)
+    context.translateBy(x: 0, y: size.height)
+    context.scaleBy(x: 1.0, y: -1.0)
 
     for drawer in drawers {
       drawer.draw(self, context: context, rect: rect)

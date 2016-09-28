@@ -9,11 +9,11 @@ class ViewController: UITableViewController {
     static let imageNumber = 400
   }
 
-  lazy var imaginaryArray: [NSURL] = { [unowned self] in
-    var array = [NSURL]()
+  lazy var imaginaryArray: [URL] = { [unowned self] in
+    var array = [URL]()
 
     for i in 0..<Constants.imageNumber {
-      if let imageURL = NSURL(
+      if let imageURL = URL(
         string: "https://unsplash.it/600/300/?image=\(i)") {
             array.append(imageURL)
       }
@@ -27,7 +27,7 @@ class ViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = UIColor.whiteColor()
+    view.backgroundColor = UIColor.white
 
     setupTableView()
   }
@@ -35,9 +35,9 @@ class ViewController: UITableViewController {
   // MARK: - Setup tableView
 
   func setupTableView() {
-    tableView.registerClass(FeedTableViewCell.self,
+    tableView.register(FeedTableViewCell.self,
       forCellReuseIdentifier: FeedTableViewCell.reusableIdentifier)
-    tableView.separatorStyle = .None
+    tableView.separatorStyle = .none
   }
 }
 
@@ -45,7 +45,7 @@ class ViewController: UITableViewController {
 
 extension ViewController {
 
-  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 250
   }
 }
@@ -54,13 +54,13 @@ extension ViewController {
 
 extension ViewController {
 
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return imaginaryArray.count
   }
 
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCellWithIdentifier(
-      FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: FeedTableViewCell.reusableIdentifier) as? FeedTableViewCell else { return UITableViewCell() }
 
     cell.generalImageView.setImage(imaginaryArray[indexPath.row], placeholder: UIImage(named: "placeholder"))
 
