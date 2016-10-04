@@ -35,12 +35,12 @@ class Fetcher {
     active = true
 
     DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async { [weak self] in
-      guard let weakSelf = self , weakSelf.active else { return }
+      guard let weakSelf = self, weakSelf.active else { return }
 
       weakSelf.task = weakSelf.session.dataTask(with: weakSelf.URL, completionHandler: {
         [weak self] data, response, error -> Void in
 
-        guard let weakSelf = self , weakSelf.active else { return }
+        guard let weakSelf = self, weakSelf.active else { return }
 
         if let error = error {
           weakSelf.complete { completion(.failure(error as! Fetcher.Error)) }
@@ -57,7 +57,7 @@ class Fetcher {
           return
         }
 
-        guard let data = data , httpResponse.validateLength(data) else {
+        guard let data = data, httpResponse.validateLength(data) else {
           weakSelf.complete { completion(.failure(Error.invalidContentLength)) }
           return
         }
@@ -72,7 +72,7 @@ class Fetcher {
         if weakSelf.active {
           weakSelf.complete { completion(Result.success(image)) }
         }
-      }) 
+      })
 
       weakSelf.task?.resume()
     }
