@@ -2,8 +2,8 @@ import Cocoa
 
 struct Decompressor {
 
-  static func decompress(data: NSData, scale: CGFloat = 1) -> NSImage {
-    guard let image = NSImage(data: data as Data) else { return NSImage() }
+  static func decompress(_ data: Data, scale: CGFloat = 1) -> NSImage {
+    guard let image = NSImage(data: data) else { return NSImage() }
 
     image.lockFocus()
 
