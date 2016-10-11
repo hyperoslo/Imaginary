@@ -5,25 +5,27 @@ struct Decompressor {
   static func decompress(_ data: Data, scale: CGFloat = 1) -> Image {
     guard let image = Image(data: data) else { return Image() }
 
-    let imageRef = image.cgImage
+    guard let imageRef = image.cgImage, let colorSpaceRef = imageRef.colorSpace else {
+      return image
+    }
 
-    if imageRef?.alphaInfo != .none { return image }
+    if imageRef.alphaInfo != .none { return image }
 
-    let colorSpaceRef = imageRef?.colorSpace
-    let width = imageRef?.width
-    let height = imageRef?.height
+    let width = imageRef.width
+    let height = imageRef.height
     let bytesPerPixel: Int = 4
-    let bytesPerRow: Int = bytesPerPixel * width!
+    let bytesPerRow: Int = bytesPerPixel * width
     let bitsPerComponent: Int = 8
 
     let context = CGContext(data: nil,
-                                        width: width!,
-                                        height: height!,
-                                        bitsPerComponent: bitsPerComponent,
-                                        bytesPerRow: bytesPerRow,
-                                        space: colorSpaceRef!,
-                                        bitmapInfo: CGBitmapInfo().rawValue)
-    context?.draw(imageRef!, in: CGRect(x: 0, y: 0, width: CGFloat(width!), height: CGFloat(height!)))
+                            width: width,
+                            height: height,
+                            bitsPerComponent: bitsPerComponent,
+                            bytesPerRow: bytesPerRow,
+                            space: colorSpaceRef,
+                            bitmapInfo: CGBitmapInfo().rawValue)
+
+    context?.draw(imageRef, in: CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height)))
 
     guard let imageRefWithoutAlpha = context?.makeImage() else {
       return image

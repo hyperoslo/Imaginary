@@ -4,15 +4,15 @@ public typealias Preprocess = (Image) -> Image
 
 extension ImageView {
 
-  public func setImage(_ URL: Foundation.URL?,
+  public func setImage(_ url: URL?,
                        placeholder: Image? = nil,
                        preprocess: @escaping Preprocess = { image in return image },
                        completion: ((Image?) -> ())? = nil) {
     image = placeholder
 
-    guard let URL = URL else { return }
+    guard let url = url else { return }
 
-    let key = URL.absoluteString
+    let key = url.absoluteString
 
     if let fetcher = fetcher {
       fetcher.cancel()
@@ -35,7 +35,7 @@ extension ImageView {
         Configuration.preConfigure?(weakSelf)
       }
 
-      weakSelf.fetcher = Fetcher(URL: URL)
+      weakSelf.fetcher = Fetcher(url: url)
 
       weakSelf.fetcher?.start(preprocess) { [weak self] result in
         guard let weakSelf = self else { return }

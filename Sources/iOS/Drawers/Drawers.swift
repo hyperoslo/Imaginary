@@ -11,18 +11,22 @@ public struct TintDrawer: ImageDrawer {
   }
 
   public func draw(_ image: UIImage, context: CGContext, rect: CGRect) {
+    guard let cgImage = image.cgImage else {
+      return
+    }
+
     context.setBlendMode(.normal)
     UIColor.black.setFill()
     context.fill(rect)
 
     context.setBlendMode(.normal)
-    context.draw(image.cgImage!, in: rect)
+    context.draw(cgImage, in: rect)
 
     context.setBlendMode(.color)
     tintColor.setFill()
     context.fill(rect)
 
     context.setBlendMode(.destinationIn)
-    context.draw(image.cgImage!, in: rect)
+    context.draw(cgImage, in: rect)
   }
 }
