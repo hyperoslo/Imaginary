@@ -10,8 +10,38 @@
 
 ## Usage
 
+### Set image with URL
 ```swift
-<API>
+let imageView: UIImageView()
+let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+imageView.setImage(URL: imageURL)
+```
+
+### How to apply placeholder images
+```swift
+let imageView: UIImageView()
+let placeholder = UIImage(named: "PlaceholderImage")
+let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+imageView.setImage(URL: imageURL, placeholder: placeholder)
+```
+
+### Pre-processing images
+```swift
+let imageView: UIImageView()
+let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+imageView.setImage(URL: imageURL, preprocess: { image in
+  /// Apply pre-process here ...
+  return image
+})
+```
+
+### Pre-processing images
+```swift
+let imageView: UIImageView()
+let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+imageView.setImage(URL: imageURL) { image in
+  /// This closure gets called when the image is set to the image view.
+}
 ```
 
 ## Installation
