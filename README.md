@@ -11,7 +11,7 @@
 ## Description
 
 Using remote images in an application is more or less a requirement these days.
-That process should be hassle free and with `Imaginar`, it is.
+This process should be easy, straight-forward and hassle free, and with `Imaginary`, it is.
 With a narrow yet flexible public API, you can set images using URL's, add
 placeholdes, pre-process images and use callbacks for when images are set.
 
