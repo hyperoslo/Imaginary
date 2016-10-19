@@ -46,6 +46,7 @@ imageView.setImage(URL: imageURL, placeholder: placeholder)
 ```swift
 let imageView: UIImageView()
 let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+
 imageView.setImage(URL: imageURL) { image in
   /// This closure gets called when the image is set to the image view.
 }
