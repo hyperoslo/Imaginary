@@ -70,10 +70,10 @@ imageView.setImage(URL: imageURL, preprocess: { image in
 })
 ```
 
-`TintDrawer` is an implementation of color blend effect which comes together
-with **Imaginary**. For the time being it's the only built-in "preprocessor",
-but you have all the power in your hands to do apply custom filters and
-transformations to make the image shine.
+`TintDrawer`, which comes together with **Imaginary**, is an implementation of
+the color blend effect. For the time being it's the only built-in
+"preprocessor", but you have all the power in your hands to do apply custom
+filters and transformations to make the image shine.
 
 ### Transition animations
 
@@ -82,7 +82,7 @@ chance to improve or even disable them:
 
 ```swift
 Imaginary.preConfigure = { imageView in
-  // Prepare the image view before the image is fetched
+  // Prepare the image view before the image is fetched.
 }
 
 Imaginary.transitionClosure = { imageView, newImage in
