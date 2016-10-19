@@ -118,6 +118,16 @@ it, simply add the following line to your Podfile:
 pod 'Imaginary'
 ```
 
+**Imaginary** is also available through [Carthage](https://github.com/Carthage/Carthage).
+To install just write into your Cartfile:
+
+```ruby
+github "hyperoslo/Imaginary"
+```
+
+**Imaginary** can also be installed manually. Just download and drop `Sources`
+folders in your project.
+
 ## Author
 
 Hyper Interaktiv AS, ios@hyper.no
