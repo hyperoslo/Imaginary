@@ -35,7 +35,7 @@ imageView.setImage(URL: imageURL, preprocess: { image in
 })
 ```
 
-### Pre-processing images
+### Callback when image is set to the image view
 ```swift
 let imageView: UIImageView()
 let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
