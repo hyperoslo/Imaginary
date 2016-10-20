@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/Imaginary.svg?style=flat)](http://cocoadocs.org/docsets/Imaginary)
 [![License](https://img.shields.io/cocoapods/l/Imaginary.svg?style=flat)](http://cocoadocs.org/docsets/Imaginary)
 [![Platform](https://img.shields.io/cocoapods/p/Imaginary.svg?style=flat)](http://cocoadocs.org/docsets/Imaginary)
-![Swift](https://img.shields.io/badge/%20in-swift%202.2-orange.svg)
+![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
 
 <img src="https://raw.githubusercontent.com/hyperoslo/Imaginary/master/Images/icon.png" alt="Brick Icon" align="right" />
 
