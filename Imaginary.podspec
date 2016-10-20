@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
 
   s.frameworks = 'Foundation'
-  s.dependency 'Cache'
+  s.dependency 'Cache' '~> 1.5'
 end
