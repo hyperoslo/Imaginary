@@ -1,18 +1,18 @@
 import Foundation
 
-public typealias Preprocess = Image -> Image
+public typealias Preprocess = (Image) -> Image
 
 extension ImageView {
 
-  public func setImage(URL: NSURL?,
+  public func setImage(url: URL?,
                        placeholder: Image? = nil,
-                       preprocess: Preprocess = { image in return image },
+                       preprocess: @escaping Preprocess = { image in return image },
                        completion: ((Image?) -> ())? = nil) {
     image = placeholder
 
-    guard let URL = URL else { return }
+    guard let url = url else { return }
 
-    let key = URL.absoluteString
+    let key = url.absoluteString
 
     if let fetcher = fetcher {
       fetcher.cancel()
@@ -23,7 +23,7 @@ extension ImageView {
       guard let weakSelf = self else { return }
 
       if let image = object {
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
           weakSelf.image = image
           completion?(image)
         }
@@ -32,23 +32,23 @@ extension ImageView {
       }
 
       if placeholder == nil {
-        Configuration.preConfigure?(imageView: weakSelf)
+        Configuration.preConfigure?(weakSelf)
       }
 
-      weakSelf.fetcher = Fetcher(URL: URL)
+      weakSelf.fetcher = Fetcher(url: url)
 
       weakSelf.fetcher?.start(preprocess) { [weak self] result in
         guard let weakSelf = self else { return }
 
         switch result {
-        case let .Success(image):
-          Configuration.transitionClosure(imageView: weakSelf, image: image)
+        case let .success(image):
+          Configuration.transitionClosure(weakSelf, image)
           Configuration.imageCache.add(key, object: image)
           completion?(image)
         default:
           break
         }
-        Configuration.postConfigure?(imageView: weakSelf)
+        Configuration.postConfigure?(weakSelf)
       }
     }
   }
@@ -56,13 +56,13 @@ extension ImageView {
   var fetcher: Fetcher? {
     get {
       let wrapper = objc_getAssociatedObject(self, &Capsule.ObjectKey) as? Capsule
-      let fetcher = wrapper?.value as? Fetcher
+      let fetcher = wrapper?.concept as? Fetcher
       return fetcher
     }
     set (fetcher) {
       var wrapper: Capsule?
       if let fetcher = fetcher {
-        wrapper = Capsule(value: fetcher)
+        wrapper = Capsule(concept: fetcher)
       }
       objc_setAssociatedObject(self, &Capsule.ObjectKey,
                                wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)

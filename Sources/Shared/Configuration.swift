@@ -5,9 +5,9 @@ public struct Configuration {
 
   public static var imageCache: Cache<Image> = {
     let config = Config(
-        frontKind: .Memory,
-        backKind: .Disk,
-        expiry: .Date(NSDate().dateByAddingTimeInterval(60 * 60 * 24 * 3)),
+        frontKind: .memory,
+        backKind: .disk,
+        expiry: Expiry.date(NSDate().addingTimeInterval(60 * 60 * 24 * 3) as Date),
         maxSize: 0,
         maxObjects: 10)
 

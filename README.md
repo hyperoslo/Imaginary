@@ -27,9 +27,9 @@ a bunch of built-in unicorny features:
 
 ```swift
 let imageView: UIImageView()
-let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+let imageUrl: URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
 
-imageView.setImage(imageURL)
+imageView.setImage(url: imageUrl)
 ```
 
 ### Apply placeholder images
@@ -37,17 +37,17 @@ imageView.setImage(imageURL)
 ```swift
 let imageView: UIImageView()
 let placeholder = UIImage(named: "PlaceholderImage")
-let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+let imageUrl: URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
 
-imageView.setImage(imageURL, placeholder: placeholder)
+imageView.setImage(url: imageUrl, placeholder: placeholder)
 ```
 
 ### Use callback for when the image is set to the image view
 ```swift
 let imageView: UIImageView()
-let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+let imageUrl: URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
 
-imageView.setImage(imageURL) { image in
+imageView.setImage(url: imageUrl) { image in
   /// This closure gets called when the image is set to the image view.
 }
 ```
@@ -61,11 +61,11 @@ it's being cached and displayed on the screen.
 
 ```swift
 let imageView: UIImageView()
-let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+let imageUrl: URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
 
-imageView.setImage(imageURL, preprocess: { image in
+imageView.setImage(url: imageUrl, preprocess: { image in
   /// Apply pre-process here ...
-  let effect = TintDrawer(tintColor: UIColor.blueColor())
+  let effect = TintDrawer(tintColor: UIColor.blue)
   return image.modify(with: effect) ?? image
 })
 ```

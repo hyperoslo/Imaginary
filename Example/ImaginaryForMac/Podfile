@@ -5,6 +5,7 @@ inhibit_all_warnings!
 
 
 pod 'Imaginary', path: '../../'
-pod 'Cache', git: 'https://github.com/hyperoslo/Cache'
+pod 'Cache'
+pod 'CryptoSwift'
 
 target 'ImaginaryForMac'

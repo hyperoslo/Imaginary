@@ -3,76 +3,78 @@ import Foundation
 class Fetcher {
 
   enum Result {
-    case Success(Image)
-    case Failure(ErrorType)
+    case success(Image)
+    case failure(Error)
   }
 
-  enum Error: ErrorType {
-    case InvalidResponse
-    case InvalidStatusCode
-    case InvalidData
-    case InvalidContentLength
-    case ConversionError
+  enum Failure: Error {
+    case invalidResponse
+    case invalidStatusCode
+    case invalidData
+    case invalidContentLength
+    case conversionError
   }
 
-  let URL: NSURL
-  var task: NSURLSessionDataTask?
+  let url: URL
+  var task: URLSessionDataTask?
   var active = false
 
-  var session: NSURLSession {
-    return NSURLSession.sharedSession()
+  var session: URLSession {
+    return URLSession.shared
   }
 
   // MARK: - Initialization
 
-  init(URL: NSURL) {
-    self.URL = URL
+  init(url: URL) {
+    self.url = url
   }
 
   // MARK: - Fetching
 
-  func start(preprocess: Preprocess, completion: (result: Result) -> Void) {
+  func start(_ preprocess: @escaping Preprocess, completion: @escaping (_ result: Result) -> Void) {
     active = true
 
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) { [weak self] in
-      guard let weakSelf = self where weakSelf.active else { return }
+    DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async { [weak self] in
+      guard let weakSelf = self, weakSelf.active else { return }
 
-      weakSelf.task = weakSelf.session.dataTaskWithURL(weakSelf.URL) {
+      weakSelf.task = weakSelf.session.dataTask(with: weakSelf.url, completionHandler: {
         [weak self] data, response, error -> Void in
 
-        guard let weakSelf = self where weakSelf.active else { return }
+        guard let weakSelf = self, weakSelf.active else { return }
 
         if let error = error {
-          weakSelf.complete { completion(result: .Failure(error)) }
+          weakSelf.complete { completion(.failure(error)) }
           return
         }
 
-        guard let httpResponse = response as? NSHTTPURLResponse else {
-          weakSelf.complete { completion(result: .Failure(Error.InvalidResponse)) }
+        guard let httpResponse = response as? HTTPURLResponse else {
+          weakSelf.complete { completion(.failure(Failure.invalidResponse)) }
           return
         }
 
         guard httpResponse.statusCode == 200 else {
-          weakSelf.complete { completion(result: .Failure(Error.InvalidStatusCode)) }
+          weakSelf.complete { completion(.failure(Failure.invalidStatusCode)) }
           return
         }
 
-        guard let data = data where httpResponse.validateLength(data) else {
-          weakSelf.complete { completion(result: .Failure(Error.InvalidContentLength)) }
+        guard let data = data, httpResponse.validateLength(data) else {
+          weakSelf.complete { completion(.failure(Failure.invalidContentLength)) }
           return
         }
 
         guard let decodedImage = Image.decode(data) else {
-          weakSelf.complete { completion(result: .Failure(Error.ConversionError)) }
+          weakSelf.complete { completion(.failure(Failure.conversionError)) }
           return
         }
 
         let image = preprocess(decodedImage)
 
         if weakSelf.active {
-          weakSelf.complete { completion(result: Result.Success(image)) }
+          weakSelf.complete {
+            completion(Result.success(image))
+          }
         }
-      }
+      })
 
       weakSelf.task?.resume()
     }
@@ -83,10 +85,10 @@ class Fetcher {
     active = false
   }
 
-  func complete(closure: () -> Void) {
+  func complete(_ closure: @escaping () -> Void) {
     active = false
 
-    dispatch_async(dispatch_get_main_queue()) {
+    DispatchQueue.main.async {
       closure()
     }
   }
