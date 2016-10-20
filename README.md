@@ -27,9 +27,9 @@ a bunch of built-in unicorny features:
 
 ```swift
 let imageView: UIImageView()
-let imageURL: NSURL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+let imageUrl: URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
 
-imageView.setImage(URL: imageURL)
+imageView.setImage(URL: imageUrl)
 ```
 
 ### Apply placeholder images
