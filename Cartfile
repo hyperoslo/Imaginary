@@ -1,1 +1,1 @@
-github "hyperoslo/Cache" "swift-3"
+github "hyperoslo/Cache" ~> 2.0
