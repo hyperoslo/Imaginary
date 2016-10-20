@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Imaginary"
-  s.summary          = "A short description of Imaginary."
+  s.summary          = "Remote images, as easy as one, two, three."
   s.version          = "0.5.0"
   s.homepage         = "https://github.com/hyperoslo/Imaginary"
   s.license          = 'MIT'
