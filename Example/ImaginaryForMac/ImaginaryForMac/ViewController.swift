@@ -10,7 +10,7 @@ class ViewController: NSViewController {
 
     for i in 0..<500 {
       if let imageURL = URL(
-        string: "https://unsplash.it/600/300/?image=\(i)") {
+        string: "https://placeimg.com/640/480/\(i)") {
         array.append(imageURL)
       }
     }
