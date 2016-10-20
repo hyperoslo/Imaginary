@@ -160,12 +160,20 @@
 			path = Drawers;
 			sourceTree = "<group>";
 		};
+		D5B274C41DB8B0A900992392 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */,
+				D5DF75B11C403FBF00BF1AB6 /* Cache.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D5DF75871C403D8200BF1AB6 = {
 			isa = PBXGroup;
 			children = (
 				BDE8FBCC1D1BFA4F00C5A212 /* Sources */,
-				BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */,
-				D5DF75B11C403FBF00BF1AB6 /* Cache.framework */,
+				D5B274C41DB8B0A900992392 /* Frameworks */,
 				D5DF759C1C403E1000BF1AB6 /* Imaginary */,
 				D5DF75921C403D8200BF1AB6 /* Products */,
 			);

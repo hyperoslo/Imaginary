@@ -4,7 +4,7 @@ public typealias Preprocess = (Image) -> Image
 
 extension ImageView {
 
-  public func setImage(_ url: URL?,
+  public func setImage(url: URL?,
                        placeholder: Image? = nil,
                        preprocess: @escaping Preprocess = { image in return image },
                        completion: ((Image?) -> ())? = nil) {
