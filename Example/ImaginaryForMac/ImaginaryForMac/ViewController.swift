@@ -56,7 +56,7 @@ extension ViewController: NSCollectionViewDataSource {
     guard let cell = item as? Cell else { return item }
 
     let value = values[(indexPath as NSIndexPath).item]
-    cell.imageView?.setImage(value, placeholder: Image(named: "placeholder"))
+    cell.imageView?.setImage(url: value, placeholder: Image(named: "placeholder"))
 
     return cell
   }
