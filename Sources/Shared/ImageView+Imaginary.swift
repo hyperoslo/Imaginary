@@ -45,9 +45,10 @@ extension ImageView {
           Configuration.transitionClosure(weakSelf, image)
           Configuration.imageCache.add(key, object: image)
           completion?(image)
-        default:
-          break
+        case let .failure(error):
+          Configuration.track?(url, error)
         }
+        
         Configuration.postConfigure?(weakSelf)
       }
     }
