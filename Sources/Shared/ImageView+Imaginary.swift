@@ -1,25 +1,24 @@
 import Foundation
 
 public typealias Preprocess = (Image) -> Image
+public typealias Completion = (Image?) -> Void
 
 extension ImageView {
 
   public func setImage(url: URL?,
                        placeholder: Image? = nil,
                        preprocess: @escaping Preprocess = { image in return image },
-                       completion: ((Image?) -> ())? = nil) {
+                       completion: Completion? = nil) {
     image = placeholder
 
     guard let url = url else { return }
-
-    let key = url.absoluteString
 
     if let fetcher = fetcher {
       fetcher.cancel()
       self.fetcher = nil
     }
 
-    Configuration.imageCache.object(key) { [weak self] object in
+    Configuration.imageCache.object(url.absoluteString) { [weak self] object in
       guard let weakSelf = self else { return }
 
       if let image = object {
@@ -35,22 +34,28 @@ extension ImageView {
         Configuration.preConfigure?(weakSelf)
       }
 
-      weakSelf.fetcher = Fetcher(url: url)
+      weakSelf.fetchFromNetwork(url: url, preprocess: preprocess, completion: completion)
+    }
+  }
 
-      weakSelf.fetcher?.start(preprocess) { [weak self] result in
-        guard let weakSelf = self else { return }
+  fileprivate func fetchFromNetwork(url: URL,
+                                    preprocess: @escaping Preprocess,
+                                    completion: Completion? = nil) {
+    fetcher = Fetcher(url: url)
 
-        switch result {
-        case let .success(image):
-          Configuration.transitionClosure(weakSelf, image)
-          Configuration.imageCache.add(key, object: image)
-          completion?(image)
-        case let .failure(error):
-          Configuration.track?(url, error)
-        }
-        
-        Configuration.postConfigure?(weakSelf)
+    fetcher?.start(preprocess) { [weak self] result in
+      guard let weakSelf = self else { return }
+
+      switch result {
+      case let .success(image):
+        Configuration.transitionClosure(weakSelf, image)
+        Configuration.imageCache.add(url.absoluteString, object: image)
+        completion?(image)
+      case let .failure(error):
+        Configuration.track?(url, error)
       }
+
+      Configuration.postConfigure?(weakSelf)
     }
   }
 
