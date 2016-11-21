@@ -34,7 +34,9 @@ extension ImageView {
         Configuration.preConfigure?(weakSelf)
       }
 
-      weakSelf.fetchFromNetwork(url: url, preprocess: preprocess, completion: completion)
+      DispatchQueue.main.async {
+        weakSelf.fetchFromNetwork(url: url, preprocess: preprocess, completion: completion)
+      }
     }
   }
 
