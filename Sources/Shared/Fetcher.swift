@@ -3,7 +3,7 @@ import Foundation
 class Fetcher {
 
   enum Result {
-    case success(Image)
+    case success(Image, Int)
     case failure(Error)
   }
 
@@ -69,9 +69,11 @@ class Fetcher {
 
         let image = preprocess(decodedImage)
 
+        Configuration.bytesLoaded += data.count
+
         if weakSelf.active {
           weakSelf.complete {
-            completion(Result.success(image))
+            completion(Result.success(image, data.count))
           }
         }
       })
