@@ -49,12 +49,13 @@ extension ImageView {
       guard let weakSelf = self else { return }
 
       switch result {
-      case let .success(image):
+      case let .success(image, bytes):
+        Configuration.track?(url, nil, bytes)
         Configuration.transitionClosure(weakSelf, image)
         Configuration.imageCache.add(url.absoluteString, object: image)
         completion?(image)
       case let .failure(error):
-        Configuration.track?(url, error)
+        Configuration.track?(url, error, 0)
       }
 
       Configuration.postConfigure?(weakSelf)

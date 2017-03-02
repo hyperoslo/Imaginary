@@ -29,5 +29,5 @@ public extension Configuration {
     imageView.layer.opacity = 1.0
   }
   
-  public static var track: ((_ url: URL?, _ error: Error) -> Void)?
+  public static var track: ((URL?, Error?, Int) -> Void)?
 }
