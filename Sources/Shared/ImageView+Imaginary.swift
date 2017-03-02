@@ -50,6 +50,7 @@ extension ImageView {
 
       switch result {
       case let .success(image):
+        Configuration.track?(url, nil)
         Configuration.transitionClosure(weakSelf, image)
         Configuration.imageCache.add(url.absoluteString, object: image)
         completion?(image)
