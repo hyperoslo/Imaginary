@@ -3,6 +3,7 @@ import Cache
 
 public struct Configuration {
 
+  public static var bytesLoaded: Int = 0
   public static var imageCache: Cache<Image> = {
     let config = Config(
         frontKind: .memory,

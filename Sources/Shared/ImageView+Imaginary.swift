@@ -54,6 +54,8 @@ extension ImageView {
         Configuration.transitionClosure(weakSelf, image)
         Configuration.imageCache.add(url.absoluteString, object: image)
         completion?(image)
+
+        Configuration.bytesLoaded += image.memorySize
       case let .failure(error):
         Configuration.track?(url, error)
       }
