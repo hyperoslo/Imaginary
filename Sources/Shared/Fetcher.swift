@@ -3,7 +3,7 @@ import Foundation
 class Fetcher {
 
   enum Result {
-    case success(Image, Int)
+    case success(image: Image, byteCount: Int)
     case failure(Error)
   }
 
@@ -73,7 +73,7 @@ class Fetcher {
 
         if weakSelf.active {
           weakSelf.complete {
-            completion(Result.success(image, data.count))
+            completion(Result.success(image: image, byteCount: data.count))
           }
         }
       })
