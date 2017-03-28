@@ -18,7 +18,7 @@ extension ImageView {
       self.fetcher = nil
     }
 
-    Configuration.imageCache.object(url.absoluteString) { [weak self] object in
+    Configuration.imageCache.object(url.absoluteString) { [weak self] (object: Image?) in
       guard let weakSelf = self else { return }
 
       if let image = object {
