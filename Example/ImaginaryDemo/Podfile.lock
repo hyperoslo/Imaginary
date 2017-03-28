@@ -1,7 +1,7 @@
 PODS:
-  - Cache (2.0.0):
+  - Cache (2.2.2):
     - CryptoSwift
-  - CryptoSwift (0.6.1)
+  - CryptoSwift (0.6.8)
   - Imaginary (1.0.1):
     - Cache (~> 2.0)
 
@@ -15,10 +15,10 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Cache: 86c7a082ce5a734df15a103581d81d29002a171e
-  CryptoSwift: abdbc1bf32c89117c6b403810a7b30f742d86e68
+  Cache: b00196618af3facf17986fadda228cc77b5a5a10
+  CryptoSwift: f21ea03ed3a94e79d241648ce26652cd4810508a
   Imaginary: d0aede1399f7a5e401428d54ee75dddaaea65e4e
 
 PODFILE CHECKSUM: 6c3e9cf6a12cbdd6952efb6b00ddfb2139144199
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
