@@ -2,8 +2,55 @@
 
 ## [Unreleased](https://github.com/hyperoslo/Imaginary/tree/HEAD)
 
+[Full Changelog](https://github.com/hyperoslo/Imaginary/compare/1.0.1...HEAD)
+
+**Implemented enhancements:**
+
+- Why my image load failed? [\#16](https://github.com/hyperoslo/Imaginary/issues/16)
+
 **Merged pull requests:**
 
+- Update to swift 3.1 [\#40](https://github.com/hyperoslo/Imaginary/pull/40) ([zenangst](https://github.com/zenangst))
+- Improve Fetch by adding labels [\#38](https://github.com/hyperoslo/Imaginary/pull/38) ([zenangst](https://github.com/zenangst))
+- Improve tracking methods by returning the bytes that Imaginary has loaded [\#37](https://github.com/hyperoslo/Imaginary/pull/37) ([zenangst](https://github.com/zenangst))
+- Update closure reference [\#35](https://github.com/hyperoslo/Imaginary/pull/35) ([onmyway133](https://github.com/onmyway133))
+- Add track function to track error [\#34](https://github.com/hyperoslo/Imaginary/pull/34) ([onmyway133](https://github.com/onmyway133))
+
+## [1.0.1](https://github.com/hyperoslo/Imaginary/tree/1.0.1) (2016-10-20)
+[Full Changelog](https://github.com/hyperoslo/Imaginary/compare/1.0.0...1.0.1)
+
+## [1.0.0](https://github.com/hyperoslo/Imaginary/tree/1.0.0) (2016-10-20)
+[Full Changelog](https://github.com/hyperoslo/Imaginary/compare/0.5.0...1.0.0)
+
+**Merged pull requests:**
+
+- Swift 3 migration [\#33](https://github.com/hyperoslo/Imaginary/pull/33) ([vadymmarkov](https://github.com/vadymmarkov))
+
+## [0.5.0](https://github.com/hyperoslo/Imaginary/tree/0.5.0) (2016-10-20)
+**Implemented enhancements:**
+
+- Reuse code with type aliases?  [\#24](https://github.com/hyperoslo/Imaginary/issues/24)
+
+**Fixed bugs:**
+
+- What is this? [\#1](https://github.com/hyperoslo/Imaginary/issues/1)
+
+**Closed issues:**
+
+- Cool logo [\#2](https://github.com/hyperoslo/Imaginary/issues/2)
+
+**Merged pull requests:**
+
+- Add more text in README [\#32](https://github.com/hyperoslo/Imaginary/pull/32) ([vadymmarkov](https://github.com/vadymmarkov))
+- Add examples to README [\#31](https://github.com/hyperoslo/Imaginary/pull/31) ([zenangst](https://github.com/zenangst))
+- Update/readme [\#30](https://github.com/hyperoslo/Imaginary/pull/30) ([zenangst](https://github.com/zenangst))
+- Fix color space in decompression [\#28](https://github.com/hyperoslo/Imaginary/pull/28) ([vadymmarkov](https://github.com/vadymmarkov))
+- Feature: image preprocessing [\#27](https://github.com/hyperoslo/Imaginary/pull/27) ([vadymmarkov](https://github.com/vadymmarkov))
+- Reuse code between iOS and macOS [\#26](https://github.com/hyperoslo/Imaginary/pull/26) ([onmyway133](https://github.com/onmyway133))
+- Fix target membership [\#25](https://github.com/hyperoslo/Imaginary/pull/25) ([vadymmarkov](https://github.com/vadymmarkov))
+- Feature/os x support [\#23](https://github.com/hyperoslo/Imaginary/pull/23) ([zenangst](https://github.com/zenangst))
+- Add UIImage in callback [\#22](https://github.com/hyperoslo/Imaginary/pull/22) ([onmyway133](https://github.com/onmyway133))
+- Improve memory handling [\#20](https://github.com/hyperoslo/Imaginary/pull/20) ([zenangst](https://github.com/zenangst))
 - Improve user experience when using Imaginary [\#19](https://github.com/hyperoslo/Imaginary/pull/19) ([zenangst](https://github.com/zenangst))
 - Adds a completion handle. [\#18](https://github.com/hyperoslo/Imaginary/pull/18) ([RamonGilabert](https://github.com/RamonGilabert))
 - Enable support for tvOS [\#17](https://github.com/hyperoslo/Imaginary/pull/17) ([zenangst](https://github.com/zenangst))
