@@ -28,4 +28,6 @@ public extension Configuration {
     imageView.layer?.add(animation, forKey: "fadeAnimation")
     imageView.layer?.opacity = 1.0
   }
+
+  public static var track: ((URL?, Error?, Int) -> Void)?
 }
