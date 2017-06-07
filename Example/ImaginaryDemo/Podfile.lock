@@ -1,24 +1,30 @@
 PODS:
-  - Cache (2.2.2):
-    - CryptoSwift
-  - CryptoSwift (0.6.8)
-  - Imaginary (1.0.1):
-    - Cache (~> 2.0)
+  - Cache (3.0.0):
+    - SwiftHash (~> 1.3.0)
+  - Imaginary (1.0.2):
+    - Cache (~> 3.0)
+  - SwiftHash (1.3.0)
 
 DEPENDENCIES:
-  - Cache
-  - CryptoSwift
+  - Cache (from `https://github.com/hyperoslo/Cache`)
   - Imaginary (from `../../`)
 
 EXTERNAL SOURCES:
+  Cache:
+    :git: https://github.com/hyperoslo/Cache
   Imaginary:
     :path: "../../"
 
+CHECKOUT OPTIONS:
+  Cache:
+    :commit: 199a19a445fe5c5db1f75b59d65a220fc96ed8ea
+    :git: https://github.com/hyperoslo/Cache
+
 SPEC CHECKSUMS:
-  Cache: b00196618af3facf17986fadda228cc77b5a5a10
-  CryptoSwift: f21ea03ed3a94e79d241648ce26652cd4810508a
-  Imaginary: d0aede1399f7a5e401428d54ee75dddaaea65e4e
+  Cache: 82e21eb6c7b7dfb1af87c0439367c5d9b449a498
+  Imaginary: 3135892ca46c5126cf94df3340e10e267066bd12
+  SwiftHash: f924b916b77236ba2aa14d12c70e71314e66eb06
 
-PODFILE CHECKSUM: 6c3e9cf6a12cbdd6952efb6b00ddfb2139144199
+PODFILE CHECKSUM: 5423981f679c1c6856d55cb3e71454acd168ec0a
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

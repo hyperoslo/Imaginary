@@ -1,1 +1,1 @@
-github "hyperoslo/Cache" ~> 2.0
+github "hyperoslo/Cache" "master"
