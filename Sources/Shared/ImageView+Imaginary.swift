@@ -11,15 +11,19 @@ extension ImageView {
                        completion: Completion? = nil) {
     image = placeholder
 
-    guard let url = url else { return }
+    guard let url = url else {
+      return
+    }
 
     if let fetcher = fetcher {
       fetcher.cancel()
       self.fetcher = nil
     }
 
-    Configuration.imageCache.object(url.absoluteString) { [weak self] (object: Image?) in
-      guard let weakSelf = self else { return }
+    Configuration.imageCache.async.object(forKey: url.absoluteString) { [weak self] (object: Image?) in
+      guard let weakSelf = self else {
+        return
+      }
 
       if let image = object {
         DispatchQueue.main.async {
@@ -52,7 +56,7 @@ extension ImageView {
       case let .success(image, bytes):
         Configuration.track?(url, nil, bytes)
         Configuration.transitionClosure(weakSelf, image)
-        Configuration.imageCache.add(url.absoluteString, object: image)
+        Configuration.imageCache.async.addObject(image, forKey: url.absoluteString)
         completion?(image)
       case let .failure(error):
         Configuration.track?(url, error, 0)
