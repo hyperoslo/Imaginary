@@ -2,12 +2,11 @@ import UIKit
 import Cache
 
 public extension Configuration {
-
-  public static var preConfigure: ((_ imageView: UIImageView) -> Void)? = { imageView in
+  public static var preConfigure: ((UIImageView) -> Void)? = { imageView in
     imageView.layer.opacity = 0.0
   }
 
-  public static var transitionClosure: ((_ imageView: UIImageView, _ image: UIImage) -> Void) = { imageView, newImage in
+  public static var transitionClosure: ((UIImageView, UIImage) -> Void) = { imageView, newImage in
     guard let oldImage = imageView.image else {
       imageView.image = newImage
       return

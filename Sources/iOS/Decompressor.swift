@@ -1,15 +1,18 @@
 import UIKit
 
 struct Decompressor {
-
   static func decompress(_ data: Data, scale: CGFloat = 1) -> Image {
-    guard let image = Image(data: data) else { return Image() }
+    guard let image = Image(data: data) else {
+      return Image()
+    }
 
     guard let imageRef = image.cgImage, let colorSpaceRef = imageRef.colorSpace else {
       return image
     }
 
-    if imageRef.alphaInfo != .none { return image }
+    if imageRef.alphaInfo != .none {
+      return image
+    }
 
     let width = imageRef.width
     let height = imageRef.height

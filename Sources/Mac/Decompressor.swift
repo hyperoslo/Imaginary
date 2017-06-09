@@ -1,16 +1,21 @@
 import Cocoa
 
 struct Decompressor {
-
   static func decompress(_ data: Data, scale: CGFloat = 1) -> NSImage {
-    guard let image = NSImage(data: data) else { return NSImage() }
+    guard let image = NSImage(data: data) else {
+      return NSImage()
+    }
 
     image.lockFocus()
 
     var imageRect: CGRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-    guard let imageRef = image.cgImage(forProposedRect: &imageRect, context: nil, hints: nil) else { return image }
+    guard let imageRef = image.cgImage(forProposedRect: &imageRect, context: nil, hints: nil) else {
+      return image
+    }
 
-    if imageRef.alphaInfo != .none { return image }
+    if imageRef.alphaInfo != .none {
+      return image
+    }
 
     let width = imageRef.width
     let height = imageRef.height
@@ -26,7 +31,10 @@ struct Decompressor {
                               bitsPerComponent: bitsPerComponent,
                               bytesPerRow: bytesPerRow,
                               space: colorSpaceRef,
-                              bitmapInfo: CGBitmapInfo.byteOrder32Big.rawValue) else { return image }
+                              bitmapInfo: CGBitmapInfo.byteOrder32Big.rawValue) else {
+                                return image
+
+    }
 
     context.draw(imageRef, in: CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height)))
 

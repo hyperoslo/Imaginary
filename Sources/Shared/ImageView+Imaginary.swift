@@ -1,10 +1,6 @@
 import Foundation
 
-public typealias Preprocess = (Image) -> Image
-public typealias Completion = (Image?) -> Void
-
 extension ImageView {
-
   public func setImage(url: URL?,
                        placeholder: Image? = nil,
                        preprocess: @escaping Preprocess = { image in return image },
@@ -21,13 +17,13 @@ extension ImageView {
     }
 
     Configuration.imageCache.async.object(forKey: url.absoluteString) { [weak self] (object: Image?) in
-      guard let weakSelf = self else {
+      guard let `self` = self else {
         return
       }
 
       if let image = object {
         DispatchQueue.main.async {
-          weakSelf.image = image
+          self.image = image
           completion?(image)
         }
 
@@ -35,34 +31,33 @@ extension ImageView {
       }
 
       if placeholder == nil {
-        Configuration.preConfigure?(weakSelf)
+        Configuration.preConfigure?(self)
       }
 
       DispatchQueue.main.async {
-        weakSelf.fetchFromNetwork(url: url, preprocess: preprocess, completion: completion)
+        self.fetchFromNetwork(url: url, preprocess: preprocess, completion: completion)
       }
     }
   }
 
-  fileprivate func fetchFromNetwork(url: URL,
-                                    preprocess: @escaping Preprocess,
-                                    completion: Completion? = nil) {
+  fileprivate func fetchFromNetwork(url: URL, preprocess: @escaping Preprocess, completion: Completion? = nil) {
     fetcher = Fetcher(url: url)
-
     fetcher?.start(preprocess) { [weak self] result in
-      guard let weakSelf = self else { return }
+      guard let `self` = self else {
+        return
+      }
 
       switch result {
       case let .success(image, bytes):
         Configuration.track?(url, nil, bytes)
-        Configuration.transitionClosure(weakSelf, image)
+        Configuration.transitionClosure(self, image)
         Configuration.imageCache.async.addObject(image, forKey: url.absoluteString)
         completion?(image)
       case let .failure(error):
         Configuration.track?(url, error, 0)
       }
 
-      Configuration.postConfigure?(weakSelf)
+      Configuration.postConfigure?(self)
     }
   }
 

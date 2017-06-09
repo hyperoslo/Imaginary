@@ -1,7 +1,6 @@
 import UIKit
 
 public extension UIImage {
-
   func modify(with drawers: [ImageDrawer]) -> UIImage? {
     UIGraphicsBeginImageContextWithOptions(size, false, scale)
 

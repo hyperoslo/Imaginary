@@ -1,7 +1,6 @@
 import Foundation
 
 class Fetcher {
-
   enum Result {
     case success(image: Image, byteCount: Int)
     case failure(Error)
@@ -35,35 +34,38 @@ class Fetcher {
     active = true
 
     DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async { [weak self] in
-      guard let weakSelf = self, weakSelf.active else { return }
+      guard let `self` = self, self.active else {
+        return
+      }
 
-      weakSelf.task = weakSelf.session.dataTask(with: weakSelf.url, completionHandler: {
-        [weak self] data, response, error -> Void in
+      self.task = self.session.dataTask(with: self.url, completionHandler: { [weak self] data, response, error -> Void in
 
-        guard let weakSelf = self, weakSelf.active else { return }
+        guard let `self` = self, self.active else {
+          return
+        }
 
         if let error = error {
-          weakSelf.complete { completion(.failure(error)) }
+          self.complete { completion(.failure(error)) }
           return
         }
 
         guard let httpResponse = response as? HTTPURLResponse else {
-          weakSelf.complete { completion(.failure(Failure.invalidResponse)) }
+          self.complete { completion(.failure(Failure.invalidResponse)) }
           return
         }
 
         guard httpResponse.statusCode == 200 else {
-          weakSelf.complete { completion(.failure(Failure.invalidStatusCode)) }
+          self.complete { completion(.failure(Failure.invalidStatusCode)) }
           return
         }
 
         guard let data = data, httpResponse.validateLength(data) else {
-          weakSelf.complete { completion(.failure(Failure.invalidContentLength)) }
+          self.complete { completion(.failure(Failure.invalidContentLength)) }
           return
         }
 
         guard let decodedImage = Image.decode(data) else {
-          weakSelf.complete { completion(.failure(Failure.conversionError)) }
+          self.complete { completion(.failure(Failure.conversionError)) }
           return
         }
 
@@ -71,14 +73,14 @@ class Fetcher {
 
         Configuration.bytesLoaded += data.count
 
-        if weakSelf.active {
-          weakSelf.complete {
+        if self.active {
+          self.complete {
             completion(Result.success(image: image, byteCount: data.count))
           }
         }
       })
 
-      weakSelf.task?.resume()
+      self.task?.resume()
     }
   }
 

@@ -1,8 +1,4 @@
-#if os(OSX)
-  import Cocoa
-#else
-  import UIKit
-#endif
+import CoreGraphics
 
 public protocol ImageDrawer {
   func draw(_ image: Image, context: CGContext, rect: CGRect)
