@@ -4,6 +4,5 @@ use_frameworks!
 inhibit_all_warnings!
 
 pod 'Imaginary', path: '../../'
-pod 'Cache', git: 'https://github.com/hyperoslo/Cache'
 
 target 'ImaginaryDemo'
