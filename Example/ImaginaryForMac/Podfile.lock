@@ -1,5 +1,5 @@
 PODS:
-  - Cache (3.0.0):
+  - Cache (3.1.0):
     - SwiftHash (~> 1.4.0)
   - Imaginary (1.0.2):
     - Cache (~> 3.0)
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Cache: 50fdd9dea71ba7d3efe39bf6bef555701509b16a
+  Cache: 6dea29625ee40c1cafb2ff6c48f3f7341a59cfb5
   Imaginary: 3135892ca46c5126cf94df3340e10e267066bd12
   SwiftHash: acf0f29032309a5c7a7f625595eade1aca97aca2
 

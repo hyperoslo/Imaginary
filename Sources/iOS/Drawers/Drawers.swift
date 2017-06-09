@@ -3,7 +3,6 @@ import UIKit
 // MARK: - Tint effect
 
 public struct TintDrawer: ImageDrawer {
-
   public let tintColor: UIColor
 
   public init(tintColor: UIColor) {

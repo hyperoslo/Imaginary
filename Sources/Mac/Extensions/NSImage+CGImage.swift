@@ -1,7 +1,6 @@
 import Cocoa
 
 extension NSImage {
-
   var cgImage: CGImage? {
     guard let data = tiffRepresentation,
       let source = CGImageSourceCreateWithData(data as CFData, nil),
