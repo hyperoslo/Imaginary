@@ -6,7 +6,7 @@ cache:
     - Carthage
 
 before_install:
-  - carthage bootstrap
+  - carthage bootstrap --platform iOS,Mac,tvOS
 
 script:
   - xcodebuild clean build -project Imaginary.xcodeproj -scheme "Imaginary-Mac" -sdk macosx | xcpretty
