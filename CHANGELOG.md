@@ -2,7 +2,19 @@
 
 ## [Unreleased](https://github.com/hyperoslo/Imaginary/tree/HEAD)
 
-[Full Changelog](https://github.com/hyperoslo/Imaginary/compare/1.0.1...HEAD)
+[Full Changelog](https://github.com/hyperoslo/Imaginary/compare/1.0.2...HEAD)
+
+**Merged pull requests:**
+
+- Improve overall code style and move type aliases into one file [\#48](https://github.com/hyperoslo/Imaginary/pull/48) ([zenangst](https://github.com/zenangst))
+- Fix/dispatch [\#47](https://github.com/hyperoslo/Imaginary/pull/47) ([zenangst](https://github.com/zenangst))
+- Feature/travis builds [\#46](https://github.com/hyperoslo/Imaginary/pull/46) ([zenangst](https://github.com/zenangst))
+- Update Cartfile and Example Podfile's [\#45](https://github.com/hyperoslo/Imaginary/pull/45) ([zenangst](https://github.com/zenangst))
+- Migrate source code to be compatible with Cache 3.0.0 [\#44](https://github.com/hyperoslo/Imaginary/pull/44) ([zenangst](https://github.com/zenangst))
+- 🌹 Updated readme examples to correct syntax. [\#43](https://github.com/hyperoslo/Imaginary/pull/43) ([viktorgardart](https://github.com/viktorgardart))
+
+## [1.0.2](https://github.com/hyperoslo/Imaginary/tree/1.0.2) (2017-03-28)
+[Full Changelog](https://github.com/hyperoslo/Imaginary/compare/1.0.1...1.0.2)
 
 **Implemented enhancements:**
 
@@ -10,6 +22,7 @@
 
 **Merged pull requests:**
 
+- Add missing track implementation on macOS [\#42](https://github.com/hyperoslo/Imaginary/pull/42) ([zenangst](https://github.com/zenangst))
 - Update to swift 3.1 [\#40](https://github.com/hyperoslo/Imaginary/pull/40) ([zenangst](https://github.com/zenangst))
 - Improve Fetch by adding labels [\#38](https://github.com/hyperoslo/Imaginary/pull/38) ([zenangst](https://github.com/zenangst))
 - Improve tracking methods by returning the bytes that Imaginary has loaded [\#37](https://github.com/hyperoslo/Imaginary/pull/37) ([zenangst](https://github.com/zenangst))
