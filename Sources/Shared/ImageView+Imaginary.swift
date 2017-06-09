@@ -35,7 +35,9 @@ extension ImageView {
       }
 
       if placeholder == nil {
-        Configuration.preConfigure?(weakSelf)
+        DispatchQueue.main.async {
+          Configuration.preConfigure?(weakSelf)
+        }
       }
 
       DispatchQueue.main.async {
