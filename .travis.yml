@@ -6,11 +6,11 @@ cache:
     - Carthage
 
 before_install:
-- travis_wait 35; bin/bootstrap-if-needed
+  - travis_wait 35; bin/bootstrap-if-needed
 
 script:
-- xcodebuild clean build -project Imaginary.xcodeproj -scheme "Imaginary-Mac" -sdk macosx | xcpretty
-- xcodebuild clean build -project Imaginary.xcodeproj -scheme "Imaginary-iOS" -sdk iphonesimulator | xcpretty 1080p,OS=10.0' | xcpretty
+  - xcodebuild clean build -project Imaginary.xcodeproj -scheme "Imaginary-Mac" -sdk macosx | xcpretty
+  - xcodebuild clean build -project Imaginary.xcodeproj -scheme "Imaginary-iOS" -sdk iphonesimulator | xcpretty 1080p,OS=10.0' | xcpretty
 
 notifications:
   email: false
