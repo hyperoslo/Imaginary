@@ -1,4 +1,4 @@
 #!/bin/sh
 
-carthage bootstrap
+carthage bootstrap --platform iOS,Mac,tvOS
 cp Cartfile.resolved Carthage
