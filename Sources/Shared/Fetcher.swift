@@ -1,6 +1,6 @@
 import Foundation
 
-class Fetcher {
+class Fetcher: Equatable {
   enum Result {
     case success(image: Image, byteCount: Int)
     case failure(Error)
@@ -95,5 +95,12 @@ class Fetcher {
     DispatchQueue.main.async {
       closure()
     }
+  }
+
+  static func == (lhs: Fetcher, rhs: Fetcher) -> Bool {
+    return lhs.active == rhs.active &&
+      lhs.session == rhs.session &&
+      lhs.task == rhs.task &&
+      lhs.url == rhs.url
   }
 }
