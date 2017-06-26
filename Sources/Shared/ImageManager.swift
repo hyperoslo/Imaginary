@@ -46,7 +46,7 @@ public class ImageManager {
   }
 
   // Cancel and remove all fetchers from `ImageManager`.
-  public func purge() {
+  public func removeFetchers() {
     fetchers.forEach { fetcher in
       fetcher.cancel()
       removeFetcher(fetcher)
