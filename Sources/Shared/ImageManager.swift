@@ -7,7 +7,10 @@ import Foundation
 public class ImageManager {
   /// A collection of `Fetcher`'s, they will be removed from the queue as soon as they are done
   /// fetching, even if the request fails to fetch.
-  var fetchers = [Fetcher]()
+  private var fetchers = [Fetcher]()
+
+  /// Public initializer
+  public init() {}
 
   /// Fetch image from URL with completion.
   /// If the file already exists in the cache
