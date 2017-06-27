@@ -19,11 +19,7 @@ public class ImageManager {
   ///   - url: The URL of the image that should be fetched, either from network or cache (if cache is enabled).
   ///   - useCache: Determines if the image should be fetched from cache and stored in cached after fetching.
   ///   - completion: A completion closure that will return the image if it is successfully fetch either from cache or the network.
-  public func fetchImage(at url: URL?, useCache: Bool = true, completion: Completion?) {
-    guard let url = url else {
-      return
-    }
-
+  public func fetchImage(from url: URL, useCache: Bool = true, completion: @escaping Completion) {
     // If cache is disabled, it will try to fetch the image from the network.
     guard useCache else {
       self.fetchFromNetwork(url: url, useCache: useCache, completion: completion)
@@ -38,7 +34,7 @@ public class ImageManager {
       // Return image from cache if it exists.
       if let image = object {
         DispatchQueue.main.async {
-          completion?(image)
+          completion(image)
         }
         return
       }
@@ -62,7 +58,7 @@ public class ImageManager {
   ///   - url: The URL of the image that should be fetch from the network.
   ///   - completion: A completion block that gets called after the network request is done.
   /// - Note: The completion will get `nil` back if the request fails to fetch the image.
-  private func fetchFromNetwork(url: URL, useCache: Bool = true, completion: Completion? = nil) {
+  private func fetchFromNetwork(url: URL, useCache: Bool = true, completion: @escaping Completion) {
     let fetcher = Fetcher(url: url)
     fetcher.start({ return $0 }) { [weak self] result in
       guard let `self` = self else {
@@ -75,11 +71,11 @@ public class ImageManager {
         if useCache {
           Configuration.imageCache.async.addObject(image, forKey: url.absoluteString)
         }
-        completion?(image)
+        completion(image)
         self.removeFetcher(fetcher)
       case let .failure(error):
         Configuration.track?(url, error, 0)
-        completion?(nil)
+        completion(nil)
         self.removeFetcher(fetcher)
       }
     }

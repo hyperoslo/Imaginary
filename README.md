@@ -94,6 +94,27 @@ Imaginary.postConfigure = { imageView in
 }
 ```
 
+### ImageManager
+
+There are usecases where you need to fetch an image from a remote location without using an image view.
+This is where `ImageManager` comes in. With `ImageManager` you can asynchronously fetch images by using `fetchImage(from:)`
+
+```swift
+imageManager.fetchImage(from: URL(string: "http://remote-location/image.png")!) { image in
+  // Handle image
+}
+```
+
+By default, `ImageManager` uses the same cache storage as the image view extension. If you want to opt-out from using
+cache, you can set `useCache` to `false` at the call-site.
+
+```swift
+imageManager.fetchImage(from: URL(string: "http://remote-location/image.png")!, useCache: false) { image in
+  // Handle image
+}
+```
+
+
 ### Cache
 
 **Imaginary** uses [Cache](https://github.com/hyperoslo/Cache) under the hood
