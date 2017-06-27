@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD92A5A41F01089A008408AB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92A5A31F01089A008408AB /* ImageManager.swift */; };
+		BD92A5A51F01089A008408AB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92A5A31F01089A008408AB /* ImageManager.swift */; };
 		BDA7AE451EEA925600E09EBC /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7AE441EEA925600E09EBC /* TypeAlias.swift */; };
 		BDA7AE461EEA925600E09EBC /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7AE441EEA925600E09EBC /* TypeAlias.swift */; };
 		BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */; };
@@ -35,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD92A5A31F01089A008408AB /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		BDA7AE441EEA925600E09EBC /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE8FBF41D1BFC7C00C5A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 				D2E6499A1D2109A2002F9730 /* Fetcher.swift */,
 				D2E6499F1D210A74002F9730 /* Image+Cache.swift */,
 				D59CC1371D79B23500D72C39 /* ImageDrawer.swift */,
+				BD92A5A31F01089A008408AB /* ImageManager.swift */,
 				D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */,
 				D54225221D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift */,
 				BDA7AE441EEA925600E09EBC /* TypeAlias.swift */,
@@ -380,6 +384,7 @@
 				D59CC1391D79B23500D72C39 /* ImageDrawer.swift in Sources */,
 				D2E649A81D210CDE002F9730 /* Decompressor.swift in Sources */,
 				D2E649A41D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */,
+				BD92A5A51F01089A008408AB /* ImageManager.swift in Sources */,
 				D2E649B01D211067002F9730 /* Configuration+Imaginary.swift in Sources */,
 				D54225251D1D7A9600AF0046 /* Capsule.swift in Sources */,
 				D2E649AB1D210E37002F9730 /* Configuration.swift in Sources */,
@@ -407,6 +412,7 @@
 				D2E649AA1D210E37002F9730 /* Configuration.swift in Sources */,
 				D54225231D1D7A9300AF0046 /* Capsule.swift in Sources */,
 				D2E6499D1D2109A2002F9730 /* Fetcher.swift in Sources */,
+				BD92A5A41F01089A008408AB /* ImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
