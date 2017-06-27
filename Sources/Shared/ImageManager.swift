@@ -62,7 +62,7 @@ public class ImageManager {
   ///   - url: The URL of the image that should be fetch from the network.
   ///   - completion: A completion block that gets called after the network request is done.
   /// - Note: The completion will get `nil` back if the request fails to fetch the image.
-  fileprivate func fetchFromNetwork(url: URL, useCache: Bool = true, completion: Completion? = nil) {
+  private func fetchFromNetwork(url: URL, useCache: Bool = true, completion: Completion? = nil) {
     let fetcher = Fetcher(url: url)
     fetcher.start({ return $0 }) { [weak self] result in
       guard let `self` = self else {
@@ -90,7 +90,7 @@ public class ImageManager {
   /// Remove fetcher based of its index
   ///
   /// - Parameter fetcher: The `Fetcher` that should be removed from the queue.
-  fileprivate func removeFetcher(_ fetcher: Fetcher) {
+  private func removeFetcher(_ fetcher: Fetcher) {
     guard let index = self.fetchers.index(of: fetcher) else {
       return
     }
