@@ -16,6 +16,7 @@ public extension Configuration {
     animation.duration = 0.25
     animation.fromValue = oldImage.cgImage
     animation.toValue = newImage.cgImage
+    imageView.wantsLayer = true
     imageView.layer?.add(animation, forKey: "transitionAnimation")
     imageView.image = newImage
   }
@@ -24,6 +25,7 @@ public extension Configuration {
     let animation = CABasicAnimation(keyPath: "opacity")
     animation.fromValue = imageView.layer?.opacity
     animation.toValue = 1.0
+    imageView.wantsLayer = true
     imageView.layer?.add(animation, forKey: "fadeAnimation")
     imageView.layer?.opacity = 1.0
   }
