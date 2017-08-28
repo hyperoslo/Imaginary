@@ -7,7 +7,7 @@ public extension Configuration {
   }
 
   public static var transitionClosure: ((NSImageView, NSImage) -> Void) = { imageView, newImage in
-    guard let oldImage = imageView.image else {
+    guard let oldImage = imageView.image, imageView.window?.inLiveResize == false else {
       imageView.image = newImage
       return
     }
