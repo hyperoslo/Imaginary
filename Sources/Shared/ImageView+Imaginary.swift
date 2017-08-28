@@ -23,7 +23,7 @@ extension ImageView {
 
       if let image = object {
         DispatchQueue.main.async {
-          self.image = image
+          Configuration.transitionClosure(self, image)
           completion?(image)
         }
 
