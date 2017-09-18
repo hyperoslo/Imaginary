@@ -1,4 +1,5 @@
 import Foundation
+import Cache
 
 /// `ImageManager` can be used to fetch images from a remote location. By default it will use
 /// cache and return that object if it exists, if it does not exist already if will try and fetch
@@ -26,15 +27,16 @@ public class ImageManager {
       return
     }
 
-    Configuration.imageCache.async.object(forKey: url.absoluteString) { [weak self] (object: Image?) in
+    Configuration.imageStorage?.async.object(ofType: ImageWrapper.self,
+                                            forKey: url.absoluteString) { [weak self] result in
       guard let `self` = self else {
         return
       }
 
       // Return image from cache if it exists.
-      if let image = object {
+      if case .value(let wrapper) = result {
         DispatchQueue.main.async {
-          completion(image)
+          completion(wrapper.image)
         }
         return
       }
@@ -69,7 +71,10 @@ public class ImageManager {
       case let .success(image, bytes):
         Configuration.track?(url, nil, bytes)
         if useCache {
-          Configuration.imageCache.async.addObject(image, forKey: url.absoluteString)
+          let wrapper = ImageWrapper(image: image)
+          Configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
+            // Don't care about result for now
+          }
         }
         completion(image)
         self.removeFetcher(fetcher)
