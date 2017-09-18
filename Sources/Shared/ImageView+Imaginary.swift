@@ -1,4 +1,5 @@
 import Foundation
+import Cache
 
 extension ImageView {
   public func setImage(url: URL?,
@@ -16,15 +17,16 @@ extension ImageView {
       self.fetcher = nil
     }
 
-    Configuration.imageCache.async.object(forKey: url.absoluteString) { [weak self] (object: Image?) in
+    Configuration.imageStorage?.async.object(ofType: ImageWrapper.self,
+                                             forKey: url.absoluteString) { [weak self] result in
       guard let `self` = self else {
         return
       }
 
-      if let image = object {
+      if case .value(let wrapper) = result {
         DispatchQueue.main.async {
-          Configuration.transitionClosure(self, image)
-          completion?(image)
+          Configuration.transitionClosure(self, wrapper.image)
+          completion?(wrapper.image)
         }
 
         return
@@ -53,7 +55,10 @@ extension ImageView {
       case let .success(image, bytes):
         Configuration.track?(url, nil, bytes)
         Configuration.transitionClosure(self, image)
-        Configuration.imageCache.async.addObject(image, forKey: url.absoluteString)
+        let wrapper = ImageWrapper(image: image)
+        Configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
+          // Don't care about result for now
+        }
         completion?(image)
       case let .failure(error):
         Configuration.track?(url, error, 0)
