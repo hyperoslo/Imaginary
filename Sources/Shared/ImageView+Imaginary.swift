@@ -84,3 +84,14 @@ extension ImageView {
     }
   }
 }
+
+
+/// Used to associate ImageDownloader with ImageView
+fileprivate class Capsule: NSObject {
+  static var ObjectKey = 0
+  let concept: Any
+
+  init(concept: Any) {
+    self.concept = concept
+  }
+}
