@@ -1,7 +1,7 @@
 import Foundation
 
 /// Download image from url
-public class ImageDownloader: Equatable {
+public class ImageDownloader {
   fileprivate let session: URLSession
 
   fileprivate var task: URLSessionDataTask?
@@ -65,12 +65,6 @@ public class ImageDownloader: Equatable {
     task?.cancel()
     active = false
   }
-}
-
-public func == (lhs: ImageDownloader, rhs: ImageDownloader) -> Bool {
-  return lhs.active == rhs.active &&
-    lhs.session == rhs.session &&
-    lhs.task == rhs.task
 }
 
 fileprivate extension HTTPURLResponse {
