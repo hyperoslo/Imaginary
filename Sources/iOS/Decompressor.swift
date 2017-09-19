@@ -1,9 +1,9 @@
 import UIKit
 
 struct Decompressor {
-  static func decompress(_ data: Data, scale: CGFloat = 1) -> Image {
+  static func decompress(_ data: Data, scale: CGFloat = 1) -> Image? {
     guard let image = Image(data: data) else {
-      return Image()
+      return nil
     }
 
     guard let imageRef = image.cgImage, let colorSpaceRef = imageRef.colorSpace else {

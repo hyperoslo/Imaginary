@@ -64,7 +64,7 @@ class Fetcher: Equatable {
           return
         }
 
-        guard let decodedImage = Image.decode(data) else {
+        guard let decodedImage = Decompressor.decompress(data) else {
           self.complete { completion(.failure(Failure.conversionError)) }
           return
         }
