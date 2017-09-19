@@ -45,8 +45,8 @@ extension ImageView {
   }
 
   fileprivate func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: Completion? = nil) {
-    imageDownloader = ImageDownloader(url: url)
-    imageDownloader?.start() { [weak self] result in
+    imageDownloader = ImageDownloader()
+    imageDownloader?.download(url: url) { [weak self] result in
       guard let `self` = self else {
         return
       }

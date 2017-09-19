@@ -61,8 +61,8 @@ public class ImageManager {
   ///   - completion: A completion block that gets called after the network request is done.
   /// - Note: The completion will get `nil` back if the request fails to fetch the image.
   private func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: @escaping Completion) {
-    let imageDownloader = ImageDownloader(url: url)
-    imageDownloader.start() { [weak self] result in
+    let imageDownloader = ImageDownloader()
+    imageDownloader.download(url: url) { [weak self] result in
       guard let `self` = self else {
         return
       }
