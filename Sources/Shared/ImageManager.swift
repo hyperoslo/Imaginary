@@ -62,7 +62,7 @@ public class ImageManager {
   /// - Note: The completion will get `nil` back if the request fails to fetch the image.
   private func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: @escaping Completion) {
     let imageDownloader = ImageDownloader(url: url)
-    imageDownloader.start({ return $0 }) { [weak self] result in
+    imageDownloader.start() { [weak self] result in
       guard let `self` = self else {
         return
       }
