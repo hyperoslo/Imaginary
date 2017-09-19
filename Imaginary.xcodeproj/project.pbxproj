@@ -14,15 +14,12 @@
 		BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */; };
 		D2E6499D1D2109A2002F9730 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6499A1D2109A2002F9730 /* Fetcher.swift */; };
 		D2E6499E1D2109A2002F9730 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6499A1D2109A2002F9730 /* Fetcher.swift */; };
-		D2E649A01D210A74002F9730 /* Image+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6499F1D210A74002F9730 /* Image+Cache.swift */; };
-		D2E649A11D210A74002F9730 /* Image+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6499F1D210A74002F9730 /* Image+Cache.swift */; };
 		D2E649A31D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */; };
 		D2E649A41D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */; };
 		D2E649A61D210CD4002F9730 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A51D210CD4002F9730 /* Decompressor.swift */; };
 		D2E649A81D210CDE002F9730 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A71D210CDE002F9730 /* Decompressor.swift */; };
 		D2E649AA1D210E37002F9730 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A91D210E37002F9730 /* Configuration.swift */; };
 		D2E649AB1D210E37002F9730 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A91D210E37002F9730 /* Configuration.swift */; };
-		D2E649AE1D21105F002F9730 /* Configuration+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649AD1D21105F002F9730 /* Configuration+Imaginary.swift */; };
 		D2E649B01D211067002F9730 /* Configuration+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649AF1D211067002F9730 /* Configuration+Imaginary.swift */; };
 		D54225231D1D7A9300AF0046 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54225211D1D7A9300AF0046 /* Capsule.swift */; };
 		D54225241D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54225221D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift */; };
@@ -43,12 +40,10 @@
 		BDE8FBF41D1BFC7C00C5A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/Mac/Cache.framework; sourceTree = "<group>"; };
 		D2E6499A1D2109A2002F9730 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		D2E6499F1D210A74002F9730 /* Image+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Cache.swift"; sourceTree = "<group>"; };
 		D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+Imaginary.swift"; sourceTree = "<group>"; };
 		D2E649A51D210CD4002F9730 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D2E649A71D210CDE002F9730 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D2E649A91D210E37002F9730 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		D2E649AD1D21105F002F9730 /* Configuration+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Configuration+Imaginary.swift"; sourceTree = "<group>"; };
 		D2E649AF1D211067002F9730 /* Configuration+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Configuration+Imaginary.swift"; sourceTree = "<group>"; };
 		D54225211D1D7A9300AF0046 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
 		D54225221D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSHTTPURLResponse+Imaginary.swift"; sourceTree = "<group>"; };
@@ -116,7 +111,6 @@
 				D54225211D1D7A9300AF0046 /* Capsule.swift */,
 				D2E649A91D210E37002F9730 /* Configuration.swift */,
 				D2E6499A1D2109A2002F9730 /* Fetcher.swift */,
-				D2E6499F1D210A74002F9730 /* Image+Cache.swift */,
 				D59CC1371D79B23500D72C39 /* ImageDrawer.swift */,
 				BD92A5A31F01089A008408AB /* ImageManager.swift */,
 				D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */,
@@ -137,7 +131,6 @@
 		D2E649AC1D21105F002F9730 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D2E649AD1D21105F002F9730 /* Configuration+Imaginary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,7 +382,6 @@
 				D54225251D1D7A9600AF0046 /* Capsule.swift in Sources */,
 				D2E649AB1D210E37002F9730 /* Configuration.swift in Sources */,
 				D2E6499E1D2109A2002F9730 /* Fetcher.swift in Sources */,
-				D2E649A11D210A74002F9730 /* Image+Cache.swift in Sources */,
 				BDA7AE461EEA925600E09EBC /* TypeAlias.swift in Sources */,
 				D54225371D1D7AF100AF0046 /* NSImage+CGImage.swift in Sources */,
 				D54225261D1D7A9900AF0046 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
@@ -403,12 +395,10 @@
 				D59CC1341D79AF5B00D72C39 /* Drawers.swift in Sources */,
 				D59CC1381D79B23500D72C39 /* ImageDrawer.swift in Sources */,
 				BDA7AE451EEA925600E09EBC /* TypeAlias.swift in Sources */,
-				D2E649AE1D21105F002F9730 /* Configuration+Imaginary.swift in Sources */,
 				D2E649A31D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */,
 				D2E649A61D210CD4002F9730 /* Decompressor.swift in Sources */,
 				D54225241D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
 				D59CC1361D79B00E00D72C39 /* UIImage+Modify.swift in Sources */,
-				D2E649A01D210A74002F9730 /* Image+Cache.swift in Sources */,
 				D2E649AA1D210E37002F9730 /* Configuration.swift in Sources */,
 				D54225231D1D7A9300AF0046 /* Capsule.swift in Sources */,
 				D2E6499D1D2109A2002F9730 /* Fetcher.swift in Sources */,
