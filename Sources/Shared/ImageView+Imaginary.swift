@@ -26,7 +26,7 @@ extension ImageView {
       if case .value(let wrapper) = result {
         DispatchQueue.main.async {
           configuration.transitionClosure(self, wrapper.image)
-          completion?(wrapper.image)
+          completion?(.image(wrapper.image))
         }
 
         return
@@ -52,16 +52,17 @@ extension ImageView {
       }
 
       switch result {
-      case let .success(image, bytes):
-        configuration.track?(url, nil, bytes)
+      case .image(let image):
+        configuration.track?(url, nil)
         configuration.transitionClosure(self, image)
         let wrapper = ImageWrapper(image: image)
         configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
           // Don't care about result for now
         }
-        completion?(image)
-      case let .failure(error):
-        configuration.track?(url, error, 0)
+        completion?(.image(image))
+      case .error(let error):
+        completion?(.error(error))
+        configuration.track?(url, error)
       }
 
       configuration.postConfigure?(self)

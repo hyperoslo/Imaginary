@@ -36,7 +36,7 @@ public class ImageManager {
       // Return image from cache if it exists.
       if case .value(let wrapper) = result {
         DispatchQueue.main.async {
-          completion(wrapper.image)
+          completion(.image(wrapper.image))
         }
         return
       }
@@ -68,19 +68,19 @@ public class ImageManager {
       }
 
       switch result {
-      case let .success(image, bytes):
-        configuration.track?(url, nil, bytes)
+      case .image(let image):
+        configuration.track?(url, nil)
         if configuration.usesCache {
           let wrapper = ImageWrapper(image: image)
           configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
             // Don't care about result for now
           }
         }
-        completion(image)
+        completion(.image(image))
         self.removeImageDownloader(imageDownloader)
-      case let .failure(error):
-        configuration.track?(url, error, 0)
-        completion(nil)
+      case .error(let error):
+        configuration.track?(url, error)
+        completion(.error(error))
         self.removeImageDownloader(imageDownloader)
       }
     }

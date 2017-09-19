@@ -86,7 +86,7 @@ public struct Configuration {
   }
 
   /// Track the url for error
-  public var track: ((URL?, Error?, Int) -> Void)?
+  public var track: ((URL?, Error?) -> Void)?
 
   /// Initialization
   public init() {}
