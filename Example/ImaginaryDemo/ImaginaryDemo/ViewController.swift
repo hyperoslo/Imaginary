@@ -14,7 +14,7 @@ class ViewController: UITableViewController {
 
     for i in 0..<Constants.imageNumber {
       if let imageURL = URL(
-        string: "https://placeimg.com/640/480/\(i)") {
+        string: "https://placeimg.com/640/480/any/\(i)") {
             array.append(imageURL)
       }
     }
