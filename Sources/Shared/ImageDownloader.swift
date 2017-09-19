@@ -72,3 +72,11 @@ public func == (lhs: ImageDownloader, rhs: ImageDownloader) -> Bool {
     lhs.session == rhs.session &&
     lhs.task == rhs.task
 }
+
+fileprivate extension HTTPURLResponse {
+  func validateLength(_ data: Data) -> Bool {
+    return expectedContentLength > -1
+      ? (Int64(data.count) >= expectedContentLength)
+      : true
+  }
+}
