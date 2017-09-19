@@ -1,8 +1,7 @@
 import Foundation
 
 /// Download image from url
-class ImageDownloader: Equatable {
-  fileprivate let url: URL
+public class ImageDownloader: Equatable {
   fileprivate let session: URLSession
 
   fileprivate var task: URLSessionDataTask?
@@ -10,17 +9,16 @@ class ImageDownloader: Equatable {
 
   // MARK: - Initialization
 
-  init(url: URL, session: URLSession = URLSession.shared) {
-    self.url = url
+  public init(session: URLSession = URLSession.shared) {
     self.session = session
   }
 
   // MARK: - Operation
 
-  func start(completion: @escaping (Result) -> Void) {
+  func download(url: URL, completion: @escaping (Result) -> Void) {
     active = true
 
-    self.task = self.session.dataTask(with: self.url,
+    self.task = self.session.dataTask(with: url,
                                       completionHandler: { [weak self] data, response, error in
       guard let `self` = self, self.active else {
         return
@@ -69,9 +67,8 @@ class ImageDownloader: Equatable {
   }
 }
 
-func == (lhs: ImageDownloader, rhs: ImageDownloader) -> Bool {
+public func == (lhs: ImageDownloader, rhs: ImageDownloader) -> Bool {
   return lhs.active == rhs.active &&
     lhs.session == rhs.session &&
-    lhs.task == rhs.task &&
-    lhs.url == rhs.url
+    lhs.task == rhs.task
 }
