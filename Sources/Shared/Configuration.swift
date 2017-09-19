@@ -1,5 +1,10 @@
-import Foundation
 import Cache
+
+#if os(iOS) || os(tvOS)
+import UIKit
+#elseif os(OSX)
+import AppKit
+#endif
 
 /// Configuration
 public struct Configuration {
