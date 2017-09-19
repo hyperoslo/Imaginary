@@ -15,7 +15,7 @@
 
 /// Result for fetching
 public enum Result {
-  case image(Image)
+  case value(Image)
   case error(Error)
 }
 

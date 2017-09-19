@@ -55,7 +55,7 @@ public class ImageDownloader: Equatable {
 
       Configuration.bytesLoaded += data.count
 
-      completion(.image(decodedImage))
+      completion(.value(decodedImage))
     })
 
     self.task?.resume()

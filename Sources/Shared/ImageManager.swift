@@ -36,7 +36,7 @@ public class ImageManager {
       // Return image from cache if it exists.
       if case .value(let wrapper) = result {
         DispatchQueue.main.async {
-          completion(.image(wrapper.image))
+          completion(.value(wrapper.image))
         }
         return
       }
@@ -68,7 +68,7 @@ public class ImageManager {
       }
 
       switch result {
-      case .image(let image):
+      case .value(let image):
         configuration.track?(url, nil)
         if configuration.usesCache {
           let wrapper = ImageWrapper(image: image)
@@ -76,7 +76,7 @@ public class ImageManager {
             // Don't care about result for now
           }
         }
-        completion(.image(image))
+        completion(.value(image))
         self.removeImageDownloader(imageDownloader)
       case .error(let error):
         configuration.track?(url, error)
