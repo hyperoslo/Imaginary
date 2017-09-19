@@ -6,9 +6,9 @@ import Cache
 /// it from network. If it is successful it will store the image to the cache. You can opt-out of
 /// using cache by setting `useCache` to `false` when using the `fetchImage` method.
 public class ImageManager {
-  /// A collection of `Fetcher`'s, they will be removed from the queue as soon as they are done
+  /// A collection of `ImageDownloader`'s, they will be removed from the queue as soon as they are done
   /// fetching, even if the request fails to fetch.
-  private var fetchers = [Fetcher]()
+  private var imageDownloaders = [ImageDownloader]()
 
   /// Public initializer
   public init() {}
@@ -36,7 +36,7 @@ public class ImageManager {
       // Return image from cache if it exists.
       if case .value(let wrapper) = result {
         DispatchQueue.main.async {
-          completion(wrapper.image)
+          completion(.image(wrapper.image))
         }
         return
       }
@@ -46,11 +46,11 @@ public class ImageManager {
     }
   }
 
-  // Cancel and remove all fetchers from `ImageManager`.
-  public func removeFetchers() {
-    fetchers.forEach { fetcher in
-      fetcher.cancel()
-      removeFetcher(fetcher)
+  // Cancel and remove all imageDownloaders from `ImageManager`.
+  public func removeImageDownloaders() {
+    imageDownloaders.forEach { imageDownloader in
+      imageDownloader.cancel()
+      removeImageDownloader(imageDownloader)
     }
   }
 
@@ -61,40 +61,40 @@ public class ImageManager {
   ///   - completion: A completion block that gets called after the network request is done.
   /// - Note: The completion will get `nil` back if the request fails to fetch the image.
   private func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: @escaping Completion) {
-    let fetcher = Fetcher(url: url)
-    fetcher.start({ return $0 }) { [weak self] result in
+    let imageDownloader = ImageDownloader(url: url)
+    imageDownloader.start({ return $0 }) { [weak self] result in
       guard let `self` = self else {
         return
       }
 
       switch result {
-      case let .success(image, bytes):
-        configuration.track?(url, nil, bytes)
+      case .image(let image):
+        configuration.track?(url, nil)
         if configuration.usesCache {
           let wrapper = ImageWrapper(image: image)
           configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
             // Don't care about result for now
           }
         }
-        completion(image)
-        self.removeFetcher(fetcher)
-      case let .failure(error):
-        configuration.track?(url, error, 0)
-        completion(nil)
-        self.removeFetcher(fetcher)
+        completion(.image(image))
+        self.removeImageDownloader(imageDownloader)
+      case .error(let error):
+        configuration.track?(url, error)
+        completion(.error(error))
+        self.removeImageDownloader(imageDownloader)
       }
     }
 
-    fetchers.append(fetcher)
+    imageDownloaders.append(imageDownloader)
   }
 
-  /// Remove fetcher based of its index
+  /// Remove imageDownloader based of its index
   ///
-  /// - Parameter fetcher: The `Fetcher` that should be removed from the queue.
-  private func removeFetcher(_ fetcher: Fetcher) {
-    guard let index = self.fetchers.index(of: fetcher) else {
+  /// - Parameter imageDownloader: The `ImageDownloader` that should be removed from the queue.
+  private func removeImageDownloader(_ imageDownloader: ImageDownloader) {
+    guard let index = self.imageDownloaders.index(of: imageDownloader) else {
       return
     }
-    self.fetchers.remove(at: index)
+    self.imageDownloaders.remove(at: index)
   }
 }
