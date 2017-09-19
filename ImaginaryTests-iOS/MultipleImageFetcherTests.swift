@@ -14,15 +14,11 @@ fileprivate class MockDownloader: ImageDownloader {
 
 class MultipleImageFetcherTests: XCTestCase {
   var storage: Storage!
-  var fetcher: ImageFetcher!
-  fileprivate var mockDownloader = MockDownloader()
-  let url = URL(string: "https://no.hyper/imaginary.png")!
 
   override func setUp() {
     super.setUp()
 
     storage = try! Storage(diskConfig: DiskConfig(name: "Floppy"))
-    fetcher = ImageFetcher(downloader: mockDownloader, storage: storage)
   }
 
   override func tearDown() {

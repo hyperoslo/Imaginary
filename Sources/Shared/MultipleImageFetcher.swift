@@ -1,6 +1,6 @@
 import Foundation
 
-// Fetch multiple images
+// Fetch multiple images. This is ideal for prefetching.
 public class MultipleImageFetcher {
 
   private var fetchers: [ImageFetcher] = []
