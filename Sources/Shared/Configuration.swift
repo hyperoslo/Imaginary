@@ -30,7 +30,11 @@ public struct Configuration {
 
   /// Pre configure imageView before setting image
   public var preConfigure: ((ImageView) -> Void)? = { imageView in
-    imageView.layer.opacity = 0.0
+    #if os(iOS) || os(tvOS)
+      imageView.layer.opacity = 0.0
+    #elseif os(OSX)
+      imageView.layer?.opacity = 0.0
+    #endif
   }
 
   /// Animation when new image is set
