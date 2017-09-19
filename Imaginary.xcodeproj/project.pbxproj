@@ -31,6 +31,8 @@
 		D27345391F71448C00BF063D /* NSImage+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345221F71448000BF063D /* NSImage+CGImage.swift */; };
 		D273453A1F7147BE00BF063D /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 		D273453C1F7148C100BF063D /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273453B1F7148C100BF063D /* TestHelper.swift */; };
+		D273453E1F715D3700BF063D /* MultipleImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273453D1F715D3700BF063D /* MultipleImageFetcher.swift */; };
+		D273453F1F715D3700BF063D /* MultipleImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273453D1F715D3700BF063D /* MultipleImageFetcher.swift */; };
 		D2E2E9831F7112CF001B4251 /* ImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E2E9821F7112CF001B4251 /* ImageFetcherTests.swift */; };
 		D2E2E9851F7112CF001B4251 /* Imaginary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75911C403D8200BF1AB6 /* Imaginary.framework */; };
 		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
@@ -64,6 +66,7 @@
 		D27345201F71448000BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D27345221F71448000BF063D /* NSImage+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+CGImage.swift"; sourceTree = "<group>"; };
 		D273453B1F7148C100BF063D /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		D273453D1F715D3700BF063D /* MultipleImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImageFetcher.swift; sourceTree = "<group>"; };
 		D2E2E9801F7112CF001B4251 /* ImaginaryTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ImaginaryTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E2E9821F7112CF001B4251 /* ImageFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherTests.swift; sourceTree = "<group>"; };
 		D2E2E9841F7112CF001B4251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 				D27345171F71448000BF063D /* ImageView+Imaginary.swift */,
 				D27345181F71448000BF063D /* ImaginaryError.swift */,
 				D27345191F71448000BF063D /* Types.swift */,
+				D273453D1F715D3700BF063D /* MultipleImageFetcher.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -453,6 +457,7 @@
 				D27345321F71448600BF063D /* ImageDrawer.swift in Sources */,
 				D27345341F71448600BF063D /* ImageManager.swift in Sources */,
 				D27345391F71448C00BF063D /* NSImage+CGImage.swift in Sources */,
+				D273453F1F715D3700BF063D /* MultipleImageFetcher.swift in Sources */,
 				D27345361F71448600BF063D /* ImaginaryError.swift in Sources */,
 				D27345371F71448600BF063D /* Types.swift in Sources */,
 				D27345331F71448600BF063D /* ImageFetcher.swift in Sources */,
@@ -477,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D273452D1F71448000BF063D /* UIImage+Modify.swift in Sources */,
+				D273453E1F715D3700BF063D /* MultipleImageFetcher.swift in Sources */,
 				D273452C1F71448000BF063D /* Drawers.swift in Sources */,
 				D27345251F71448000BF063D /* ImageDrawer.swift in Sources */,
 				D27345271F71448000BF063D /* ImageManager.swift in Sources */,
