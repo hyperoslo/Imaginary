@@ -6,7 +6,9 @@ fileprivate class MockDownloader: ImageDownloader {
   var url: URL?
   override func download(url: URL, completion: @escaping (Imaginary.Result) -> Void) {
     self.url = url
-    completion(.value(TestHelper.image()))
+    DispatchQueue.global().async {
+      completion(.value(TestHelper.image()))
+    }
   }
 }
 
