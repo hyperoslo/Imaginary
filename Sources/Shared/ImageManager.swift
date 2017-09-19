@@ -27,7 +27,7 @@ public class ImageManager {
       return
     }
 
-    configuration.imageStorage?.async.object(ofType: ImageWrapper.self,
+    configuration.imageStorage.async.object(ofType: ImageWrapper.self,
                                             forKey: url.absoluteString) { [weak self] result in
       guard let `self` = self else {
         return
@@ -36,7 +36,7 @@ public class ImageManager {
       // Return image from cache if it exists.
       if case .value(let wrapper) = result {
         DispatchQueue.main.async {
-          completion(.image(wrapper.image))
+          completion(.value(wrapper.image))
         }
         return
       }
@@ -61,22 +61,22 @@ public class ImageManager {
   ///   - completion: A completion block that gets called after the network request is done.
   /// - Note: The completion will get `nil` back if the request fails to fetch the image.
   private func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: @escaping Completion) {
-    let imageDownloader = ImageDownloader(url: url)
-    imageDownloader.start({ return $0 }) { [weak self] result in
+    let imageDownloader = ImageDownloader()
+    imageDownloader.download(url: url) { [weak self] result in
       guard let `self` = self else {
         return
       }
 
       switch result {
-      case .image(let image):
+      case .value(let image):
         configuration.track?(url, nil)
         if configuration.usesCache {
           let wrapper = ImageWrapper(image: image)
-          configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
+          configuration.imageStorage.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
             // Don't care about result for now
           }
         }
-        completion(.image(image))
+        completion(.value(image))
         self.removeImageDownloader(imageDownloader)
       case .error(let error):
         configuration.track?(url, error)

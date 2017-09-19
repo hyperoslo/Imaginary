@@ -8,28 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */; };
-		D27344F81F71239200BF063D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344E71F71239200BF063D /* Configuration.swift */; };
-		D27344F91F71239200BF063D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344E81F71239200BF063D /* ImageDownloader.swift */; };
-		D27344FA1F71239200BF063D /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344E91F71239200BF063D /* ImageDrawer.swift */; };
-		D27344FB1F71239200BF063D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344EA1F71239200BF063D /* ImageManager.swift */; };
-		D27344FC1F71239200BF063D /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344EB1F71239200BF063D /* ImageView+Imaginary.swift */; };
-		D27344FD1F71239200BF063D /* ImaginaryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344EC1F71239200BF063D /* ImaginaryError.swift */; };
-		D27344FE1F71239200BF063D /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344ED1F71239200BF063D /* NSHTTPURLResponse+Imaginary.swift */; };
-		D27344FF1F71239200BF063D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344EE1F71239200BF063D /* Types.swift */; };
-		D27345001F71239200BF063D /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344F01F71239200BF063D /* Decompressor.swift */; };
-		D27345011F71239200BF063D /* Drawers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344F21F71239200BF063D /* Drawers.swift */; };
-		D27345021F71239200BF063D /* UIImage+Modify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344F31F71239200BF063D /* UIImage+Modify.swift */; };
-		D27345051F71239600BF063D /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344F51F71239200BF063D /* Decompressor.swift */; };
-		D27345061F71239900BF063D /* NSImage+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344F71F71239200BF063D /* NSImage+CGImage.swift */; };
-		D27345071F71239D00BF063D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344E71F71239200BF063D /* Configuration.swift */; };
-		D27345081F71239D00BF063D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344E81F71239200BF063D /* ImageDownloader.swift */; };
-		D27345091F71239D00BF063D /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344E91F71239200BF063D /* ImageDrawer.swift */; };
-		D273450A1F71239D00BF063D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344EA1F71239200BF063D /* ImageManager.swift */; };
-		D273450B1F71239D00BF063D /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344EB1F71239200BF063D /* ImageView+Imaginary.swift */; };
-		D273450C1F71239D00BF063D /* ImaginaryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344EC1F71239200BF063D /* ImaginaryError.swift */; };
-		D273450D1F71239D00BF063D /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344ED1F71239200BF063D /* NSHTTPURLResponse+Imaginary.swift */; };
-		D273450E1F71239D00BF063D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27344EE1F71239200BF063D /* Types.swift */; };
-		D2E2E9831F7112CF001B4251 /* ImaginaryTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E2E9821F7112CF001B4251 /* ImaginaryTests_iOS.swift */; };
+		D27345231F71448000BF063D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345121F71448000BF063D /* Configuration.swift */; };
+		D27345241F71448000BF063D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345131F71448000BF063D /* ImageDownloader.swift */; };
+		D27345251F71448000BF063D /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345141F71448000BF063D /* ImageDrawer.swift */; };
+		D27345261F71448000BF063D /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345151F71448000BF063D /* ImageFetcher.swift */; };
+		D27345271F71448000BF063D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345161F71448000BF063D /* ImageManager.swift */; };
+		D27345281F71448000BF063D /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345171F71448000BF063D /* ImageView+Imaginary.swift */; };
+		D27345291F71448000BF063D /* ImaginaryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345181F71448000BF063D /* ImaginaryError.swift */; };
+		D273452A1F71448000BF063D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345191F71448000BF063D /* Types.swift */; };
+		D273452B1F71448000BF063D /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451B1F71448000BF063D /* Decompressor.swift */; };
+		D273452C1F71448000BF063D /* Drawers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451D1F71448000BF063D /* Drawers.swift */; };
+		D273452D1F71448000BF063D /* UIImage+Modify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451E1F71448000BF063D /* UIImage+Modify.swift */; };
+		D27345301F71448600BF063D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345121F71448000BF063D /* Configuration.swift */; };
+		D27345311F71448600BF063D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345131F71448000BF063D /* ImageDownloader.swift */; };
+		D27345321F71448600BF063D /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345141F71448000BF063D /* ImageDrawer.swift */; };
+		D27345331F71448600BF063D /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345151F71448000BF063D /* ImageFetcher.swift */; };
+		D27345341F71448600BF063D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345161F71448000BF063D /* ImageManager.swift */; };
+		D27345351F71448600BF063D /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345171F71448000BF063D /* ImageView+Imaginary.swift */; };
+		D27345361F71448600BF063D /* ImaginaryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345181F71448000BF063D /* ImaginaryError.swift */; };
+		D27345371F71448600BF063D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345191F71448000BF063D /* Types.swift */; };
+		D27345381F71448900BF063D /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345201F71448000BF063D /* Decompressor.swift */; };
+		D27345391F71448C00BF063D /* NSImage+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345221F71448000BF063D /* NSImage+CGImage.swift */; };
+		D273453A1F7147BE00BF063D /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
+		D273453C1F7148C100BF063D /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273453B1F7148C100BF063D /* TestHelper.swift */; };
+		D2E2E9831F7112CF001B4251 /* ImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E2E9821F7112CF001B4251 /* ImageFetcherTests.swift */; };
 		D2E2E9851F7112CF001B4251 /* Imaginary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75911C403D8200BF1AB6 /* Imaginary.framework */; };
 		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 /* End PBXBuildFile section */
@@ -48,21 +50,22 @@
 		BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE8FBF41D1BFC7C00C5A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/Mac/Cache.framework; sourceTree = "<group>"; };
-		D27344E71F71239200BF063D /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		D27344E81F71239200BF063D /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
-		D27344E91F71239200BF063D /* ImageDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDrawer.swift; sourceTree = "<group>"; };
-		D27344EA1F71239200BF063D /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		D27344EB1F71239200BF063D /* ImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+Imaginary.swift"; sourceTree = "<group>"; };
-		D27344EC1F71239200BF063D /* ImaginaryError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImaginaryError.swift; sourceTree = "<group>"; };
-		D27344ED1F71239200BF063D /* NSHTTPURLResponse+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSHTTPURLResponse+Imaginary.swift"; sourceTree = "<group>"; };
-		D27344EE1F71239200BF063D /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		D27344F01F71239200BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
-		D27344F21F71239200BF063D /* Drawers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawers.swift; sourceTree = "<group>"; };
-		D27344F31F71239200BF063D /* UIImage+Modify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Modify.swift"; sourceTree = "<group>"; };
-		D27344F51F71239200BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
-		D27344F71F71239200BF063D /* NSImage+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+CGImage.swift"; sourceTree = "<group>"; };
+		D27345121F71448000BF063D /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		D27345131F71448000BF063D /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		D27345141F71448000BF063D /* ImageDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDrawer.swift; sourceTree = "<group>"; };
+		D27345151F71448000BF063D /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		D27345161F71448000BF063D /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		D27345171F71448000BF063D /* ImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+Imaginary.swift"; sourceTree = "<group>"; };
+		D27345181F71448000BF063D /* ImaginaryError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImaginaryError.swift; sourceTree = "<group>"; };
+		D27345191F71448000BF063D /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		D273451B1F71448000BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
+		D273451D1F71448000BF063D /* Drawers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawers.swift; sourceTree = "<group>"; };
+		D273451E1F71448000BF063D /* UIImage+Modify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Modify.swift"; sourceTree = "<group>"; };
+		D27345201F71448000BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
+		D27345221F71448000BF063D /* NSImage+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+CGImage.swift"; sourceTree = "<group>"; };
+		D273453B1F7148C100BF063D /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		D2E2E9801F7112CF001B4251 /* ImaginaryTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ImaginaryTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2E2E9821F7112CF001B4251 /* ImaginaryTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaginaryTests_iOS.swift; sourceTree = "<group>"; };
+		D2E2E9821F7112CF001B4251 /* ImageFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherTests.swift; sourceTree = "<group>"; };
 		D2E2E9841F7112CF001B4251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DF75911C403D8200BF1AB6 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DF759E1C403E1000BF1AB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D273453A1F7147BE00BF063D /* Cache.framework in Frameworks */,
 				D2E2E9851F7112CF001B4251 /* Imaginary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,9 +104,9 @@
 		BDE8FBCC1D1BFA4F00C5A212 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D27344EF1F71239200BF063D /* iOS */,
-				D27344F41F71239200BF063D /* Mac */,
-				D27344E61F71239200BF063D /* Shared */,
+				D273451A1F71448000BF063D /* iOS */,
+				D273451F1F71448000BF063D /* Mac */,
+				D27345111F71448000BF063D /* Shared */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -115,52 +119,52 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
-		D27344E61F71239200BF063D /* Shared */ = {
+		D27345111F71448000BF063D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D27344E71F71239200BF063D /* Configuration.swift */,
-				D27344E81F71239200BF063D /* ImageDownloader.swift */,
-				D27344E91F71239200BF063D /* ImageDrawer.swift */,
-				D27344EA1F71239200BF063D /* ImageManager.swift */,
-				D27344EB1F71239200BF063D /* ImageView+Imaginary.swift */,
-				D27344EC1F71239200BF063D /* ImaginaryError.swift */,
-				D27344ED1F71239200BF063D /* NSHTTPURLResponse+Imaginary.swift */,
-				D27344EE1F71239200BF063D /* Types.swift */,
+				D27345121F71448000BF063D /* Configuration.swift */,
+				D27345131F71448000BF063D /* ImageDownloader.swift */,
+				D27345141F71448000BF063D /* ImageDrawer.swift */,
+				D27345151F71448000BF063D /* ImageFetcher.swift */,
+				D27345161F71448000BF063D /* ImageManager.swift */,
+				D27345171F71448000BF063D /* ImageView+Imaginary.swift */,
+				D27345181F71448000BF063D /* ImaginaryError.swift */,
+				D27345191F71448000BF063D /* Types.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		D27344EF1F71239200BF063D /* iOS */ = {
+		D273451A1F71448000BF063D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D27344F01F71239200BF063D /* Decompressor.swift */,
-				D27344F11F71239200BF063D /* Drawers */,
+				D273451B1F71448000BF063D /* Decompressor.swift */,
+				D273451C1F71448000BF063D /* Drawers */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		D27344F11F71239200BF063D /* Drawers */ = {
+		D273451C1F71448000BF063D /* Drawers */ = {
 			isa = PBXGroup;
 			children = (
-				D27344F21F71239200BF063D /* Drawers.swift */,
-				D27344F31F71239200BF063D /* UIImage+Modify.swift */,
+				D273451D1F71448000BF063D /* Drawers.swift */,
+				D273451E1F71448000BF063D /* UIImage+Modify.swift */,
 			);
 			path = Drawers;
 			sourceTree = "<group>";
 		};
-		D27344F41F71239200BF063D /* Mac */ = {
+		D273451F1F71448000BF063D /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				D27344F51F71239200BF063D /* Decompressor.swift */,
-				D27344F61F71239200BF063D /* Extensions */,
+				D27345201F71448000BF063D /* Decompressor.swift */,
+				D27345211F71448000BF063D /* Extensions */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
 		};
-		D27344F61F71239200BF063D /* Extensions */ = {
+		D27345211F71448000BF063D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D27344F71F71239200BF063D /* NSImage+CGImage.swift */,
+				D27345221F71448000BF063D /* NSImage+CGImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -168,8 +172,9 @@
 		D2E2E9811F7112CF001B4251 /* ImaginaryTests-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D2E2E9821F7112CF001B4251 /* ImaginaryTests_iOS.swift */,
+				D2E2E9821F7112CF001B4251 /* ImageFetcherTests.swift */,
 				D2E2E9841F7112CF001B4251 /* Info.plist */,
+				D273453B1F7148C100BF063D /* TestHelper.swift */,
 			);
 			path = "ImaginaryTests-iOS";
 			sourceTree = "<group>";
@@ -445,16 +450,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D273450D1F71239D00BF063D /* NSHTTPURLResponse+Imaginary.swift in Sources */,
-				D27345071F71239D00BF063D /* Configuration.swift in Sources */,
-				D27345061F71239900BF063D /* NSImage+CGImage.swift in Sources */,
-				D273450E1F71239D00BF063D /* Types.swift in Sources */,
-				D273450C1F71239D00BF063D /* ImaginaryError.swift in Sources */,
-				D273450B1F71239D00BF063D /* ImageView+Imaginary.swift in Sources */,
-				D27345081F71239D00BF063D /* ImageDownloader.swift in Sources */,
-				D273450A1F71239D00BF063D /* ImageManager.swift in Sources */,
-				D27345051F71239600BF063D /* Decompressor.swift in Sources */,
-				D27345091F71239D00BF063D /* ImageDrawer.swift in Sources */,
+				D27345321F71448600BF063D /* ImageDrawer.swift in Sources */,
+				D27345341F71448600BF063D /* ImageManager.swift in Sources */,
+				D27345391F71448C00BF063D /* NSImage+CGImage.swift in Sources */,
+				D27345361F71448600BF063D /* ImaginaryError.swift in Sources */,
+				D27345371F71448600BF063D /* Types.swift in Sources */,
+				D27345331F71448600BF063D /* ImageFetcher.swift in Sources */,
+				D27345311F71448600BF063D /* ImageDownloader.swift in Sources */,
+				D27345351F71448600BF063D /* ImageView+Imaginary.swift in Sources */,
+				D27345301F71448600BF063D /* Configuration.swift in Sources */,
+				D27345381F71448900BF063D /* Decompressor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +467,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2E2E9831F7112CF001B4251 /* ImaginaryTests_iOS.swift in Sources */,
+				D2E2E9831F7112CF001B4251 /* ImageFetcherTests.swift in Sources */,
+				D273453C1F7148C100BF063D /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,17 +476,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D27345021F71239200BF063D /* UIImage+Modify.swift in Sources */,
-				D27345011F71239200BF063D /* Drawers.swift in Sources */,
-				D27344FC1F71239200BF063D /* ImageView+Imaginary.swift in Sources */,
-				D27344FA1F71239200BF063D /* ImageDrawer.swift in Sources */,
-				D27344FE1F71239200BF063D /* NSHTTPURLResponse+Imaginary.swift in Sources */,
-				D27344FF1F71239200BF063D /* Types.swift in Sources */,
-				D27344F91F71239200BF063D /* ImageDownloader.swift in Sources */,
-				D27344F81F71239200BF063D /* Configuration.swift in Sources */,
-				D27344FD1F71239200BF063D /* ImaginaryError.swift in Sources */,
-				D27344FB1F71239200BF063D /* ImageManager.swift in Sources */,
-				D27345001F71239200BF063D /* Decompressor.swift in Sources */,
+				D273452D1F71448000BF063D /* UIImage+Modify.swift in Sources */,
+				D273452C1F71448000BF063D /* Drawers.swift in Sources */,
+				D27345251F71448000BF063D /* ImageDrawer.swift in Sources */,
+				D27345271F71448000BF063D /* ImageManager.swift in Sources */,
+				D27345291F71448000BF063D /* ImaginaryError.swift in Sources */,
+				D273452A1F71448000BF063D /* Types.swift in Sources */,
+				D27345261F71448000BF063D /* ImageFetcher.swift in Sources */,
+				D27345241F71448000BF063D /* ImageDownloader.swift in Sources */,
+				D27345281F71448000BF063D /* ImageView+Imaginary.swift in Sources */,
+				D27345231F71448000BF063D /* Configuration.swift in Sources */,
+				D273452B1F71448000BF063D /* Decompressor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +565,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T78DK947F2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "ImaginaryTests-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -583,6 +593,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T78DK947F2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "ImaginaryTests-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
