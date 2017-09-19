@@ -1,7 +1,8 @@
 import Foundation
 import Cache
 
-/// Download image from url. Use cache if specified.
+/// Fetch image for you so that you don't have to think.
+/// It can be from storage or network.
 public class ImageFetcher {
   private let downloader: ImageDownloader
   private let storage: Storage?
@@ -22,6 +23,16 @@ public class ImageFetcher {
   ///   - url: The url to fetch.
   ///   - completion: The callback upon completion.
   public func fetch(url: URL, completion: @escaping (Result) -> Void) {
+    backgroundFetch(url: url, completion: { result in
+      DispatchQueue.main.async {
+        completion(result)
+      }
+    })
+  }
+
+  // MARK: - Helper
+
+  private func backgroundFetch(url: URL, completion: @escaping (Result) -> Void) {
     // Check if we should ignore storage
     guard let storage = storage else {
       fetchFromNetwork(url: url, completion: completion)
