@@ -3,7 +3,12 @@ import Foundation
 // Fetch multiple images
 public class MultipleImageFetcher {
 
-  var fetchers: [ImageFetcher] = []
+  private var fetchers: [ImageFetcher] = []
+  private let fetcherMaker: () -> ImageFetcher
+
+  init(fetcherMaker: @escaping () -> ImageFetcher) {
+    self.fetcherMaker = fetcherMaker
+  }
 
   /// Fetch multiple urls at once
   ///
@@ -17,7 +22,7 @@ public class MultipleImageFetcher {
     var results: [Result] = []
 
     self.fetchers = urls.map { url in
-      let fetcher = ImageFetcher()
+      let fetcher = self.fetcherMaker()
       fetcher.fetch(url: url, completion: { result in
         each?(result)
 
