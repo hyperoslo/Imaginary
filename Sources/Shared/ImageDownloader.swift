@@ -6,14 +6,6 @@ class ImageDownloader: Equatable {
     case failure(Error)
   }
 
-  enum Failure: Error {
-    case invalidResponse
-    case invalidStatusCode
-    case invalidData
-    case invalidContentLength
-    case conversionError
-  }
-
   let url: URL
   var task: URLSessionDataTask?
   var active = false
@@ -50,22 +42,22 @@ class ImageDownloader: Equatable {
         }
 
         guard let httpResponse = response as? HTTPURLResponse else {
-          self.complete { completion(.failure(Failure.invalidResponse)) }
+          self.complete { completion(.failure(ImaginaryError.invalidResponse)) }
           return
         }
 
         guard httpResponse.statusCode == 200 else {
-          self.complete { completion(.failure(Failure.invalidStatusCode)) }
+          self.complete { completion(.failure(ImaginaryError.invalidStatusCode)) }
           return
         }
 
         guard let data = data, httpResponse.validateLength(data) else {
-          self.complete { completion(.failure(Failure.invalidContentLength)) }
+          self.complete { completion(.failure(ImaginaryError.invalidContentLength)) }
           return
         }
 
         guard let decodedImage = Decompressor.decompress(data) else {
-          self.complete { completion(.failure(Failure.conversionError)) }
+          self.complete { completion(.failure(ImaginaryError.conversionError)) }
           return
         }
 
