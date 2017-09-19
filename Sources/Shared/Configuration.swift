@@ -1,5 +1,10 @@
-import Foundation
 import Cache
+
+#if os(iOS) || os(tvOS)
+import UIKit
+#elseif os(OSX)
+import AppKit
+#endif
 
 /// Configuration
 public struct Configuration {
@@ -27,6 +32,8 @@ public struct Configuration {
   public var preConfigure: ((ImageView) -> Void)? = { imageView in
     #if os(iOS) || os(tvOS)
       imageView.layer.opacity = 0.0
+    #elseif os(OSX)
+      imageView.layer?.opacity = 0.0
     #endif
   }
 
@@ -44,6 +51,19 @@ public struct Configuration {
       animation.toValue = newImage.cgImage
       imageView.layer.add(animation, forKey: "transitionAnimation")
       imageView.image = newImage
+    #elseif os(OSX)
+      guard let oldImage = imageView.image, imageView.window?.inLiveResize == false else {
+        imageView.image = newImage
+        return
+      }
+
+      let animation = CABasicAnimation(keyPath: "contents")
+      animation.duration = 0.25
+      animation.fromValue = oldImage.cgImage
+      animation.toValue = newImage.cgImage
+      imageView.wantsLayer = true
+      imageView.layer?.add(animation, forKey: "transitionAnimation")
+      imageView.image = newImage
     #endif
   }
 
@@ -55,6 +75,13 @@ public struct Configuration {
       animation.toValue = 1.0
       imageView.layer.add(animation, forKey: "fadeAnimation")
       imageView.layer.opacity = 1.0
+    #elseif os(OSX)
+      let animation = CABasicAnimation(keyPath: "opacity")
+      animation.fromValue = imageView.layer?.opacity
+      animation.toValue = 1.0
+      imageView.wantsLayer = true
+      imageView.layer?.add(animation, forKey: "fadeAnimation")
+      imageView.layer?.opacity = 1.0
     #endif
   }
 

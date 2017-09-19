@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D2E2E97F1F7112CF001B4251"
+               BuildableName = "ImaginaryTests-iOS.xctest"
+               BlueprintName = "ImaginaryTests-iOS"
+               ReferencedContainer = "container:Imaginary.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D5DF75901C403D8200BF1AB6"
+            BuildableName = "Imaginary.framework"
+            BlueprintName = "Imaginary-iOS"
+            ReferencedContainer = "container:Imaginary.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

@@ -12,18 +12,16 @@
 		BDA7AE451EEA925600E09EBC /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7AE441EEA925600E09EBC /* TypeAlias.swift */; };
 		BDA7AE461EEA925600E09EBC /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7AE441EEA925600E09EBC /* TypeAlias.swift */; };
 		BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */; };
+		D2E2E9831F7112CF001B4251 /* ImaginaryTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E2E9821F7112CF001B4251 /* ImaginaryTests_iOS.swift */; };
+		D2E2E9851F7112CF001B4251 /* Imaginary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75911C403D8200BF1AB6 /* Imaginary.framework */; };
 		D2E6499D1D2109A2002F9730 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6499A1D2109A2002F9730 /* Fetcher.swift */; };
 		D2E6499E1D2109A2002F9730 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6499A1D2109A2002F9730 /* Fetcher.swift */; };
-		D2E649A01D210A74002F9730 /* Image+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6499F1D210A74002F9730 /* Image+Cache.swift */; };
-		D2E649A11D210A74002F9730 /* Image+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6499F1D210A74002F9730 /* Image+Cache.swift */; };
 		D2E649A31D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */; };
 		D2E649A41D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */; };
 		D2E649A61D210CD4002F9730 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A51D210CD4002F9730 /* Decompressor.swift */; };
 		D2E649A81D210CDE002F9730 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A71D210CDE002F9730 /* Decompressor.swift */; };
 		D2E649AA1D210E37002F9730 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A91D210E37002F9730 /* Configuration.swift */; };
 		D2E649AB1D210E37002F9730 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649A91D210E37002F9730 /* Configuration.swift */; };
-		D2E649AE1D21105F002F9730 /* Configuration+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649AD1D21105F002F9730 /* Configuration+Imaginary.swift */; };
-		D2E649B01D211067002F9730 /* Configuration+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E649AF1D211067002F9730 /* Configuration+Imaginary.swift */; };
 		D54225231D1D7A9300AF0046 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54225211D1D7A9300AF0046 /* Capsule.swift */; };
 		D54225241D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54225221D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift */; };
 		D54225251D1D7A9600AF0046 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54225211D1D7A9300AF0046 /* Capsule.swift */; };
@@ -36,20 +34,30 @@
 		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D2E2E9861F7112CF001B4251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5DF75881C403D8200BF1AB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5DF75901C403D8200BF1AB6;
+			remoteInfo = "Imaginary-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BD92A5A31F01089A008408AB /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		BDA7AE441EEA925600E09EBC /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE8FBF41D1BFC7C00C5A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/Mac/Cache.framework; sourceTree = "<group>"; };
+		D2E2E9801F7112CF001B4251 /* ImaginaryTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ImaginaryTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2E2E9821F7112CF001B4251 /* ImaginaryTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaginaryTests_iOS.swift; sourceTree = "<group>"; };
+		D2E2E9841F7112CF001B4251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2E6499A1D2109A2002F9730 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		D2E6499F1D210A74002F9730 /* Image+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Cache.swift"; sourceTree = "<group>"; };
 		D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+Imaginary.swift"; sourceTree = "<group>"; };
 		D2E649A51D210CD4002F9730 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D2E649A71D210CDE002F9730 /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D2E649A91D210E37002F9730 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		D2E649AD1D21105F002F9730 /* Configuration+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Configuration+Imaginary.swift"; sourceTree = "<group>"; };
-		D2E649AF1D211067002F9730 /* Configuration+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Configuration+Imaginary.swift"; sourceTree = "<group>"; };
 		D54225211D1D7A9300AF0046 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
 		D54225221D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSHTTPURLResponse+Imaginary.swift"; sourceTree = "<group>"; };
 		D54225291D1D7ABD00AF0046 /* NSImage+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+CGImage.swift"; sourceTree = "<group>"; };
@@ -67,6 +75,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E2E97D1F7112CF001B4251 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E2E9851F7112CF001B4251 /* Imaginary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +132,6 @@
 				D54225211D1D7A9300AF0046 /* Capsule.swift */,
 				D2E649A91D210E37002F9730 /* Configuration.swift */,
 				D2E6499A1D2109A2002F9730 /* Fetcher.swift */,
-				D2E6499F1D210A74002F9730 /* Image+Cache.swift */,
 				D59CC1371D79B23500D72C39 /* ImageDrawer.swift */,
 				BD92A5A31F01089A008408AB /* ImageManager.swift */,
 				D2E649A21D210C1A002F9730 /* ImageView+Imaginary.swift */,
@@ -134,10 +149,18 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
+		D2E2E9811F7112CF001B4251 /* ImaginaryTests-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D2E2E9821F7112CF001B4251 /* ImaginaryTests_iOS.swift */,
+				D2E2E9841F7112CF001B4251 /* Info.plist */,
+			);
+			path = "ImaginaryTests-iOS";
+			sourceTree = "<group>";
+		};
 		D2E649AC1D21105F002F9730 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D2E649AD1D21105F002F9730 /* Configuration+Imaginary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -145,7 +168,6 @@
 		D54225271D1D7ABD00AF0046 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D2E649AF1D211067002F9730 /* Configuration+Imaginary.swift */,
 				D54225291D1D7ABD00AF0046 /* NSImage+CGImage.swift */,
 			);
 			path = Extensions;
@@ -173,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				BDE8FBCC1D1BFA4F00C5A212 /* Sources */,
+				D2E2E9811F7112CF001B4251 /* ImaginaryTests-iOS */,
 				D5B274C41DB8B0A900992392 /* Frameworks */,
 				D5DF759C1C403E1000BF1AB6 /* Imaginary */,
 				D5DF75921C403D8200BF1AB6 /* Products */,
@@ -184,6 +207,7 @@
 			children = (
 				D5DF75911C403D8200BF1AB6 /* Imaginary.framework */,
 				BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */,
+				D2E2E9801F7112CF001B4251 /* ImaginaryTests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,6 +269,25 @@
 			productReference = BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D2E2E97F1F7112CF001B4251 /* ImaginaryTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2E2E98A1F7112CF001B4251 /* Build configuration list for PBXNativeTarget "ImaginaryTests-iOS" */;
+			buildPhases = (
+				D2E2E97C1F7112CF001B4251 /* Sources */,
+				D2E2E97D1F7112CF001B4251 /* Frameworks */,
+				D2E2E97E1F7112CF001B4251 /* Resources */,
+				D27344E31F71148300BF063D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2E2E9871F7112CF001B4251 /* PBXTargetDependency */,
+			);
+			name = "ImaginaryTests-iOS";
+			productName = "ImaginaryTests-iOS";
+			productReference = D2E2E9801F7112CF001B4251 /* ImaginaryTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D5DF75901C403D8200BF1AB6 /* Imaginary-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5DF75991C403D8200BF1AB6 /* Build configuration list for PBXNativeTarget "Imaginary-iOS" */;
@@ -271,11 +314,17 @@
 		D5DF75881C403D8200BF1AB6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
 					BDE8FBE81D1BFB9F00C5A212 = {
 						CreatedOnToolsVersion = 7.3.1;
+					};
+					D2E2E97F1F7112CF001B4251 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = T78DK947F2;
+						ProvisioningStyle = Automatic;
 					};
 					D5DF75901C403D8200BF1AB6 = {
 						CreatedOnToolsVersion = 7.2;
@@ -297,12 +346,20 @@
 			targets = (
 				D5DF75901C403D8200BF1AB6 /* Imaginary-iOS */,
 				BDE8FBE81D1BFB9F00C5A212 /* Imaginary-Mac */,
+				D2E2E97F1F7112CF001B4251 /* ImaginaryTests-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BDE8FBE71D1BFB9F00C5A212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E2E97E1F7112CF001B4251 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,6 +416,21 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		D27344E31F71148300BF063D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Cache.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftHash.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		D5DF75B31C403FC700BF1AB6 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,14 +457,20 @@
 				D2E649A81D210CDE002F9730 /* Decompressor.swift in Sources */,
 				D2E649A41D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */,
 				BD92A5A51F01089A008408AB /* ImageManager.swift in Sources */,
-				D2E649B01D211067002F9730 /* Configuration+Imaginary.swift in Sources */,
 				D54225251D1D7A9600AF0046 /* Capsule.swift in Sources */,
 				D2E649AB1D210E37002F9730 /* Configuration.swift in Sources */,
 				D2E6499E1D2109A2002F9730 /* Fetcher.swift in Sources */,
-				D2E649A11D210A74002F9730 /* Image+Cache.swift in Sources */,
 				BDA7AE461EEA925600E09EBC /* TypeAlias.swift in Sources */,
 				D54225371D1D7AF100AF0046 /* NSImage+CGImage.swift in Sources */,
 				D54225261D1D7A9900AF0046 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E2E97C1F7112CF001B4251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E2E9831F7112CF001B4251 /* ImaginaryTests_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,12 +481,10 @@
 				D59CC1341D79AF5B00D72C39 /* Drawers.swift in Sources */,
 				D59CC1381D79B23500D72C39 /* ImageDrawer.swift in Sources */,
 				BDA7AE451EEA925600E09EBC /* TypeAlias.swift in Sources */,
-				D2E649AE1D21105F002F9730 /* Configuration+Imaginary.swift in Sources */,
 				D2E649A31D210C1A002F9730 /* ImageView+Imaginary.swift in Sources */,
 				D2E649A61D210CD4002F9730 /* Decompressor.swift in Sources */,
 				D54225241D1D7A9300AF0046 /* NSHTTPURLResponse+Imaginary.swift in Sources */,
 				D59CC1361D79B00E00D72C39 /* UIImage+Modify.swift in Sources */,
-				D2E649A01D210A74002F9730 /* Image+Cache.swift in Sources */,
 				D2E649AA1D210E37002F9730 /* Configuration.swift in Sources */,
 				D54225231D1D7A9300AF0046 /* Capsule.swift in Sources */,
 				D2E6499D1D2109A2002F9730 /* Fetcher.swift in Sources */,
@@ -417,6 +493,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2E2E9871F7112CF001B4251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5DF75901C403D8200BF1AB6 /* Imaginary-iOS */;
+			targetProxy = D2E2E9861F7112CF001B4251 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BDE8FBEF1D1BFB9F00C5A212 /* Debug */ = {
@@ -468,6 +552,51 @@
 				PRODUCT_NAME = Imaginary;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D2E2E9881F7112CF001B4251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T78DK947F2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "ImaginaryTests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.ImaginaryTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D2E2E9891F7112CF001B4251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T78DK947F2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "ImaginaryTests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.ImaginaryTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -631,6 +760,15 @@
 			buildConfigurations = (
 				BDE8FBEF1D1BFB9F00C5A212 /* Debug */,
 				BDE8FBF01D1BFB9F00C5A212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2E2E98A1F7112CF001B4251 /* Build configuration list for PBXNativeTarget "ImaginaryTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2E2E9881F7112CF001B4251 /* Debug */,
+				D2E2E9891F7112CF001B4251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
