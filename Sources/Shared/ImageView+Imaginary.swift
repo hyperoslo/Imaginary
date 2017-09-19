@@ -12,9 +12,9 @@ extension ImageView {
       return
     }
 
-    if let fetcher = fetcher {
-      fetcher.cancel()
-      self.fetcher = nil
+    if let imageDownloader = imageDownloader {
+      imageDownloader.cancel()
+      self.imageDownloader = nil
     }
 
     configuration.imageStorage?.async.object(ofType: ImageWrapper.self,
@@ -45,8 +45,8 @@ extension ImageView {
   }
 
   fileprivate func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: Completion? = nil) {
-    fetcher = ImageDownloader(url: url)
-    fetcher?.start(configuration.preprocess) { [weak self] result in
+    imageDownloader = ImageDownloader(url: url)
+    imageDownloader?.start(configuration.preprocess) { [weak self] result in
       guard let `self` = self else {
         return
       }
@@ -68,16 +68,16 @@ extension ImageView {
     }
   }
 
-  var fetcher: ImageDownloader? {
+  var imageDownloader: ImageDownloader? {
     get {
       let wrapper = objc_getAssociatedObject(self, &Capsule.ObjectKey) as? Capsule
-      let fetcher = wrapper?.concept as? ImageDownloader
-      return fetcher
+      let imageDownloader = wrapper?.concept as? ImageDownloader
+      return imageDownloader
     }
-    set (fetcher) {
+    set (imageDownloader) {
       var wrapper: Capsule?
-      if let fetcher = fetcher {
-        wrapper = Capsule(concept: fetcher)
+      if let imageDownloader = imageDownloader {
+        wrapper = Capsule(concept: imageDownloader)
       }
       objc_setAssociatedObject(self, &Capsule.ObjectKey,
                                wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)

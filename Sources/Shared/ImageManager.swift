@@ -8,7 +8,7 @@ import Cache
 public class ImageManager {
   /// A collection of `ImageDownloader`'s, they will be removed from the queue as soon as they are done
   /// fetching, even if the request fails to fetch.
-  private var fetchers = [ImageDownloader]()
+  private var imageDownloaders = [ImageDownloader]()
 
   /// Public initializer
   public init() {}
@@ -46,11 +46,11 @@ public class ImageManager {
     }
   }
 
-  // Cancel and remove all fetchers from `ImageManager`.
+  // Cancel and remove all imageDownloaders from `ImageManager`.
   public func removeImageDownloaders() {
-    fetchers.forEach { fetcher in
-      fetcher.cancel()
-      removeImageDownloader(fetcher)
+    imageDownloaders.forEach { imageDownloader in
+      imageDownloader.cancel()
+      removeImageDownloader(imageDownloader)
     }
   }
 
@@ -61,8 +61,8 @@ public class ImageManager {
   ///   - completion: A completion block that gets called after the network request is done.
   /// - Note: The completion will get `nil` back if the request fails to fetch the image.
   private func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: @escaping Completion) {
-    let fetcher = ImageDownloader(url: url)
-    fetcher.start({ return $0 }) { [weak self] result in
+    let imageDownloader = ImageDownloader(url: url)
+    imageDownloader.start({ return $0 }) { [weak self] result in
       guard let `self` = self else {
         return
       }
@@ -77,24 +77,24 @@ public class ImageManager {
           }
         }
         completion(image)
-        self.removeImageDownloader(fetcher)
+        self.removeImageDownloader(imageDownloader)
       case let .failure(error):
         configuration.track?(url, error, 0)
         completion(nil)
-        self.removeImageDownloader(fetcher)
+        self.removeImageDownloader(imageDownloader)
       }
     }
 
-    fetchers.append(fetcher)
+    imageDownloaders.append(imageDownloader)
   }
 
-  /// Remove fetcher based of its index
+  /// Remove imageDownloader based of its index
   ///
-  /// - Parameter fetcher: The `ImageDownloader` that should be removed from the queue.
-  private func removeImageDownloader(_ fetcher: ImageDownloader) {
-    guard let index = self.fetchers.index(of: fetcher) else {
+  /// - Parameter imageDownloader: The `ImageDownloader` that should be removed from the queue.
+  private func removeImageDownloader(_ imageDownloader: ImageDownloader) {
+    guard let index = self.imageDownloaders.index(of: imageDownloader) else {
       return
     }
-    self.fetchers.remove(at: index)
+    self.imageDownloaders.remove(at: index)
   }
 }
