@@ -13,11 +13,11 @@ public struct Configuration {
   public static var bytesLoaded: Int = 0
 
   /// The image storage, used for caching images in memory and disk
-  public var imageStorage: Storage? = {
+  public var imageStorage: Storage = {
     let diskConfig = DiskConfig(name: "Imaginary", expiry: .date(Date().addingTimeInterval(60 * 60 * 24 * 3)))
     let memoryConfig = MemoryConfig(countLimit: 10, totalCostLimit: 0)
 
-    return try? Storage(diskConfig: diskConfig, memoryConfig: memoryConfig)
+    return try! Storage(diskConfig: diskConfig, memoryConfig: memoryConfig)
   }()
 
   /// Toggle whether image should be fetched from cache first

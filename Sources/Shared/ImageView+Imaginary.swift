@@ -17,7 +17,7 @@ extension ImageView {
       self.imageDownloader = nil
     }
 
-    configuration.imageStorage?.async.object(ofType: ImageWrapper.self,
+    configuration.imageStorage.async.object(ofType: ImageWrapper.self,
                                              forKey: url.absoluteString) { [weak self] result in
       guard let `self` = self else {
         return
@@ -56,7 +56,7 @@ extension ImageView {
         configuration.track?(url, nil)
         configuration.transitionClosure(self, image)
         let wrapper = ImageWrapper(image: image)
-        configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
+        configuration.imageStorage.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
           // Don't care about result for now
         }
         completion?(.image(image))
