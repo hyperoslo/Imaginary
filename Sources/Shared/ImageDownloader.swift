@@ -1,11 +1,6 @@
 import Foundation
 
 class ImageDownloader: Equatable {
-  enum Result {
-    case success(image: Image, byteCount: Int)
-    case failure(Error)
-  }
-
   let url: URL
   var task: URLSessionDataTask?
   var active = false
@@ -22,7 +17,7 @@ class ImageDownloader: Equatable {
 
   // MARK: - Fetching
 
-  func start(_ preprocess: @escaping Preprocess, completion: @escaping (_ result: Result) -> Void) {
+  func start(_ preprocess: @escaping Preprocess, completion: @escaping (Result) -> Void) {
     active = true
 
     DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async { [weak self] in
@@ -37,27 +32,27 @@ class ImageDownloader: Equatable {
         }
 
         if let error = error {
-          self.complete { completion(.failure(error)) }
+          self.complete { completion(.error(error)) }
           return
         }
 
         guard let httpResponse = response as? HTTPURLResponse else {
-          self.complete { completion(.failure(ImaginaryError.invalidResponse)) }
+          self.complete { completion(.error(ImaginaryError.invalidResponse)) }
           return
         }
 
         guard httpResponse.statusCode == 200 else {
-          self.complete { completion(.failure(ImaginaryError.invalidStatusCode)) }
+          self.complete { completion(.error(ImaginaryError.invalidStatusCode)) }
           return
         }
 
         guard let data = data, httpResponse.validateLength(data) else {
-          self.complete { completion(.failure(ImaginaryError.invalidContentLength)) }
+          self.complete { completion(.error(ImaginaryError.invalidContentLength)) }
           return
         }
 
         guard let decodedImage = Decompressor.decompress(data) else {
-          self.complete { completion(.failure(ImaginaryError.conversionError)) }
+          self.complete { completion(.error(ImaginaryError.conversionError)) }
           return
         }
 
@@ -67,7 +62,7 @@ class ImageDownloader: Equatable {
 
         if self.active {
           self.complete {
-            completion(Result.success(image: image, byteCount: data.count))
+            completion(.image(image))
           }
         }
       })
