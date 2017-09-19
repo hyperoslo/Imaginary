@@ -5,6 +5,12 @@ public class MultipleImageFetcher {
 
   var fetchers: [ImageFetcher] = []
 
+  /// Fetch multiple urls at once
+  ///
+  /// - Parameters:
+  ///   - urls: The urls to fetch
+  ///   - each: Called when each fetcher completes
+  ///   - completion: Called when all fetcher completes
   public func fetch(urls: [URL],
                     each: ((Result) -> Void)? = nil,
                     completion: (([Result]) -> Void)? = nil) {
