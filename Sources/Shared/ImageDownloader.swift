@@ -1,18 +1,18 @@
 import Foundation
 
+/// Download image from url
 class ImageDownloader: Equatable {
-  let url: URL
-  var task: URLSessionDataTask?
-  var active = false
+  private let url: URL
+  private let session: URLSession
 
-  var session: URLSession {
-    return URLSession.shared
-  }
+  private var task: URLSessionDataTask?
+  private var active = false
 
   // MARK: - Initialization
 
-  init(url: URL) {
+  init(url: URL, session: URLSession = URLSession.shared) {
     self.url = url
+    self.session = session
   }
 
   // MARK: - Fetching
