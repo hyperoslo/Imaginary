@@ -2,7 +2,7 @@ import Foundation
 import Cache
 
 /// Fetch image for you so that you don't have to think.
-/// It can be from storage or network.
+/// It can be fetched from storage or network.
 public class ImageFetcher {
   private let downloader: ImageDownloader
   private let storage: Storage?
