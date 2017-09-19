@@ -23,7 +23,7 @@ public class ImageDownloader: Equatable {
       guard let `self` = self, self.active else {
         return
       }
-                                        
+
       defer {
         self.active = false
       }
