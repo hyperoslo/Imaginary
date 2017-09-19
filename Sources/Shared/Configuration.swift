@@ -27,11 +27,6 @@ public struct Configuration {
   /// Toggle whether image should be fetched from cache first
   public var usesCache: Bool = true
 
-  /// Pre process fetched image
-  public var preprocess: ((Image) -> Image) = {
-    return $0
-  }
-
   /// Pre configure imageView before setting image
   public var preConfigure: ((ImageView) -> Void)? = { imageView in
     #if os(iOS) || os(tvOS)
