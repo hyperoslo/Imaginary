@@ -4,7 +4,7 @@ import Cache
 extension ImageView {
   public func setImage(url: URL?,
                        placeholder: Image? = nil,
-                       preprocess: @escaping Preprocess = { image in return image },
+                       configuration: Configuration = Configuration.default,
                        completion: Completion? = nil) {
     image = placeholder
 
@@ -17,7 +17,7 @@ extension ImageView {
       self.fetcher = nil
     }
 
-    Configuration.imageStorage?.async.object(ofType: ImageWrapper.self,
+    configuration.imageStorage?.async.object(ofType: ImageWrapper.self,
                                              forKey: url.absoluteString) { [weak self] result in
       guard let `self` = self else {
         return
@@ -25,7 +25,7 @@ extension ImageView {
 
       if case .value(let wrapper) = result {
         DispatchQueue.main.async {
-          Configuration.transitionClosure(self, wrapper.image)
+          configuration.transitionClosure(self, wrapper.image)
           completion?(wrapper.image)
         }
 
@@ -34,37 +34,37 @@ extension ImageView {
 
       if placeholder == nil {
         DispatchQueue.main.async {
-          Configuration.preConfigure?(self)
+          configuration.preConfigure?(self)
         }
       }
 
       DispatchQueue.main.async {
-        self.fetchFromNetwork(url: url, preprocess: preprocess, completion: completion)
+        self.fetchFromNetwork(url: url, configuration: configuration, completion: completion)
       }
     }
   }
 
-  fileprivate func fetchFromNetwork(url: URL, preprocess: @escaping Preprocess, completion: Completion? = nil) {
+  fileprivate func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: Completion? = nil) {
     fetcher = Fetcher(url: url)
-    fetcher?.start(preprocess) { [weak self] result in
+    fetcher?.start(configuration.preprocess) { [weak self] result in
       guard let `self` = self else {
         return
       }
 
       switch result {
       case let .success(image, bytes):
-        Configuration.track?(url, nil, bytes)
-        Configuration.transitionClosure(self, image)
+        configuration.track?(url, nil, bytes)
+        configuration.transitionClosure(self, image)
         let wrapper = ImageWrapper(image: image)
-        Configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
+        configuration.imageStorage?.async.setObject(wrapper, forKey: url.absoluteString, expiry: nil) { _ in
           // Don't care about result for now
         }
         completion?(image)
       case let .failure(error):
-        Configuration.track?(url, error, 0)
+        configuration.track?(url, error, 0)
       }
 
-      Configuration.postConfigure?(self)
+      configuration.postConfigure?(self)
     }
   }
 
