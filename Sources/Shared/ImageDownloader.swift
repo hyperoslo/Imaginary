@@ -1,6 +1,6 @@
 import Foundation
 
-class Fetcher: Equatable {
+class ImageDownloader: Equatable {
   enum Result {
     case success(image: Image, byteCount: Int)
     case failure(Error)
@@ -97,7 +97,7 @@ class Fetcher: Equatable {
     }
   }
 
-  static func == (lhs: Fetcher, rhs: Fetcher) -> Bool {
+  static func == (lhs: ImageDownloader, rhs: ImageDownloader) -> Bool {
     return lhs.active == rhs.active &&
       lhs.session == rhs.session &&
       lhs.task == rhs.task &&

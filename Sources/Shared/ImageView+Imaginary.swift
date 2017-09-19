@@ -45,7 +45,7 @@ extension ImageView {
   }
 
   fileprivate func fetchFromNetwork(url: URL, configuration: Configuration = Configuration.default, completion: Completion? = nil) {
-    fetcher = Fetcher(url: url)
+    fetcher = ImageDownloader(url: url)
     fetcher?.start(configuration.preprocess) { [weak self] result in
       guard let `self` = self else {
         return
@@ -68,10 +68,10 @@ extension ImageView {
     }
   }
 
-  var fetcher: Fetcher? {
+  var fetcher: ImageDownloader? {
     get {
       let wrapper = objc_getAssociatedObject(self, &Capsule.ObjectKey) as? Capsule
-      let fetcher = wrapper?.concept as? Fetcher
+      let fetcher = wrapper?.concept as? ImageDownloader
       return fetcher
     }
     set (fetcher) {
