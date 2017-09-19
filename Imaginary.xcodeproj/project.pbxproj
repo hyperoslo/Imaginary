@@ -12,7 +12,6 @@
 		D27345241F71448000BF063D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345131F71448000BF063D /* ImageDownloader.swift */; };
 		D27345251F71448000BF063D /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345141F71448000BF063D /* ImageDrawer.swift */; };
 		D27345261F71448000BF063D /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345151F71448000BF063D /* ImageFetcher.swift */; };
-		D27345271F71448000BF063D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345161F71448000BF063D /* ImageManager.swift */; };
 		D27345281F71448000BF063D /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345171F71448000BF063D /* ImageView+Imaginary.swift */; };
 		D27345291F71448000BF063D /* ImaginaryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345181F71448000BF063D /* ImaginaryError.swift */; };
 		D273452A1F71448000BF063D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345191F71448000BF063D /* Types.swift */; };
@@ -23,7 +22,6 @@
 		D27345311F71448600BF063D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345131F71448000BF063D /* ImageDownloader.swift */; };
 		D27345321F71448600BF063D /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345141F71448000BF063D /* ImageDrawer.swift */; };
 		D27345331F71448600BF063D /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345151F71448000BF063D /* ImageFetcher.swift */; };
-		D27345341F71448600BF063D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345161F71448000BF063D /* ImageManager.swift */; };
 		D27345351F71448600BF063D /* ImageView+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345171F71448000BF063D /* ImageView+Imaginary.swift */; };
 		D27345361F71448600BF063D /* ImaginaryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345181F71448000BF063D /* ImaginaryError.swift */; };
 		D27345371F71448600BF063D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345191F71448000BF063D /* Types.swift */; };
@@ -56,7 +54,6 @@
 		D27345131F71448000BF063D /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D27345141F71448000BF063D /* ImageDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDrawer.swift; sourceTree = "<group>"; };
 		D27345151F71448000BF063D /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
-		D27345161F71448000BF063D /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		D27345171F71448000BF063D /* ImageView+Imaginary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+Imaginary.swift"; sourceTree = "<group>"; };
 		D27345181F71448000BF063D /* ImaginaryError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImaginaryError.swift; sourceTree = "<group>"; };
 		D27345191F71448000BF063D /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
@@ -129,7 +126,6 @@
 				D27345131F71448000BF063D /* ImageDownloader.swift */,
 				D27345141F71448000BF063D /* ImageDrawer.swift */,
 				D27345151F71448000BF063D /* ImageFetcher.swift */,
-				D27345161F71448000BF063D /* ImageManager.swift */,
 				D27345171F71448000BF063D /* ImageView+Imaginary.swift */,
 				D27345181F71448000BF063D /* ImaginaryError.swift */,
 				D27345191F71448000BF063D /* Types.swift */,
@@ -455,7 +451,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27345321F71448600BF063D /* ImageDrawer.swift in Sources */,
-				D27345341F71448600BF063D /* ImageManager.swift in Sources */,
 				D27345391F71448C00BF063D /* NSImage+CGImage.swift in Sources */,
 				D273453F1F715D3700BF063D /* MultipleImageFetcher.swift in Sources */,
 				D27345361F71448600BF063D /* ImaginaryError.swift in Sources */,
@@ -485,7 +480,6 @@
 				D273453E1F715D3700BF063D /* MultipleImageFetcher.swift in Sources */,
 				D273452C1F71448000BF063D /* Drawers.swift in Sources */,
 				D27345251F71448000BF063D /* ImageDrawer.swift in Sources */,
-				D27345271F71448000BF063D /* ImageManager.swift in Sources */,
 				D27345291F71448000BF063D /* ImaginaryError.swift in Sources */,
 				D273452A1F71448000BF063D /* Types.swift in Sources */,
 				D27345261F71448000BF063D /* ImageFetcher.swift in Sources */,

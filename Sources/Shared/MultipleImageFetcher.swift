@@ -9,8 +9,8 @@ public class MultipleImageFetcher {
   ///
   /// - Parameters:
   ///   - urls: The urls to fetch
-  ///   - each: Called when each fetcher completes
-  ///   - completion: Called when all fetcher completes
+  ///   - each: Called after each fetcher completed
+  ///   - completion: Called after all fetchers completed
   public func fetch(urls: [URL],
                     each: ((Result) -> Void)? = nil,
                     completion: (([Result]) -> Void)? = nil) {
