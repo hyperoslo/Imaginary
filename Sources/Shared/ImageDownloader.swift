@@ -2,11 +2,11 @@ import Foundation
 
 /// Download image from url
 class ImageDownloader: Equatable {
-  private let url: URL
-  private let session: URLSession
+  fileprivate let url: URL
+  fileprivate let session: URLSession
 
-  private var task: URLSessionDataTask?
-  private var active = false
+  fileprivate var task: URLSessionDataTask?
+  fileprivate var active = false
 
   // MARK: - Initialization
 
@@ -15,79 +15,63 @@ class ImageDownloader: Equatable {
     self.session = session
   }
 
-  // MARK: - Fetching
+  // MARK: - Operation
 
-  func start(_ preprocess: @escaping Preprocess, completion: @escaping (Result) -> Void) {
+  func start(completion: @escaping (Result) -> Void) {
     active = true
 
-    DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async { [weak self] in
+    self.task = self.session.dataTask(with: self.url,
+                                      completionHandler: { [weak self] data, response, error in
       guard let `self` = self, self.active else {
         return
       }
+                                        
+      defer {
+        self.active = false
+      }
 
-      self.task = self.session.dataTask(with: self.url, completionHandler: { [weak self] data, response, error -> Void in
+      if let error = error {
+        completion(.error(error))
+        return
+      }
 
-        guard let `self` = self, self.active else {
-          return
-        }
+      guard let httpResponse = response as? HTTPURLResponse else {
+        completion(.error(ImaginaryError.invalidResponse))
+        return
+      }
 
-        if let error = error {
-          self.complete { completion(.error(error)) }
-          return
-        }
+      guard httpResponse.statusCode == 200 else {
+        completion(.error(ImaginaryError.invalidStatusCode))
+        return
+      }
 
-        guard let httpResponse = response as? HTTPURLResponse else {
-          self.complete { completion(.error(ImaginaryError.invalidResponse)) }
-          return
-        }
+      guard let data = data, httpResponse.validateLength(data) else {
+        completion(.error(ImaginaryError.invalidContentLength))
+        return
+      }
 
-        guard httpResponse.statusCode == 200 else {
-          self.complete { completion(.error(ImaginaryError.invalidStatusCode)) }
-          return
-        }
+      guard let decodedImage = Decompressor.decompress(data) else {
+        completion(.error(ImaginaryError.conversionError))
+        return
+      }
 
-        guard let data = data, httpResponse.validateLength(data) else {
-          self.complete { completion(.error(ImaginaryError.invalidContentLength)) }
-          return
-        }
+      Configuration.bytesLoaded += data.count
 
-        guard let decodedImage = Decompressor.decompress(data) else {
-          self.complete { completion(.error(ImaginaryError.conversionError)) }
-          return
-        }
+      completion(.image(decodedImage))
+    })
 
-        let image = preprocess(decodedImage)
-
-        Configuration.bytesLoaded += data.count
-
-        if self.active {
-          self.complete {
-            completion(.image(image))
-          }
-        }
-      })
-
-      self.task?.resume()
-    }
+    self.task?.resume()
   }
 
   func cancel() {
     task?.cancel()
     active = false
   }
+}
 
-  func complete(_ closure: @escaping () -> Void) {
-    active = false
-
-    DispatchQueue.main.async {
-      closure()
-    }
-  }
-
-  static func == (lhs: ImageDownloader, rhs: ImageDownloader) -> Bool {
-    return lhs.active == rhs.active &&
-      lhs.session == rhs.session &&
-      lhs.task == rhs.task &&
-      lhs.url == rhs.url
-  }
+func == (lhs: ImageDownloader, rhs: ImageDownloader) -> Bool {
+  return lhs.active == rhs.active &&
+    lhs.session == rhs.session &&
+    lhs.task == rhs.task &&
+    lhs.url == rhs.url
 }
