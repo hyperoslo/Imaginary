@@ -31,6 +31,11 @@ public class ImageFetcher {
     })
   }
 
+  /// Cancel operations
+  public func cancel() {
+    downloader.cancel()
+  }
+
   // MARK: - Helper
 
   private func backgroundFetch(url: URL, completion: @escaping (Result) -> Void) {
