@@ -1,6 +1,6 @@
 import Cocoa
 
-class Decompressor {
+final class Decompressor {
   func decompress(data: Data) -> NSImage? {
     guard let image = NSImage(data: data) else {
       return nil

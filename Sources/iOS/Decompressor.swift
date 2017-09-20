@@ -1,6 +1,6 @@
 import UIKit
 
-class Decompressor {
+final class Decompressor {
   func decompress(data: Data) -> Image? {
     guard let image = Image(data: data) else {
       return nil
