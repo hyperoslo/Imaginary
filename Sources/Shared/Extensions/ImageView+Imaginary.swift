@@ -2,6 +2,13 @@ import Foundation
 import Cache
 
 extension ImageView {
+  /// Set image with url
+  ///
+  /// - Parameters:
+  ///   - url: The url to fetch
+  ///   - placeholder: Placeholder if any
+  ///   - option: Customise this specific fetching
+  ///   - completion: Called after done
   public func setImage(url: URL,
                        placeholder: Image? = nil,
                        option: Option = Option(),
@@ -21,17 +28,17 @@ extension ImageView {
         return
       }
 
-      switch result {
-      case .value(let image):
-        let processedImage = option.imagePreprocessor?.process(image: image) ?? image
-        option.imageDisplayer?.display(image: processedImage, onto: self)
-        break
-      case .error(let error):
-        Configuration.trackError?(url, error)
-        break
-      }
+      DispatchQueue.main.async {
+        switch result {
+        case .value(let image):
+          let processedImage = option.imagePreprocessor?.process(image: image) ?? image
+          option.imageDisplayer?.display(image: processedImage, onto: self)
+        case .error(let error):
+          Configuration.trackError?(url, error)
+        }
 
-      completion?(result)
+        completion?(result)
+      }
     })
   }
 
