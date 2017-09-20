@@ -6,7 +6,9 @@ extension ImageView {
                        placeholder: Image? = nil,
                        configuration: Configuration = Configuration.default,
                        completion: Completion? = nil) {
-    image = placeholder
+    if let placeholder = placeholder {
+      image = placeholder
+    }
 
     if let imageFetcher = imageFetcher {
       imageFetcher.cancel()
