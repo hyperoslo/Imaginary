@@ -10,8 +10,9 @@ public struct Option {
   /// To apply transition or custom animation when display image
   public var imageDisplayer: ImageDisplaying = SimpleImageDisplayer()
 
-  /// The image storage, defaults to Configuration.imageStorage
-  public var imageStorage: Storage = Configuration.imageStorage
+  /// The image storage, defaults to Configuration.imageStorage.
+  /// Specify nil to ignore storage.
+  public var imageStorage: Storage? = Configuration.imageStorage
 
   public init() {}
 }
