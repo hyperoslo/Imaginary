@@ -12,7 +12,7 @@ fileprivate class MockDownloader: ImageDownloader {
   }
 }
 
-class MultipleImageFetcherTests: XCTestCase {
+private final class MultipleImageFetcherTests: XCTestCase {
   var storage: Storage!
 
   override func setUp() {
