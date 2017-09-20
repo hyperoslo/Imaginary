@@ -58,7 +58,7 @@ extension ImageView {
   }
 }
 
-/// Used for associate ImageFetcher with ImageView
+/// Used to associate ImageFetcher with ImageView
 fileprivate struct AssociateKey {
   static var fetcher = 0
 }
