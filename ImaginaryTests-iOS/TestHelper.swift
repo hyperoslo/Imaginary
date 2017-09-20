@@ -1,4 +1,5 @@
 import UIKit
+@testable import Imaginary
 
 class TestHelper {
   static func image(_ color: UIColor = .red, size: CGSize = .init(width: 1, height: 1)) -> UIImage {
@@ -12,5 +13,15 @@ class TestHelper {
     UIGraphicsEndImageContext()
 
     return image!
+  }
+}
+
+class MockDownloader: ImageDownloader {
+  var url: URL?
+  override func download(url: URL, completion: @escaping (Imaginary.Result) -> Void) {
+    self.url = url
+    DispatchQueue.global().async {
+      completion(.value(TestHelper.image()))
+    }
   }
 }

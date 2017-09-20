@@ -2,16 +2,6 @@ import XCTest
 import Cache
 @testable import Imaginary
 
-fileprivate class MockDownloader: ImageDownloader {
-  var url: URL?
-  override func download(url: URL, completion: @escaping (Imaginary.Result) -> Void) {
-    self.url = url
-    DispatchQueue.global().async {
-      completion(.value(TestHelper.image()))
-    }
-  }
-}
-
 private final class MultipleImageFetcherTests: XCTestCase {
   var storage: Storage!
 
