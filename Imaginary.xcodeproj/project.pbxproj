@@ -38,6 +38,10 @@
 		D2E8C8261F7252C300D2B8EF /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C8121F7252C300D2B8EF /* Types.swift */; };
 		D2E8C8271F7252C300D2B8EF /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C8141F7252C300D2B8EF /* ImageDrawer.swift */; };
 		D2E8C8281F7252C300D2B8EF /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C8141F7252C300D2B8EF /* ImageDrawer.swift */; };
+		D2E8C82A1F72537B00D2B8EF /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C8291F72537B00D2B8EF /* ImageProcessing.swift */; };
+		D2E8C82B1F72537B00D2B8EF /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C8291F72537B00D2B8EF /* ImageProcessing.swift */; };
+		D2E8C82D1F72539E00D2B8EF /* ImageDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C82C1F72539E00D2B8EF /* ImageDisplaying.swift */; };
+		D2E8C82E1F72539E00D2B8EF /* ImageDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C82C1F72539E00D2B8EF /* ImageDisplaying.swift */; };
 		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +79,8 @@
 		D2E8C8111F7252C300D2B8EF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D2E8C8121F7252C300D2B8EF /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		D2E8C8141F7252C300D2B8EF /* ImageDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDrawer.swift; sourceTree = "<group>"; };
+		D2E8C8291F72537B00D2B8EF /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		D2E8C82C1F72539E00D2B8EF /* ImageDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplaying.swift; sourceTree = "<group>"; };
 		D5DF75911C403D8200BF1AB6 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DF759E1C403E1000BF1AB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DF75B11C403FBF00BF1AB6 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/iOS/Cache.framework; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 		D2E8C8061F7252C300D2B8EF /* Displaying */ = {
 			isa = PBXGroup;
 			children = (
+				D2E8C82C1F72539E00D2B8EF /* ImageDisplaying.swift */,
 			);
 			path = Displaying;
 			sourceTree = "<group>";
@@ -226,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				D2E8C8141F7252C300D2B8EF /* ImageDrawer.swift */,
+				D2E8C8291F72537B00D2B8EF /* ImageProcessing.swift */,
 			);
 			path = Processing;
 			sourceTree = "<group>";
@@ -506,7 +514,9 @@
 				D2E8C81C1F7252C300D2B8EF /* MultipleImageFetcher.swift in Sources */,
 				D2E8C8201F7252C300D2B8EF /* ImaginaryError.swift in Sources */,
 				D2E8C81E1F7252C300D2B8EF /* Configuration.swift in Sources */,
+				D2E8C82E1F72539E00D2B8EF /* ImageDisplaying.swift in Sources */,
 				D2E8C8161F7252C300D2B8EF /* ImageView+Imaginary.swift in Sources */,
+				D2E8C82B1F72537B00D2B8EF /* ImageProcessing.swift in Sources */,
 				D2E8C8181F7252C300D2B8EF /* ImageDownloader.swift in Sources */,
 				D2E8C8241F7252C300D2B8EF /* Result.swift in Sources */,
 				D27345381F71448900BF063D /* Decompressor.swift in Sources */,
@@ -533,6 +543,7 @@
 				D273452D1F71448000BF063D /* UIImage+Modify.swift in Sources */,
 				D2E8C8271F7252C300D2B8EF /* ImageDrawer.swift in Sources */,
 				D2E8C8171F7252C300D2B8EF /* ImageDownloader.swift in Sources */,
+				D2E8C82D1F72539E00D2B8EF /* ImageDisplaying.swift in Sources */,
 				D2E8C8211F7252C300D2B8EF /* Option.swift in Sources */,
 				D2E8C8251F7252C300D2B8EF /* Types.swift in Sources */,
 				D273452C1F71448000BF063D /* Drawers.swift in Sources */,
@@ -540,6 +551,7 @@
 				D2E8C8191F7252C300D2B8EF /* ImageFetcher.swift in Sources */,
 				D2E8C8151F7252C300D2B8EF /* ImageView+Imaginary.swift in Sources */,
 				D2E8C81D1F7252C300D2B8EF /* Configuration.swift in Sources */,
+				D2E8C82A1F72537B00D2B8EF /* ImageProcessing.swift in Sources */,
 				D2E8C81F1F7252C300D2B8EF /* ImaginaryError.swift in Sources */,
 				D273452B1F71448000BF063D /* Decompressor.swift in Sources */,
 				D2E8C8231F7252C300D2B8EF /* Result.swift in Sources */,
