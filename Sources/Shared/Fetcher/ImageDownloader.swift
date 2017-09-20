@@ -48,7 +48,7 @@ public class ImageDownloader {
         return
       }
 
-      guard let decodedImage = Decompressor.decompress(data) else {
+      guard let decodedImage = Decompressor().decompress(data: data) else {
         completion(.error(ImaginaryError.conversionError))
         return
       }
