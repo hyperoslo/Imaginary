@@ -14,7 +14,7 @@ private final class ImageView_ImaginaryTests: XCTestCase {
     // Mock the Fetcher
     var option = Option()
     option.fetcherMaker = {
-      return ImageFetcher(downloader: mockDownloader)
+      return ImageFetcher(downloader: mockDownloader, storage: nil)
     }
 
     imageView.setImage(
