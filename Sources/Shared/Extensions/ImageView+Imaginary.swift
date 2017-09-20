@@ -44,11 +44,16 @@ extension ImageView {
 
   private var imageFetcher: ImageFetcher? {
     get {
-      return objc_getAssociatedObject(self, &AssociateKey.fetcher) as? ImageFetcher
+      return objc_getAssociatedObject(
+        self, &AssociateKey.fetcher) as? ImageFetcher
     }
     set {
-      objc_setAssociatedObject(self, &AssociateKey.fetcher,
-                               newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+      objc_setAssociatedObject(
+        self,
+        &AssociateKey.fetcher,
+        newValue,
+        objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC
+      )
     }
   }
 }
