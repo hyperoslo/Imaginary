@@ -5,6 +5,6 @@ target 'ImaginaryDemo' do
 
   pod 'Imaginary', path: '../../'
   pod 'SwiftHash', git: 'https://github.com/onmyway133/SwiftHash', tag: '2.0.0'
-  pod 'Cache', git: 'https://github.com/hyperoslo/Cache', branch: 'swift4'
+  pod 'Cache', git: 'https://github.com/hyperoslo/Cache', branch: 'master'
 
 end

@@ -1,7 +1,7 @@
 import UIKit
 
-struct Decompressor {
-  static func decompress(_ data: Data, scale: CGFloat = 1) -> Image? {
+final class Decompressor {
+  func decompress(data: Data) -> Image? {
     guard let image = Image(data: data) else {
       return nil
     }

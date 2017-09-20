@@ -48,13 +48,12 @@ public class ImageDownloader {
         return
       }
 
-      guard let decodedImage = Decompressor.decompress(data) else {
+      guard let decodedImage = Decompressor().decompress(data: data) else {
         completion(.error(ImaginaryError.conversionError))
         return
       }
 
-      Configuration.bytesLoaded += data.count
-
+      Configuration.trackBytesDownloaded[url] = data.count
       completion(.value(decodedImage))
     })
 

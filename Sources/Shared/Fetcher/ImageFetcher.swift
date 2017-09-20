@@ -13,9 +13,14 @@ public class ImageFetcher {
   ///   - downloader: Used to download images.
   ///   - storage: Used to store downloaded images. Pass nil to ignore cache
   public init(downloader: ImageDownloader = ImageDownloader(),
-              storage: Storage? = Configuration.default.imageStorage) {
+              storage: Storage? = Configuration.imageStorage) {
     self.downloader = downloader
     self.storage = storage
+  }
+
+  /// Cancel operations
+  public func cancel() {
+    downloader.cancel()
   }
 
   /// Fetch image from url.
@@ -24,21 +29,6 @@ public class ImageFetcher {
   ///   - url: The url to fetch.
   ///   - completion: The callback upon completion.
   public func fetch(url: URL, completion: @escaping (Result) -> Void) {
-    backgroundFetch(url: url, completion: { result in
-      DispatchQueue.main.async {
-        completion(result)
-      }
-    })
-  }
-
-  /// Cancel operations
-  public func cancel() {
-    downloader.cancel()
-  }
-
-  // MARK: - Helper
-
-  private func backgroundFetch(url: URL, completion: @escaping (Result) -> Void) {
     // Check if we should ignore storage
     guard let storage = storage else {
       fetchFromNetwork(url: url, completion: completion)
@@ -60,6 +50,8 @@ public class ImageFetcher {
       }
     })
   }
+
+  // MARK: - Helper
 
   private func fetchFromNetwork(url: URL, completion: @escaping (Result) -> Void) {
     downloader.download(url: url, completion: { [weak self] result in
