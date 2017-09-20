@@ -28,18 +28,29 @@ extension ImageView {
         return
       }
 
-      DispatchQueue.main.async {
-        switch result {
-        case .value(let image):
-          let processedImage = option.imagePreprocessor?.process(image: image) ?? image
-          option.imageDisplayer.display(image: processedImage, onto: self)
-        case .error(let error):
-          Configuration.trackError?(url, error)
-        }
+      self.handle(url: url, result: result,
+                  option: option, completion: completion)
+    })
+  }
 
+  private func handle(url: URL, result: Result,
+                      option: Option, completion: Completion?) {
+
+    defer {
+      DispatchQueue.main.async {
         completion?(result)
       }
-    })
+    }
+
+    switch result {
+    case .value(let image):
+      let processedImage = option.imagePreprocessor?.process(image: image) ?? image
+      DispatchQueue.main.async {
+        option.imageDisplayer.display(image: processedImage, onto: self)
+      }
+    case .error(let error):
+      Configuration.trackError?(url, error)
+    }
   }
 
   private var imageFetcher: ImageFetcher? {
