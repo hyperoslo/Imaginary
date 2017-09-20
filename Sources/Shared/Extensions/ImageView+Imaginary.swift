@@ -32,7 +32,7 @@ extension ImageView {
         switch result {
         case .value(let image):
           let processedImage = option.imagePreprocessor?.process(image: image) ?? image
-          option.imageDisplayer?.display(image: processedImage, onto: self)
+          option.imageDisplayer.display(image: processedImage, onto: self)
         case .error(let error):
           Configuration.trackError?(url, error)
         }

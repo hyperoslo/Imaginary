@@ -8,7 +8,7 @@ public struct Option {
   public var imagePreprocessor: ImageProcessing?
 
   /// To apply transition or custom animation when display image
-  public var imageDisplayer: ImageDisplaying?
+  public var imageDisplayer: ImageDisplaying = SimpleImageDisplayer()
 
   /// The image storage, defaults to Configuration.imageStorage
   public var imageStorage: Storage = Configuration.imageStorage
