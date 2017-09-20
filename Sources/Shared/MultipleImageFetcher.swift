@@ -19,10 +19,13 @@ public class MultipleImageFetcher {
   public func fetch(urls: [URL],
                     each: ((Result) -> Void)? = nil,
                     completion: (([Result]) -> Void)? = nil) {
+    self.fetchers = urls.map { _ in
+      return self.fetcherMaker()
+    }
+
     var results: [Result] = []
 
-    self.fetchers = urls.map { url in
-      let fetcher = self.fetcherMaker()
+    zip(fetchers, urls).forEach { fetcher, url in
       fetcher.fetch(url: url, completion: { result in
         each?(result)
 
@@ -32,8 +35,15 @@ public class MultipleImageFetcher {
           completion?(results)
         }
       })
-
-      return fetcher
     }
+  }
+
+  /// Cancel all operations
+  public func cancel() {
+    fetchers.forEach {
+      $0.cancel()
+    }
+
+    fetchers.removeAll()
   }
 }
