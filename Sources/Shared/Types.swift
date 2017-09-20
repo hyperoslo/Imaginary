@@ -13,11 +13,4 @@
   public typealias ImageView = UIImageView
 #endif
 
-/// Result for fetching
-public enum Result {
-  case value(Image)
-  case error(Error)
-}
-
-public typealias Preprocess = (Image) -> Image
 public typealias Completion = (Result) -> Void

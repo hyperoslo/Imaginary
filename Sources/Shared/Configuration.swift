@@ -17,16 +17,15 @@ public struct Configuration {
     let diskConfig = DiskConfig(name: "Imaginary", expiry: .date(Date().addingTimeInterval(60 * 60 * 24 * 3)))
     let memoryConfig = MemoryConfig(countLimit: 10, totalCostLimit: 0)
 
-    return try! Storage(diskConfig: diskConfig, memoryConfig: memoryConfig)
+    do {
+      return try Storage(diskConfig: diskConfig, memoryConfig: memoryConfig)
+    } catch {
+      fatalError(error.localizedDescription)
+    }
   }()
 
   /// Toggle whether image should be fetched from cache first
   public var usesCache: Bool = true
-
-  /// Pre process fetched image
-  public var preprocess: ((Image) -> Image) = {
-    return $0
-  }
 
   /// Pre configure imageView before setting image
   public var preConfigure: ((ImageView) -> Void)? = { imageView in

@@ -12,7 +12,7 @@ fileprivate class MockDownloader: ImageDownloader {
   }
 }
 
-class ImageFetcherTests: XCTestCase {
+private final class ImageFetcherTests: XCTestCase {
   var storage: Storage!
   var fetcher: ImageFetcher!
   fileprivate var mockDownloader = MockDownloader()
