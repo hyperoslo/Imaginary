@@ -22,7 +22,7 @@ extension ImageView {
       self.imageFetcher = nil
     }
 
-    self.imageFetcher = ImageFetcher(downloader: ImageDownloader(), storage: option.imageStorage)
+    self.imageFetcher = option.fetcherMaker()
     self.imageFetcher?.fetch(url: url, completion: { [weak self] result in
       guard let `self` = self else {
         return
