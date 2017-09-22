@@ -5,12 +5,16 @@
 
 #if os(OSX)
   import Cocoa
+  public typealias View = NSView
   public typealias Image = NSImage
   public typealias ImageView = NSImageView
+  public typealias Button = NSButton
 #else
   import UIKit
+  public typealias View = UIView
   public typealias Image = UIImage
   public typealias ImageView = UIImageView
+  public typealias Button = UIButton
 #endif
 
 public typealias Completion = (Result) -> Void

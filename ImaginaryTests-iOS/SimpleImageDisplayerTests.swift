@@ -7,7 +7,7 @@ private final class SimpleImageDisplayerTests: XCTestCase {
     let expectation = self.expectation(description: #function)
 
     let imageView = UIImageView()
-    let displayer: ImageDisplaying = SimpleImageDisplayer(animationOption: .transitionFlipFromTop)
+    let displayer: ImageDisplayer = ImageViewDisplayer(animationOption: .transitionFlipFromTop)
 
     XCTAssertNil(imageView.image)
 

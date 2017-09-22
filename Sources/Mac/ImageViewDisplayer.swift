@@ -1,7 +1,20 @@
 import AppKit
 
-public class SimpleImageDisplayer: ImageDisplaying {
-  public func display(image: Image, onto imageView: ImageView) {
+/// Used to set image onto ImageView
+public class ImageViewDisplayer: ImageDisplayer {
+  public func display(placeholder: Image, onto view: View) {
+    guard let imageView = view as? ImageView else {
+      return
+    }
+
+    imageView.image = placeholder
+  }
+
+  public func display(image: Image, onto view: View) {
+    guard let imageView = view as? ImageView else {
+      return
+    }
+
     guard let oldImage = imageView.image,
       imageView.window?.inLiveResize == false else {
       imageView.image = image
@@ -16,6 +29,8 @@ public class SimpleImageDisplayer: ImageDisplaying {
     imageView.layer?.add(animation, forKey: "transitionAnimation")
     imageView.image = image
   }
+
+  public init() {}
 }
 
 fileprivate extension NSImage {

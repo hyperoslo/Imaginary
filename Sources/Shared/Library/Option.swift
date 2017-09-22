@@ -5,10 +5,10 @@ import Cache
 public struct Option {
 
   /// Pre process downloaded image before it gets applied to UI
-  public var imagePreprocessor: ImageProcessing?
+  public let imagePreprocessor: ImageProcessor?
 
   /// To apply transition or custom animation when display image
-  public var imageDisplayer: ImageDisplaying = SimpleImageDisplayer()
+  public let imageDisplayer: ImageDisplayer
 
   /// How to make ImageFetcher to fetch.
   /// Defaults to ImageFetcher with Configuration.imageStorage, specify nil to ignore caching.
@@ -17,5 +17,9 @@ public struct Option {
                         storage: Configuration.imageStorage)
   }
 
-  public init() {}
+  public init(imagePreprocessor: ImageProcessor? = nil,
+              imageDisplayer: ImageDisplayer = ImageViewDisplayer()) {
+    self.imagePreprocessor = imagePreprocessor
+    self.imageDisplayer = imageDisplayer
+  }
 }
