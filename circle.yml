@@ -1,0 +1,17 @@
+machine:
+  xcode:
+    version: "9.0"
+
+dependencies:
+  override:
+    - bin/bootstrap-if-needed
+  cache_directories:
+    - "Carthage"
+
+test:
+  override:
+    - set -o pipefail && xcodebuild -project Imaginary.xcodeproj -scheme "Imaginary-macOS" -sdk macosx clean build
+    - set -o pipefail && xcodebuild -project Imaginary.xcodeproj -scheme "Imaginary-iOS" -sdk iphonesimulator clean build
+    - set -o pipefail && xcodebuild -project Imaginary.xcodeproj -scheme "Imaginary-iOS" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.0' -enableCodeCoverage YES test
+    - set -o pipefail && xcodebuild -project Imaginary.xcodeproj -scheme "Imaginary-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV,OS=11.0' clean build
+    - set -o pipefail && xcodebuild -project Imaginary.xcodeproj -scheme "Imaginary-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV,OS=11.0' -enableCodeCoverage YES test

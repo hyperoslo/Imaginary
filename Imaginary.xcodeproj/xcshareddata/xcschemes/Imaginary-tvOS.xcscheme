@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5DF75901C403D8200BF1AB6"
+               BlueprintIdentifier = "D21352C11F7540E400B5375B"
                BuildableName = "Imaginary.framework"
-               BlueprintName = "Imaginary-iOS"
+               BlueprintName = "Imaginary-tvOS"
                ReferencedContainer = "container:Imaginary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2E2E97F1F7112CF001B4251"
-               BuildableName = "ImaginaryTests-iOS.xctest"
-               BlueprintName = "ImaginaryTests-iOS"
+               BlueprintIdentifier = "D21352EE1F75423700B5375B"
+               BuildableName = "Imaginary_tvOSTests.xctest"
+               BlueprintName = "Imaginary_tvOSTests"
                ReferencedContainer = "container:Imaginary.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5DF75901C403D8200BF1AB6"
+            BlueprintIdentifier = "D21352C11F7540E400B5375B"
             BuildableName = "Imaginary.framework"
-            BlueprintName = "Imaginary-iOS"
+            BlueprintName = "Imaginary-tvOS"
             ReferencedContainer = "container:Imaginary.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,9 +66,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5DF75901C403D8200BF1AB6"
+            BlueprintIdentifier = "D21352C11F7540E400B5375B"
             BuildableName = "Imaginary.framework"
-            BlueprintName = "Imaginary-iOS"
+            BlueprintName = "Imaginary-tvOS"
             ReferencedContainer = "container:Imaginary.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,9 +84,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5DF75901C403D8200BF1AB6"
+            BlueprintIdentifier = "D21352C11F7540E400B5375B"
             BuildableName = "Imaginary.framework"
-            BlueprintName = "Imaginary-iOS"
+            BlueprintName = "Imaginary-tvOS"
             ReferencedContainer = "container:Imaginary.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

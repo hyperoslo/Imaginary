@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Imaginary"
   s.summary          = "Remote images, as easy as one, two, three."
-  s.version          = "2.1.1"
+  s.version          = "3.0.0"
   s.homepage         = "https://github.com/hyperoslo/Imaginary"
   s.license          = 'MIT'
   s.author           = { "Hyper Interaktiv AS" => "ios@hyper.no" }
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
 
   s.frameworks = 'Foundation'
-  s.dependency 'Cache', '~> 3.0'
+  s.dependency 'Cache', '~> 4.0'
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 end

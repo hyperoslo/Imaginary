@@ -1,9 +1,9 @@
 import Cocoa
 
-struct Decompressor {
-  static func decompress(_ data: Data, scale: CGFloat = 1) -> NSImage {
+final class Decompressor {
+  func decompress(data: Data) -> NSImage? {
     guard let image = NSImage(data: data) else {
-      return NSImage()
+      return nil
     }
 
     image.lockFocus()
