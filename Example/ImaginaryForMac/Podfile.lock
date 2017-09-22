@@ -1,22 +1,22 @@
 PODS:
-  - Cache (3.1.0):
-    - SwiftHash (~> 1.4.0)
-  - Imaginary (1.0.2):
-    - Cache (~> 3.0)
-  - SwiftHash (1.4.0)
+  - Cache (4.0.0):
+    - SwiftHash (~> 2.0.0)
+  - Imaginary (3.0.0):
+    - Cache (~> 4.0)
+  - SwiftHash (2.0.0)
 
 DEPENDENCIES:
   - Imaginary (from `../../`)
 
 EXTERNAL SOURCES:
   Imaginary:
-    :path: "../../"
+    :path: ../../
 
 SPEC CHECKSUMS:
-  Cache: 6dea29625ee40c1cafb2ff6c48f3f7341a59cfb5
-  Imaginary: 3135892ca46c5126cf94df3340e10e267066bd12
-  SwiftHash: acf0f29032309a5c7a7f625595eade1aca97aca2
+  Cache: e73353960c614ab79b0c6911b8c39da05b334470
+  Imaginary: 61c53e76b1b6f84cb86e98b0b8d47b535af89204
+  SwiftHash: d2e09b13495447178cdfb8e46e54a5c46f15f5a9
 
 PODFILE CHECKSUM: 804905a0cfc064a8a0388d223095e41774bcee31
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1
