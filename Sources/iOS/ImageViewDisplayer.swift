@@ -1,5 +1,6 @@
 import UIKit
 
+/// Used to set image onto ImageView
 public class ImageViewDisplayer: ImageDisplayer {
 
   private let animationOption: UIViewAnimationOptions

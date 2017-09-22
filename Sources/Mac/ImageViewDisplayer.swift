@@ -1,5 +1,6 @@
 import AppKit
 
+/// Used to set image onto ImageView
 public class ImageViewDisplayer: ImageDisplayer {
   public func display(placeholder: Image, onto view: View) {
     guard let imageView = view as? ImageView else {
