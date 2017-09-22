@@ -31,7 +31,7 @@ a bunch of built-in unicorny features:
 - [x] Default transition animations
 - [x] Possibility to pre-process and modify the original image
 - [x] Work on any any view, including `ImageView`, `Button`, ...
-- [x] Support iOS, macOS
+- [x] Support iOS, tvOS, macOS
 
 ## Usage
 
