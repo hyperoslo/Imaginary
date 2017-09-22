@@ -1,38 +1,22 @@
 PODS:
   - Cache (4.0.0):
     - SwiftHash (~> 2.0.0)
-  - Imaginary (2.1.1):
+  - Imaginary (3.0.0):
     - Cache (~> 4.0)
   - SwiftHash (2.0.0)
 
 DEPENDENCIES:
-  - Cache (from `https://github.com/hyperoslo/Cache`, branch `master`)
   - Imaginary (from `../../`)
-  - SwiftHash (from `https://github.com/onmyway133/SwiftHash`, tag `2.0.0`)
 
 EXTERNAL SOURCES:
-  Cache:
-    :branch: master
-    :git: https://github.com/hyperoslo/Cache
   Imaginary:
     :path: ../../
-  SwiftHash:
-    :git: https://github.com/onmyway133/SwiftHash
-    :tag: 2.0.0
-
-CHECKOUT OPTIONS:
-  Cache:
-    :commit: 0d7d8006fde3da062ce8fc984bc1c4678d17f5e5
-    :git: https://github.com/hyperoslo/Cache
-  SwiftHash:
-    :git: https://github.com/onmyway133/SwiftHash
-    :tag: 2.0.0
 
 SPEC CHECKSUMS:
-  Cache: ecde4da6b8379f3066b9ce1e5e2e0433ca41a024
-  Imaginary: a469477f935daba69da43086627e8d6130804ba4
-  SwiftHash: 52faa311aa5ccd128989fb701637f1c981e69447
+  Cache: e73353960c614ab79b0c6911b8c39da05b334470
+  Imaginary: 61c53e76b1b6f84cb86e98b0b8d47b535af89204
+  SwiftHash: d2e09b13495447178cdfb8e46e54a5c46f15f5a9
 
-PODFILE CHECKSUM: 5471dc22cae3ea13bfdaf08a88f9396dfb0f0b9e
+PODFILE CHECKSUM: 317cccf04e61f3f6f7e8a7e2dbc1ad0f7fa2beee
 
 COCOAPODS: 1.3.1
