@@ -1,6 +1,6 @@
 import Foundation
 
 /// Process downloaded image
-public protocol ImageProcessing {
+public protocol ImageProcessor {
   func process(image: Image) -> Image
 }

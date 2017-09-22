@@ -1,7 +1,7 @@
 import Foundation
 
 /// How to display image onto view
-public protocol ImageDisplaying {
+public protocol ImageDisplayer {
   /// How to display the placeholder
   func display(placeholder: Image, onto view: View)
 
