@@ -1,7 +1,7 @@
 import UIKit
 
 /// Apply tint color to image
-public class TintImageProcessor: ImageProcessing {
+public class TintImageProcessor: ImageProcessor {
   private let tintColor: UIColor
 
   public init(tintColor: UIColor) {
