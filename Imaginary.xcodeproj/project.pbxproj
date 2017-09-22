@@ -13,7 +13,6 @@
 		D21352B81F75266200B5375B /* ButtonDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B71F75266200B5375B /* ButtonDisplayer.swift */; };
 		D21352BA1F75266C00B5375B /* ButtonBackgroundDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B91F75266C00B5375B /* ButtonBackgroundDisplayer.swift */; };
 		D21352BC1F7527F700B5375B /* Button+ImaginaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352BB1F7527F700B5375B /* Button+ImaginaryTests.swift */; };
-		D21352D21F7540E400B5375B /* Imaginary_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = D21352C41F7540E400B5375B /* Imaginary_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D21352D91F7540F700B5375B /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451B1F71448000BF063D /* Decompressor.swift */; };
 		D21352DA1F7540F700B5375B /* ImageViewDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C41F7259F4001963ED /* ImageViewDisplayer.swift */; };
 		D21352DB1F7540F700B5375B /* TintImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C81F725CE1001963ED /* TintImageProcessor.swift */; };
@@ -31,7 +30,6 @@
 		D21352E71F75410100B5375B /* MultipleImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C80C1F7252C300D2B8EF /* MultipleImageFetcher.swift */; };
 		D21352E81F75410300B5375B /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B41F7523BF00B5375B /* View+Imaginary.swift */; };
 		D21352EA1F7541D300B5375B /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21352E91F7541D300B5375B /* Cache.framework */; };
-		D21352F21F75423700B5375B /* Imaginary_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352F11F75423700B5375B /* Imaginary_tvOSTests.swift */; };
 		D21352FB1F75427000B5375B /* ImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E2E9821F7112CF001B4251 /* ImageFetcherTests.swift */; };
 		D21352FC1F75427000B5375B /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273453B1F7148C100BF063D /* TestHelper.swift */; };
 		D21352FD1F75427000B5375B /* MultipleImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345401F71619800BF063D /* MultipleImageFetcherTests.swift */; };
@@ -101,14 +99,10 @@
 		D21352B91F75266C00B5375B /* ButtonBackgroundDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBackgroundDisplayer.swift; sourceTree = "<group>"; };
 		D21352BB1F7527F700B5375B /* Button+ImaginaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+ImaginaryTests.swift"; sourceTree = "<group>"; };
 		D21352C21F7540E400B5375B /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D21352C41F7540E400B5375B /* Imaginary_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Imaginary_tvOS.h; sourceTree = "<group>"; };
-		D21352C51F7540E400B5375B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D21352CF1F7540E400B5375B /* Imaginary_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imaginary_tvOSTests.swift; sourceTree = "<group>"; };
-		D21352D11F7540E400B5375B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D21352E91F7541D300B5375B /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/tvOS/Cache.framework; sourceTree = "<group>"; };
 		D21352EF1F75423700B5375B /* Imaginary_tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Imaginary_tvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D21352F11F75423700B5375B /* Imaginary_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imaginary_tvOSTests.swift; sourceTree = "<group>"; };
 		D21352F31F75423700B5375B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D21353061F75487600B5375B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D273451B1F71448000BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D27345201F71448000BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
 		D273453B1F7148C100BF063D /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
@@ -200,31 +194,20 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
-		D21352C31F7540E400B5375B /* Imaginary-tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				D21352C41F7540E400B5375B /* Imaginary_tvOS.h */,
-				D21352C51F7540E400B5375B /* Info.plist */,
-			);
-			path = "Imaginary-tvOS";
-			sourceTree = "<group>";
-		};
-		D21352CE1F7540E400B5375B /* Imaginary-tvOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				D21352CF1F7540E400B5375B /* Imaginary_tvOSTests.swift */,
-				D21352D11F7540E400B5375B /* Info.plist */,
-			);
-			path = "Imaginary-tvOSTests";
-			sourceTree = "<group>";
-		};
 		D21352F01F75423700B5375B /* Imaginary_tvOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				D21352F11F75423700B5375B /* Imaginary_tvOSTests.swift */,
 				D21352F31F75423700B5375B /* Info.plist */,
 			);
 			path = Imaginary_tvOSTests;
+			sourceTree = "<group>";
+		};
+		D21353051F75487600B5375B /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				D21353061F75487600B5375B /* Info.plist */,
+			);
+			path = tvOS;
 			sourceTree = "<group>";
 		};
 		D273451A1F71448000BF063D /* iOS */ = {
@@ -319,8 +302,6 @@
 			children = (
 				BDE8FBCC1D1BFA4F00C5A212 /* Sources */,
 				D2E2E9811F7112CF001B4251 /* ImaginaryTests-iOS */,
-				D21352C31F7540E400B5375B /* Imaginary-tvOS */,
-				D21352CE1F7540E400B5375B /* Imaginary-tvOSTests */,
 				D21352F01F75423700B5375B /* Imaginary_tvOSTests */,
 				D5B274C41DB8B0A900992392 /* Frameworks */,
 				D5DF759C1C403E1000BF1AB6 /* Imaginary */,
@@ -343,6 +324,7 @@
 		D5DF759C1C403E1000BF1AB6 /* Imaginary */ = {
 			isa = PBXGroup;
 			children = (
+				D21353051F75487600B5375B /* tvOS */,
 				BDE8FBF31D1BFC7C00C5A212 /* Mac */,
 				D5DF759D1C403E1000BF1AB6 /* iOS */,
 			);
@@ -371,7 +353,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21352D21F7540E400B5375B /* Imaginary_tvOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,7 +694,6 @@
 				D21352FC1F75427000B5375B /* TestHelper.swift in Sources */,
 				D21352FD1F75427000B5375B /* MultipleImageFetcherTests.swift in Sources */,
 				D21352FE1F75427000B5375B /* SimpleImageDisplayerTests.swift in Sources */,
-				D21352F21F75423700B5375B /* Imaginary_tvOSTests.swift in Sources */,
 				D21353001F75427000B5375B /* Button+ImaginaryTests.swift in Sources */,
 				D21352FF1F75427000B5375B /* ImageView+ImaginaryTests.swift in Sources */,
 				D21352FB1F75427000B5375B /* ImageFetcherTests.swift in Sources */,
@@ -844,7 +824,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Imaginary-tvOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-tvOS";
@@ -878,7 +858,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Imaginary-tvOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-tvOS";
