@@ -1,7 +1,7 @@
 import Foundation
 import Cache
 
-extension ImageView {
+extension View {
   /// Set image with url
   ///
   /// - Parameters:
@@ -14,7 +14,7 @@ extension ImageView {
                        option: Option = Option(),
                        completion: Completion? = nil) {
     if let placeholder = placeholder {
-      image = placeholder
+      option.imageDisplayer.display(placeholder: placeholder, onto: self)
     }
 
     if let imageFetcher = imageFetcher {
@@ -73,3 +73,4 @@ extension ImageView {
 fileprivate struct AssociateKey {
   static var fetcher = 0
 }
+
