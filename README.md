@@ -8,6 +8,16 @@
 
 <img src="https://raw.githubusercontent.com/hyperoslo/Imaginary/master/Images/icon.png" alt="Brick Icon" align="right" />
 
+## Table of Contents
+
+- [Description](#description)
+- [Usage](#usage)
+  - [Basic](#basic)
+  - [Advanced](#advanced)
+  - [Configuration](#configuration)
+  - [ImageFetcher](#imagefetcher)
+- [Installation](#installation)
+
 ## Description
 
 Using remote images in an application is more or less a requirement these days.
@@ -16,119 +26,188 @@ This process should be easy, straight-forward and hassle free, and with
 a bunch of built-in unicorny features:
 
 - [x] Asynchronous image downloading
-- [x] Memory and disk [cache](https://github.com/hyperoslo/Cache)
+- [x] Memory and disk cache based on [Cache](https://github.com/hyperoslo/Cache)
 - [x] Image decompression
 - [x] Default transition animations
 - [x] Possibility to pre-process and modify the original image
+- [x] Work on any any view, including `ImageView`, `Button`, ...
+- [x] Support iOS, macOS
 
-## Regular usage
+## Usage
 
-### Set image with URL
+In the most common case, you want to set remote image from url onto `ImageView`. `Imaginary` does the heavy job of downloading and caching images. The caching is done via 2 cache layers (memory and disk) to allow fast retrieval. It also manages expiry for you. And the good news is that you can customise most of these features.
+
+## Basic
+
+#### Set image with URL
+
+Simply pass `URL` to fetch.
 
 ```swift
-let imageView = UIImageView()
 let imageUrl = URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
-
 imageView.setImage(url: imageUrl)
 ```
 
-### Apply placeholder images
+#### Use placeholder
+
+Placeholder is optional. But the users would be much pleased if they see something while images are being fetched.
 
 ```swift
-let imageView = UIImageView()
 let placeholder = UIImage(named: "PlaceholderImage")
 let imageUrl = URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
 
 imageView.setImage(url: imageUrl, placeholder: placeholder)
 ```
 
-### Use callback for when the image is set to the image view
-```swift
-let imageView = UIImageView()
-let imageUrl = URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+#### Use callback for when the image is fetched
 
-imageView.setImage(url: imageUrl) { image in
-  /// This closure gets called when the image is set to the image view.
+If you want to get more info on the fetching result, you can use pass closure as `completion`.
+
+```swift
+imageView.setImage(url: imageUrl) { result in
+  switch result {
+  case .value(let image):
+    print(image)
+  case .error(let error)
+    print(error)
+  }
 }
 ```
 
-## Advanced usage
+`result` is an enum `Result` that let you know if the operation succeeded or failed. The possible error is of `ImaginaryError`.
 
-### Images pre-processing
+## Advanced
 
-`preprocess` closure is a good place to modify the original image before
-it's being cached and displayed on the screen.
+### Passing option
+
+You can also pass `Option` when fetching images, it allows fine grain control over the fetching process. `Option` defaults to no pre processor and a displayer for `ImageView`.
+
+```
+let option = Option()
+imageView.setImage(url: imageUrl, option: option)
+```
+
+### Pre processing
+
+Images are fetched, decompressed and pre processed in the background. If you want to modify, simply implement your own `ImageProcessor` and specify it in the `Option`. The pre processing is done in the background, before the image is set into view.
 
 ```swift
-let imageView = UIImageView()
-let imageUrl = URL(string: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+public protocol ImageProcessor {
+  func process(image: Image) -> Image
+}
+```
 
-imageView.setImage(url: imageUrl, preprocess: { image in
-  /// Apply pre-process here ...
-  let effect = TintDrawer(tintColor: UIColor.blue)
-  return image.modify(with: effect) ?? image
+This is how you apply tint color before setting images.
+
+
+```swift
+let option = Option(imagePreprocessor: TintImageProcessor(tintColor: .orange))
+imageView.setImage(url: imageUrl, option: option)
+```
+
+`Imaginary` provides the following built in pre processors
+
+- [x] `TintImageProcessor`: apply tint color using color blend effect
+- [ ] `ResizeImageProcessor`: resize
+- [ ] `RoundImageProcessor`: make round corner
+
+### Displaying
+
+`Imaginary` supports any `View`, it can be `UIImageView`, `UIButton`, `MKAnnotationView`, `UINavigationBar`, ... As you can see, the fetching is the same, the difference is the way the image is displayed. To avoid code duplication, `Imaginary` take advantages of Swift protocols to allow fully customisation.
+
+You can roll out your own `displayer` by comforming to `ImageDisplayer` and specify that in `Option`
+
+```swift
+public protocol ImageDisplayer {
+  func display(placeholder: Image, onto view: View)
+  func display(image: Image, onto view: View)
+}
+```
+
+This is how you set image for `UIButton`
+
+```swift
+let option = Option(imageDisplayer: ButtonDisplayer())
+button.setImage(url: imageUrl, option: option)
+
+let option = Option(imageDisplayer: ImageDisplayer(animationOption: .transitionCurlUp))
+imageView.setImage(url: imageUrl, option: option)
+```
+
+These are the buit in displayers. You need to supply the correct displayer for your view
+
+- [x] ImageDisplayer: display onto `UI|NSImageView`. This is the default with cross dissolve animation.
+- [x] ButtonDisplayer: display onto `UI|NSButton` using `setImage(_ image: UIImage?, for state: UIControlState)`
+- [x] ButtonBackgroundDisplayer: display onto `UI|NSButton` using `setBackgroundImage(_ image: UIImage?, for state: UIControlState)`
+
+### Fetching
+
+`Imaginary` uses `ImageFetcher` under the hood. You can use your own fetcher and storage. The storage defaults to `Configuration.storage`, but you can use your own `Storage`, this allows your to group images for a particular feature.
+
+What if you want forced downloading and ignore storage? Then just pass `nil` to `storage`. This is how you can customise via `fetcherMaker`
+
+```swift
+var option = Option()
+option.fetcherMaker = {
+  return ImageFetcher(downloader: ImageDownloader(), storage: nil)
+}
+imageView.setImage(imageUrl, option: option)
+```
+
+For how to configure `storage`, see [Storage](https://github.com/hyperoslo/Cache#storage)
+
+## Configuration
+
+You can customise the overal experience with `Imaginary` through `Configuration`.
+
+- `trackBytesDownloaded`: track how many bytes have been used to download a specific image
+- `trackError`: track if any error occured when fetching an image.
+- `imageStorage`: the storage used by all fetching operations.
+
+## ImageFetcher
+
+`Imaginary` uses `ImageFetcher` under the hood. But you can use it as a standalone component.
+
+### ImageDownloader
+
+Its main task is to download image and perform all kinds of sanity checkings.
+
+```swift
+let downloader = ImageDownloder()
+downloader.download(url: imageUrl) { result in
+  // handle result
+}
+```
+
+### ImageFetcher
+
+This knows how to fetch and cache the images. It first checks memory and disk cache to see if there's image. If there isn't it will perform network download. You can optionally ignore the cache by setting storage to `nil`.
+
+```swift
+let fetcher = ImageFetcher(downloader: ImageDownloader(), storage: myStorage()
+fetcher.fetch(url: imageUrl) { result in
+  // handle result
+}
+```
+
+### MultipleImageFetcher
+
+It sometimes makes sense to pre download images beforehand to improve user experience. We have `MultipleImageFetcher` for you
+
+```swift
+let multipleFetcher = MultipleImageFetcher(fetcherMaker: {
+  return ImageFetcher()
+})
+
+multipleFetcher.fetch(urls: imageUrls, each: { result in
+  // handle when each image is fetched
+}, completion: {
+  // handle when all images are fetched
 })
 ```
 
-`TintDrawer`, which comes together with **Imaginary**, is an implementation of
-the color blend effect. For the time being it's the only built-in
-"preprocessor", but you have all the power in your hands to do apply custom
-filters and transformations to make the image shine.
+This is ideal for the new [prefetching mode in UICollectionView](https://developer.apple.com/documentation/uikit/uicollectionview/1771771-prefetchingenabled)
 
-### Transition animations
-
-If you're not satisfied with default transition animations there is always a
-chance to improve or even disable them:
-
-```swift
-Imaginary.preConfigure = { imageView in
-  // Prepare the image view before the image is fetched.
-}
-
-Imaginary.transitionClosure = { imageView, newImage in
-  // Transition animations go here.
-}
-
-Imaginary.postConfigure = { imageView in
-  // Setup the image view when the image is set.
-}
-```
-
-### ImageManager
-
-There are usecases where you need to fetch an image from a remote location without using an image view.
-This is where `ImageManager` comes in. With `ImageManager` you can asynchronously fetch images by using `fetchImage(from:)`
-
-```swift
-imageManager.fetchImage(from: URL(string: "http://remote-location/image.png")!) { image in
-  // Handle image
-}
-```
-
-By default, `ImageManager` uses the same cache storage as the image view extension. If you want to opt-out from using
-cache, you can set `useCache` to `false` at the call-site.
-
-```swift
-imageManager.fetchImage(from: URL(string: "http://remote-location/image.png")!, useCache: false) { image in
-  // Handle image
-}
-```
-
-
-### Cache
-
-**Imaginary** uses [Cache](https://github.com/hyperoslo/Cache) under the hood
-to store images in memory and on the disk. It's possible to change the default
-`Cache<Image>` instance and use your custom configured cache:
-
-```swift
-Imaginary.Configuration.imageCache = Cache<Image>(
-  name: "Imaginary",
-  config: customConfig
-)
-```
-
-Read more about cache configuration [here](https://github.com/hyperoslo/Cache#hybrid-cache)
 
 ## Installation
 
