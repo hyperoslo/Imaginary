@@ -29,14 +29,14 @@ class ViewController: NSViewController {
 
     let layout = NSCollectionViewFlowLayout()
     layout.itemSize = NSSize(width: 300.0, height: 150.0)
-    layout.sectionInset = EdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
+    layout.sectionInset = NSEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
     layout.minimumInteritemSpacing = 4.0
     layout.minimumLineSpacing = 4.0
     collectionView.collectionViewLayout = layout
 
     collectionView.layer?.backgroundColor = NSColor.black.cgColor
-
-    collectionView.register(NSNib(nibNamed: "Cell", bundle: nil), forItemWithIdentifier: "Cell")
+    collectionView.register(NSNib(nibNamed: NSNib.Name(rawValue: "Cell"), bundle: nil)!,
+                            forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell"))
   }
 }
 
@@ -52,11 +52,11 @@ extension ViewController: NSCollectionViewDataSource {
 
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
 
-    let item = collectionView.makeItem(withIdentifier: "Cell", for: indexPath)
+    let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell"), for: indexPath)
     guard let cell = item as? Cell else { return item }
 
     let value = values[(indexPath as NSIndexPath).item]
-    cell.imageView?.setImage(url: value, placeholder: Image(named: "placeholder"))
+    cell.imageView?.setImage(url: value, placeholder: Image(named: NSImage.Name(rawValue: "placeholder")))
 
     return cell
   }
