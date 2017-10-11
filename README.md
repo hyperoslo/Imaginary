@@ -30,8 +30,8 @@ a bunch of built-in unicorny features:
 - [x] Image decompression
 - [x] Default transition animations
 - [x] Possibility to pre-process and modify the original image
-- [x] Work on any any view, including `ImageView`, `Button`, ...
-- [x] Support iOS, tvOS, macOS
+- [x] Works on any view, including `ImageView`, `Button`, ...
+- [x] Supports iOS, tvOS, macOS
 
 ## Usage
 
@@ -61,7 +61,7 @@ imageView.setImage(url: imageUrl, placeholder: placeholder)
 
 #### Use callback for when the image is fetched
 
-If you want to get more info on the fetching result, you can use pass closure as `completion`.
+If you want to get more info on the fetching result, you can pass a closure as `completion`.
 
 ```swift
 imageView.setImage(url: imageUrl) { result in
@@ -80,16 +80,16 @@ imageView.setImage(url: imageUrl) { result in
 
 ### Passing option
 
-You can also pass `Option` when fetching images, it allows fine grain control over the fetching process. `Option` defaults to no pre processor and a displayer for `ImageView`.
+You can also pass `Option` when fetching images; it allows fine grain control over the fetching process. `Option` defaults to no pre-processor and a displayer for `ImageView`.
 
 ```
 let option = Option()
 imageView.setImage(url: imageUrl, option: option)
 ```
 
-### Pre processing
+### Pre-processing
 
-Images are fetched, decompressed and pre processed in the background. If you want to modify, simply implement your own `ImageProcessor` and specify it in the `Option`. The pre processing is done in the background, before the image is set into view.
+Images are fetched, decompressed and pre-processed in the background. If you want to modify, simply implement your own `ImageProcessor` and specify it in the `Option`. The pre-processing is done in the background, before the image is set into view.
 
 ```swift
 public protocol ImageProcessor {
@@ -105,7 +105,7 @@ let option = Option(imagePreprocessor: TintImageProcessor(tintColor: .orange))
 imageView.setImage(url: imageUrl, option: option)
 ```
 
-`Imaginary` provides the following built in pre processors
+`Imaginary` provides the following built in pre-processors
 
 - [x] `TintImageProcessor`: apply tint color using color blend effect
 - [ ] `ResizeImageProcessor`: resize
@@ -124,7 +124,7 @@ public protocol ImageDisplayer {
 }
 ```
 
-This is how you set image for `UIButton`
+This is how you set an image for `UIButton`
 
 ```swift
 let option = Option(imageDisplayer: ButtonDisplayer())
