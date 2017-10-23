@@ -15,7 +15,7 @@ public class ImageDownloader {
 
   // MARK: - Operation
 
-  func download(url: URL, completion: @escaping (Result) -> Void) {
+  public func download(url: URL, completion: @escaping (Result) -> Void) {
     active = true
 
     self.task = self.session.dataTask(with: url,

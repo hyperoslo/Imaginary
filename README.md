@@ -173,7 +173,7 @@ You can customise the overal experience with `Imaginary` through `Configuration`
 Its main task is to download image and perform all kinds of sanity checkings.
 
 ```swift
-let downloader = ImageDownloder()
+let downloader = ImageDownloader()
 downloader.download(url: imageUrl) { result in
   // handle result
 }

@@ -73,4 +73,3 @@ extension View {
 fileprivate struct AssociateKey {
   static var fetcher = 0
 }
-
