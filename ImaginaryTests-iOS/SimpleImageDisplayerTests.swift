@@ -1,6 +1,6 @@
 import XCTest
 import Cache
-@testable import Imaginary
+import Imaginary
 
 private final class SimpleImageDisplayerTests: XCTestCase {
   func testDisplayer() {
