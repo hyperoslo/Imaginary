@@ -1,6 +1,6 @@
 import XCTest
 import Cache
-@testable import Imaginary
+import Imaginary
 
 private final class ImageView_ImaginaryTests: XCTestCase {
   func testSetImage() {
