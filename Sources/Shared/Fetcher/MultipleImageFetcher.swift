@@ -6,7 +6,7 @@ public class MultipleImageFetcher {
   private var fetchers: [ImageFetcher] = []
   private let fetcherMaker: () -> ImageFetcher
 
-  init(fetcherMaker: @escaping () -> ImageFetcher) {
+  public init(fetcherMaker: @escaping () -> ImageFetcher) {
     self.fetcherMaker = fetcherMaker
   }
 
