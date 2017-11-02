@@ -4,9 +4,8 @@ machine:
 
 dependencies:
   override:
+    - rm -rf Carthage
     - carthage update
-  cache_directories:
-    - "Carthage"
 
 test:
   override:
