@@ -603,7 +603,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/tvOS/Cache.framework",
-				"$(SRCROOT)/Carthage/Build/tvOS/SwiftHash.framework",
 			);
 			outputPaths = (
 			);
@@ -618,7 +617,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Cache.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftHash.framework",
 			);
 			outputPaths = (
 			);
