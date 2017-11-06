@@ -1,6 +1,6 @@
 # Imaginary
 
-[![CI Status](http://img.shields.io/travis/hyperoslo/Imaginary.svg?style=flat)](https://travis-ci.org/hyperoslo/Imaginary)
+[![CI Status](https://circleci.com/gh/hyperoslo/Imaginary.png)](https://circleci.com/gh/hyperoslo/Imaginary)
 [![Version](https://img.shields.io/cocoapods/v/Imaginary.svg?style=flat)](http://cocoadocs.org/docsets/Imaginary)
 [![License](https://img.shields.io/cocoapods/l/Imaginary.svg?style=flat)](http://cocoadocs.org/docsets/Imaginary)
 [![Platform](https://img.shields.io/cocoapods/p/Imaginary.svg?style=flat)](http://cocoadocs.org/docsets/Imaginary)
