@@ -450,7 +450,6 @@
 				D5DF758D1C403D8200BF1AB6 /* Frameworks */,
 				D5DF758E1C403D8200BF1AB6 /* Headers */,
 				D5DF758F1C403D8200BF1AB6 /* Resources */,
-				D5DF75B31C403FC700BF1AB6 /* Run Script */,
 				BD58C3AF1CF30382003F7141 /* ShellScript */,
 			);
 			buildRules = (
@@ -618,21 +617,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Cache.framework",
 			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		D5DF75B31C403FC700BF1AB6 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Cache.framework",
-			);
-			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
