@@ -68,7 +68,7 @@ imageView.setImage(url: imageUrl) { result in
   switch result {
   case .value(let image):
     print(image)
-  case .error(let error)
+  case .error(let error):
     print(error)
   }
 }
