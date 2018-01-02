@@ -164,7 +164,7 @@ The storage defaults to `Configuration.storage`, but you can use your own `Stora
 ```swift
 var option = Option()
 option.storageMaker = {
-  return Configuration.storage
+  return Configuration.imageStorage
 }
 ```
 
