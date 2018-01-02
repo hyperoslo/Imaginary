@@ -19,7 +19,11 @@ extension View {
 
     cancelImageFetch()
 
-    self.imageFetcher = option.fetcherMaker()
+    self.imageFetcher = ImageFetcher(
+      downloader: ImageDownloader(modifyRequest: option.modifyRequest),
+      storage: option.storageMaker()
+    )
+
     self.imageFetcher?.fetch(url: url, completion: { [weak self] result in
       guard let `self` = self else {
         return
