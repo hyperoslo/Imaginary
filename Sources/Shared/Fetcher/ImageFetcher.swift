@@ -12,8 +12,7 @@ public class ImageFetcher {
   /// - Parameters:
   ///   - downloader: Used to download images.
   ///   - storage: Used to store downloaded images. Pass nil to ignore cache
-  public init(downloader: ImageDownloader = ImageDownloader(),
-              storage: Storage? = Configuration.imageStorage) {
+  public init(downloader: ImageDownloader, storage: Storage?) {
     self.downloader = downloader
     self.storage = storage
   }
