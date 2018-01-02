@@ -23,7 +23,7 @@ public class ImageDownloader {
   public func download(url: URL, completion: @escaping (Result) -> Void) {
     active = true
 
-    var request = modifyRequest(URLRequest(url: url))
+    let request = modifyRequest(URLRequest(url: url))
     self.task = self.session.dataTask(with: request,
                                       completionHandler: { [weak self] data, response, error in
       guard let `self` = self, self.active else {
