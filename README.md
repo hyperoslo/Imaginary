@@ -144,7 +144,6 @@ These are the buit in displayers. You need to supply the correct displayer for y
 
 `Imaginary` uses `ImageFetcher` under the hood, which has downloader and storage.  You can specify your own `ImageDownloader` together with a `modifyRequest` closure, there you can change request body or add more HTTP headers.
 
-
 ```swift
 var option = Option()
 option.downloaderMaker = {
@@ -158,10 +157,7 @@ option.downloaderMaker = {
 imageView.setImage(imageUrl, option: option)
 ```
 
-
 ### Caching
-
-
 
 The storage defaults to `Configuration.storage`, but you can use your own `Storage`, this allows you to group saved images for particular feature. What if you want forced downloading and ignore storage? Then simply return `nil`. For how to configure `storage`, see [Storage](https://github.com/hyperoslo/Cache#storage)
 
@@ -171,7 +167,6 @@ option.storageMaker = {
   return Configuration.storage
 }
 ```
-
 
 ## Configuration
 
