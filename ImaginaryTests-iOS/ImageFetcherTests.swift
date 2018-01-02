@@ -5,7 +5,7 @@ import Cache
 private final class ImageFetcherTests: XCTestCase {
   var storage: Storage!
   var fetcher: ImageFetcher!
-  fileprivate var mockDownloader = MockDownloader()
+  fileprivate var mockDownloader = MockDownloader(modifyRequest: { $0 })
   let url = URL(string: "https://no.hyper/imaginary.png")!
 
   override func setUp() {

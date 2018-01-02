@@ -17,11 +17,9 @@ public struct Option {
     return Configuration.imageStorage
   }
 
-  /// Modify request before it is sent
-  public var modifyRequest: (URLRequest) -> URLRequest = {
-    var request = $0
-    request.httpMethod = "GET"
-    return request
+  /// Specify ImageDownloader and request modifier
+  public var downloaderMaker: () -> ImageDownloader = {
+    return ImageDownloader(modifyRequest: { $0 })
   }
 
   public init(imagePreprocessor: ImageProcessor? = nil,

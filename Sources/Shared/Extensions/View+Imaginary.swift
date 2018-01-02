@@ -20,7 +20,7 @@ extension View {
     cancelImageFetch()
 
     self.imageFetcher = ImageFetcher(
-      downloader: ImageDownloader(modifyRequest: option.modifyRequest),
+      downloader: option.downloaderMaker(),
       storage: option.storageMaker()
     )
 
