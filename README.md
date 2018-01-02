@@ -140,21 +140,33 @@ These are the buit in displayers. You need to supply the correct displayer for y
 - [x] ButtonDisplayer: display onto `UI|NSButton` using `setImage(_ image: UIImage?, for state: UIControlState)`
 - [x] ButtonBackgroundDisplayer: display onto `UI|NSButton` using `setBackgroundImage(_ image: UIImage?, for state: UIControlState)`
 
-### Fetching
+### Downloading
 
-`Imaginary` uses `ImageFetcher` under the hood. You can use your own fetcher and storage. The storage defaults to `Configuration.storage`, but you can use your own `Storage`, this allows your to group images for a particular feature.
-
-What if you want forced downloading and ignore storage? Then just pass `nil` to `storage`. This is how you can customise via `fetcherMaker`
+`Imaginary` uses `ImageFetcher` under the hood, which has downloader and storage.  You can specify your own `ImageDownloader` together with a `modifyRequest` closure, there you can change request body or add more HTTP headers.
 
 ```swift
 var option = Option()
-option.fetcherMaker = {
-  return ImageFetcher(downloader: ImageDownloader(), storage: nil)
+option.downloaderMaker = {
+  return ImageDownloader(modifyRequest: { 
+    var request = $0
+    request.addValue("Bearer 123", forHTTPHeaderField: "Authorization")
+    return request 
+  })
 }
+
 imageView.setImage(imageUrl, option: option)
 ```
 
-For how to configure `storage`, see [Storage](https://github.com/hyperoslo/Cache#storage)
+### Caching
+
+The storage defaults to `Configuration.storage`, but you can use your own `Storage`, this allows you to group saved images for particular feature. What if you want forced downloading and ignore storage? Then simply return `nil`. For how to configure `storage`, see [Storage](https://github.com/hyperoslo/Cache#storage)
+
+```swift
+var option = Option()
+option.storageMaker = {
+  return Configuration.imageStorage
+}
+```
 
 ## Configuration
 

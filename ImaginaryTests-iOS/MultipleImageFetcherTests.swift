@@ -27,7 +27,7 @@ private final class MultipleImageFetcherTests: XCTestCase {
     ]
 
     let multipleFetcher = MultipleImageFetcher(fetcherMaker: {
-      return ImageFetcher(downloader: MockDownloader(), storage: self.storage)
+      return ImageFetcher(downloader: MockDownloader(modifyRequest: { $0 }), storage: self.storage)
     })
 
     multipleFetcher.fetch(urls: urls, each: { result in

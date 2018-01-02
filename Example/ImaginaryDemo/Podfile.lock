@@ -1,7 +1,7 @@
 PODS:
   - Cache (4.0.0):
     - SwiftHash (~> 2.0.0)
-  - Imaginary (3.0.0):
+  - Imaginary (3.0.2):
     - Cache (~> 4.0)
   - SwiftHash (2.0.0)
 
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Cache: e73353960c614ab79b0c6911b8c39da05b334470
-  Imaginary: 61c53e76b1b6f84cb86e98b0b8d47b535af89204
+  Imaginary: ef0a73d0d09a1191f9e6763d6d4b6424176a6b4e
   SwiftHash: d2e09b13495447178cdfb8e46e54a5c46f15f5a9
 
 PODFILE CHECKSUM: 317cccf04e61f3f6f7e8a7e2dbc1ad0f7fa2beee

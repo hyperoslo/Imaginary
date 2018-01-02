@@ -3,14 +3,19 @@ import Foundation
 /// Download image from url
 public class ImageDownloader {
   fileprivate let session: URLSession
+  fileprivate let modifyRequest: (URLRequest) -> (URLRequest)
 
   fileprivate var task: URLSessionDataTask?
   fileprivate var active = false
 
   // MARK: - Initialization
 
-  public init(session: URLSession = URLSession.shared) {
+  public init(
+    session: URLSession = URLSession.shared,
+    modifyRequest: @escaping (URLRequest) -> (URLRequest)) {
+
     self.session = session
+    self.modifyRequest = modifyRequest
   }
 
   // MARK: - Operation
@@ -18,7 +23,8 @@ public class ImageDownloader {
   public func download(url: URL, completion: @escaping (Result) -> Void) {
     active = true
 
-    self.task = self.session.dataTask(with: url,
+    let request = modifyRequest(URLRequest(url: url))
+    self.task = self.session.dataTask(with: request,
                                       completionHandler: { [weak self] data, response, error in
       guard let `self` = self, self.active else {
         return

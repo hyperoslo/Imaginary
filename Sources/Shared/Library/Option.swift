@@ -10,11 +10,16 @@ public struct Option {
   /// To apply transition or custom animation when display image
   public let imageDisplayer: ImageDisplayer
 
-  /// How to make ImageFetcher to fetch.
-  /// Defaults to ImageFetcher with Configuration.imageStorage, specify nil to ignore caching.
-  public var fetcherMaker: () -> ImageFetcher = {
-    return ImageFetcher(downloader: ImageDownloader(),
-                        storage: Configuration.imageStorage)
+  /// Specify Storage for memory and disk cache.
+  /// Defaults to Configuration.imageStorage.
+  /// Return nil to ignore cache
+  public var storageMaker: () -> Storage? = {
+    return Configuration.imageStorage
+  }
+
+  /// Specify ImageDownloader and request modifier
+  public var downloaderMaker: () -> ImageDownloader = {
+    return ImageDownloader(modifyRequest: { $0 })
   }
 
   public init(imagePreprocessor: ImageProcessor? = nil,

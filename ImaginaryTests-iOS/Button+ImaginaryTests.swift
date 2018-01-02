@@ -9,12 +9,16 @@ private final class Button_ImaginaryTests: XCTestCase {
     let button = UIButton()
     let placeholder = TestHelper.image(.green,
                                        size: CGSize(width: 50, height: 50))
-    let mockDownloader = MockDownloader()
+    let mockDownloader = MockDownloader(modifyRequest: { $0 })
 
     // Mock the Fetcher
     var option = Option(imageDisplayer: ButtonDisplayer())
-    option.fetcherMaker = {
-      return ImageFetcher(downloader: mockDownloader, storage: nil)
+    option.downloaderMaker = {
+      return mockDownloader
+    }
+
+    option.storageMaker = {
+      return nil
     }
 
     button.setImage(
