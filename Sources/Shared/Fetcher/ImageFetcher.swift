@@ -30,7 +30,11 @@ public class ImageFetcher {
   public func fetch(url: URL, completion: @escaping (Result) -> Void) {
     // Check if we should ignore storage
     guard let storage = storage else {
-      fetchFromNetwork(url: url, completion: completion)
+      if url.isFileURL {
+        self.fetchFromDisk(url: url, completion: completion)
+      } else {
+        self.fetchFromNetwork(url: url, completion: completion)
+      }
       return
     }
 
@@ -44,8 +48,11 @@ public class ImageFetcher {
       case .value(let wrapper):
         completion(.value(wrapper.image))
       case .error:
-        // Try to download
-        self.fetchFromNetwork(url: url, completion: completion)
+        if url.isFileURL {
+          self.fetchFromDisk(url: url, completion: completion)
+        } else {
+          self.fetchFromNetwork(url: url, completion: completion)
+        }
       }
     })
   }
@@ -68,4 +75,29 @@ public class ImageFetcher {
       }
     })
   }
+
+  private func fetchFromDisk(url: URL, completion: @escaping (Result) -> Void) {
+    DispatchQueue.global(qos: .utility).async {
+      [weak self] in
+      guard let `self` = self else {
+        return
+      }
+
+      let fm = FileManager.default
+      guard let data = fm.contents(atPath: url.path) else {
+        completion(.error(ImaginaryError.invalidData))
+        return
+      }
+
+      guard let image = Decompressor().decompress(data: data) else {
+        completion(.error(ImaginaryError.conversionError))
+        return
+      }
+
+      // Try saving to storage
+      try? self.storage?.setObject(ImageWrapper(image: image), forKey: url.absoluteString)
+      completion(.value(image))
+    }
+  }
+
 }
