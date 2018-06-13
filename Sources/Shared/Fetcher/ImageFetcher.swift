@@ -5,14 +5,14 @@ import Cache
 /// It can be fetched from storage or network.
 public class ImageFetcher {
   private let downloader: ImageDownloader
-  private let storage: Storage<?
+  private let storage: Storage<Image>?
 
   /// Initialize ImageFetcehr
   ///
   /// - Parameters:
   ///   - downloader: Used to download images.
   ///   - storage: Used to store downloaded images. Pass nil to ignore cache
-  public init(downloader: ImageDownloader, storage: Storage?) {
+  public init(downloader: ImageDownloader, storage: Storage<Image>?) {
     self.downloader = downloader
     self.storage = storage
   }
@@ -39,14 +39,14 @@ public class ImageFetcher {
     }
 
     // Try fetching from storage first
-    storage.async.object(ofType: ImageWrapper.self, forKey: url.absoluteString, completion: { [weak self] result in
+    storage.async.object(forKey: url.absoluteString, completion: { [weak self] result in
       guard let `self` = self else {
         return
       }
 
       switch result {
-      case .value(let wrapper):
-        completion(.value(wrapper.image))
+      case .value(let image):
+        completion(.value(image))
       case .error:
         if url.isFileURL {
           self.fetchFromDisk(url: url, completion: completion)
@@ -68,7 +68,7 @@ public class ImageFetcher {
       switch result {
       case .value(let image):
         // Try saving to storage
-        try? self.storage?.setObject(ImageWrapper(image: image), forKey: url.absoluteString)
+        try? self.storage?.setObject(image, forKey: url.absoluteString)
         completion(.value(image))
       case .error(let error):
         completion(.error(error))
@@ -95,7 +95,7 @@ public class ImageFetcher {
       }
 
       // Try saving to storage
-      try? self.storage?.setObject(ImageWrapper(image: image), forKey: url.absoluteString)
+      try? self.storage?.setObject(image, forKey: url.absoluteString)
       completion(.value(image))
     }
   }

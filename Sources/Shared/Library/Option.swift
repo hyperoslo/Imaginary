@@ -13,7 +13,7 @@ public struct Option {
   /// Specify Storage for memory and disk cache.
   /// Defaults to Configuration.imageStorage.
   /// Return nil to ignore cache
-  public var storageMaker: () -> Storage? = {
+  public var storageMaker: () -> Storage<Image>? = {
     return Configuration.imageStorage
   }
 
