@@ -102,7 +102,6 @@
 				295D77321C07122700C43B07 /* Frameworks */,
 				295D77331C07122700C43B07 /* Resources */,
 				D1AAB81F955C622F64DA8840 /* [CP] Embed Pods Frameworks */,
-				E41A79301CD7776E3513E3F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,32 +185,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ImaginaryDemo/Pods-ImaginaryDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaginaryDemo/Pods-ImaginaryDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E41A79301CD7776E3513E3F9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaginaryDemo/Pods-ImaginaryDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
