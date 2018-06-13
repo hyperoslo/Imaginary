@@ -5,7 +5,7 @@ import Cache
 /// It can be fetched from storage or network.
 public class ImageFetcher {
   private let downloader: ImageDownloader
-  private let storage: Storage?
+  private let storage: Storage<?
 
   /// Initialize ImageFetcehr
   ///
