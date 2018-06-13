@@ -3,12 +3,12 @@ import Cache
 import Imaginary
 
 private final class MultipleImageFetcherTests: XCTestCase {
-  var storage: Storage!
+  var storage: Storage<Image>!
 
   override func setUp() {
     super.setUp()
 
-    storage = try! Storage(diskConfig: DiskConfig(name: "Floppy"))
+    storage = try! Storage<Image>(diskConfig: DiskConfig(name: "Floppy"), memoryConfig: MemoryConfig(), transformer: TransformerFactory.forImage())
   }
 
   override func tearDown() {

@@ -83,8 +83,8 @@ public class ImageFetcher {
         return
       }
 
-      let fm = FileManager.default
-      guard let data = fm.contents(atPath: url.path) else {
+      let fileManager = FileManager.default
+      guard let data = fileManager.contents(atPath: url.path) else {
         completion(.error(ImaginaryError.invalidData))
         return
       }
