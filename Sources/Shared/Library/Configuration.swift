@@ -16,13 +16,17 @@ public struct Configuration {
   public static var trackError: ((URL, Error) -> Void)?
 
   /// The default storage
-  public static var imageStorage: Storage = {
+  public static var imageStorage: Storage<Image> = {
     let diskConfig = DiskConfig(name: "Imaginary",
                                 expiry: .date(Date().addingTimeInterval(60 * 60 * 24 * 3)))
     let memoryConfig = MemoryConfig(countLimit: 10, totalCostLimit: 0)
 
     do {
-      return try Storage(diskConfig: diskConfig, memoryConfig: memoryConfig)
+      return try Storage<Image>(
+        diskConfig: diskConfig,
+        memoryConfig: memoryConfig,
+        transformer: TransformerFactory.forImage()
+      )
     } catch {
       fatalError(error.localizedDescription)
     }
