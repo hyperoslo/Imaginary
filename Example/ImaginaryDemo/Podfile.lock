@@ -1,5 +1,5 @@
 PODS:
-  - Cache (5.0.0)
+  - Cache (5.1.0)
   - Imaginary (4.0.0):
     - Cache (~> 5.0)
 
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Cache: fae4826ba52d7a5d9a3a0ad6fe73e3501a82964f
+  Cache: 7737c595aae7d94c7c0feca2c887288624e3b07e
   Imaginary: 441fc8390e20f99e2025cc40643acc037e84dd30
 
 PODFILE CHECKSUM: 317cccf04e61f3f6f7e8a7e2dbc1ad0f7fa2beee
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

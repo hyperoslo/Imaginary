@@ -35,7 +35,7 @@ class ViewController: NSViewController {
     collectionView.collectionViewLayout = layout
 
     collectionView.layer?.backgroundColor = NSColor.black.cgColor
-    collectionView.register(NSNib(nibNamed: NSNib.Name(rawValue: "Cell"), bundle: nil)!,
+    collectionView.register(NSNib(nibNamed: "Cell", bundle: nil)!,
                             forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell"))
   }
 }
@@ -56,7 +56,7 @@ extension ViewController: NSCollectionViewDataSource {
     guard let cell = item as? Cell else { return item }
 
     let value = values[(indexPath as NSIndexPath).item]
-    cell.imageView?.setImage(url: value, placeholder: Image(named: NSImage.Name(rawValue: "placeholder")))
+    cell.imageView?.setImage(url: value, placeholder: Image(named:"placeholder"))
 
     return cell
   }
