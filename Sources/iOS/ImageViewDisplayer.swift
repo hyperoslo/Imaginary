@@ -3,9 +3,9 @@ import UIKit
 /// Used to set image onto ImageView
 public class ImageViewDisplayer: ImageDisplayer {
 
-  private let animationOption: UIViewAnimationOptions
+  private let animationOption: UIView.AnimationOptions
 
-  public init(animationOption: UIViewAnimationOptions = .transitionCrossDissolve) {
+  public init(animationOption: UIView.AnimationOptions = .transitionCrossDissolve) {
     self.animationOption = animationOption
   }
 

@@ -374,8 +374,7 @@
 				BDE8FBE51D1BFB9F00C5A212 /* Frameworks */,
 				BDE8FBE61D1BFB9F00C5A212 /* Headers */,
 				BDE8FBE71D1BFB9F00C5A212 /* Resources */,
-				BDE8FBF21D1BFBB300C5A212 /* ShellScript */,
-				BDE8FBF11D1BFBAB00C5A212 /* ShellScript */,
+				BDE8FBF21D1BFBB300C5A212 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -450,7 +449,6 @@
 				D5DF758D1C403D8200BF1AB6 /* Frameworks */,
 				D5DF758E1C403D8200BF1AB6 /* Headers */,
 				D5DF758F1C403D8200BF1AB6 /* Resources */,
-				BD58C3AF1CF30382003F7141 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -555,33 +553,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BD58C3AF1CF30382003F7141 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		BDE8FBF11D1BFBAB00C5A212 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		BDE8FBF21D1BFBB300C5A212 /* ShellScript */ = {
+		BDE8FBF21D1BFBB300C5A212 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -589,11 +561,12 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/Cache.framework",
 			);
+			name = Carthage;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		D21352FA1F75425600B5375B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
