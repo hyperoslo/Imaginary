@@ -13,16 +13,22 @@ extension View {
                        placeholder: Image? = nil,
                        option: Option = Option(),
                        completion: Completion? = nil) {
-    if let placeholder = placeholder {
-      option.imageDisplayer.display(placeholder: placeholder, onto: self)
-    }
-
     cancelImageFetch()
 
     self.imageFetcher = ImageFetcher(
       downloader: option.downloaderMaker(),
       storage: option.storageMaker()
     )
+
+    var shouldSetPlaceholder = placeholder != nil
+
+    if let storage = option.storageMaker(), let _ = try? storage.entry(forKey: url.absoluteString) {
+        shouldSetPlaceholder = false
+    }
+
+    if shouldSetPlaceholder, let placeholder = placeholder {
+        option.imageDisplayer.display(placeholder: placeholder, onto: self)
+    }
 
     self.imageFetcher?.fetch(url: url, completion: { [weak self] result in
       guard let `self` = self else {
