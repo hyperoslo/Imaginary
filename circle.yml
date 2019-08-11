@@ -1,6 +1,6 @@
 machine:
   xcode:
-    version: "9.0"
+    version: "10.3.0"
 
 dependencies:
   override:
