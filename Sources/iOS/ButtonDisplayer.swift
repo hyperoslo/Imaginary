@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 
 /// Used to set image onto Button
@@ -24,3 +25,4 @@ public class ButtonDisplayer: ImageDisplayer {
     }, completion: nil)
   }
 }
+#endif

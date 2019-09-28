@@ -3,18 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE8FBF51D1BFC8D00C5A212 /* Cache.framework */; };
+		63CFCF47233F76770040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF46233F76770040A04F /* Cache */; };
+		63CFCF49233F76B70040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF48233F76B70040A04F /* Cache */; };
+		63CFCF4B233F76BC0040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF4A233F76BC0040A04F /* Cache */; };
 		D21352B51F7523BF00B5375B /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B41F7523BF00B5375B /* View+Imaginary.swift */; };
 		D21352B61F7523BF00B5375B /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B41F7523BF00B5375B /* View+Imaginary.swift */; };
 		D21352B81F75266200B5375B /* ButtonDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B71F75266200B5375B /* ButtonDisplayer.swift */; };
 		D21352BA1F75266C00B5375B /* ButtonBackgroundDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B91F75266C00B5375B /* ButtonBackgroundDisplayer.swift */; };
 		D21352BC1F7527F700B5375B /* Button+ImaginaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352BB1F7527F700B5375B /* Button+ImaginaryTests.swift */; };
-		D21352D91F7540F700B5375B /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451B1F71448000BF063D /* Decompressor.swift */; };
-		D21352DA1F7540F700B5375B /* ImageViewDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C41F7259F4001963ED /* ImageViewDisplayer.swift */; };
+		D21352D91F7540F700B5375B /* DecompressorUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451B1F71448000BF063D /* DecompressorUIKit.swift */; };
+		D21352DA1F7540F700B5375B /* ImageViewDisplayerUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C41F7259F4001963ED /* ImageViewDisplayerUIKit.swift */; };
 		D21352DB1F7540F700B5375B /* TintImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C81F725CE1001963ED /* TintImageProcessor.swift */; };
 		D21352DC1F7540F700B5375B /* ButtonDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B71F75266200B5375B /* ButtonDisplayer.swift */; };
 		D21352DD1F7540F700B5375B /* ButtonBackgroundDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B91F75266C00B5375B /* ButtonBackgroundDisplayer.swift */; };
@@ -29,7 +31,6 @@
 		D21352E61F75410100B5375B /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C80B1F7252C300D2B8EF /* ImageFetcher.swift */; };
 		D21352E71F75410100B5375B /* MultipleImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C80C1F7252C300D2B8EF /* MultipleImageFetcher.swift */; };
 		D21352E81F75410300B5375B /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B41F7523BF00B5375B /* View+Imaginary.swift */; };
-		D21352EA1F7541D300B5375B /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21352E91F7541D300B5375B /* Cache.framework */; };
 		D21352FB1F75427000B5375B /* ImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E2E9821F7112CF001B4251 /* ImageFetcherTests.swift */; };
 		D21352FC1F75427000B5375B /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273453B1F7148C100BF063D /* TestHelper.swift */; };
 		D21352FD1F75427000B5375B /* MultipleImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345401F71619800BF063D /* MultipleImageFetcherTests.swift */; };
@@ -38,13 +39,13 @@
 		D21353001F75427000B5375B /* Button+ImaginaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352BB1F7527F700B5375B /* Button+ImaginaryTests.swift */; };
 		D21353011F75429B00B5375B /* Imaginary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21352C21F7540E400B5375B /* Imaginary.framework */; };
 		D21353021F7542C800B5375B /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21352E91F7541D300B5375B /* Cache.framework */; };
-		D273452B1F71448000BF063D /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451B1F71448000BF063D /* Decompressor.swift */; };
-		D27345381F71448900BF063D /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345201F71448000BF063D /* Decompressor.swift */; };
+		D273452B1F71448000BF063D /* DecompressorUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451B1F71448000BF063D /* DecompressorUIKit.swift */; };
+		D27345381F71448900BF063D /* DecompressorCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345201F71448000BF063D /* DecompressorCocoa.swift */; };
 		D273453A1F7147BE00BF063D /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 		D273453C1F7148C100BF063D /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273453B1F7148C100BF063D /* TestHelper.swift */; };
 		D27345411F71619800BF063D /* MultipleImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345401F71619800BF063D /* MultipleImageFetcherTests.swift */; };
-		D2AFA1C51F7259F4001963ED /* ImageViewDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C41F7259F4001963ED /* ImageViewDisplayer.swift */; };
-		D2AFA1C71F725A3A001963ED /* ImageViewDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C61F725A3A001963ED /* ImageViewDisplayer.swift */; };
+		D2AFA1C51F7259F4001963ED /* ImageViewDisplayerUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C41F7259F4001963ED /* ImageViewDisplayerUIKit.swift */; };
+		D2AFA1C71F725A3A001963ED /* ImageViewDisplayerCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C61F725A3A001963ED /* ImageViewDisplayerCocoa.swift */; };
 		D2AFA1C91F725CE1001963ED /* TintImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C81F725CE1001963ED /* TintImageProcessor.swift */; };
 		D2AFA1CB1F726DEF001963ED /* SimpleImageDisplayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1CA1F726DEF001963ED /* SimpleImageDisplayerTests.swift */; };
 		D2AFA1CD1F726F15001963ED /* ImageView+ImaginaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1CC1F726F15001963ED /* ImageView+ImaginaryTests.swift */; };
@@ -70,7 +71,6 @@
 		D2E8C8351F7257A800D2B8EF /* ImageDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C8321F7257A800D2B8EF /* ImageDisplayer.swift */; };
 		D2E8C8361F7257A800D2B8EF /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C8331F7257A800D2B8EF /* ImageProcessor.swift */; };
 		D2E8C8371F7257A800D2B8EF /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8C8331F7257A800D2B8EF /* ImageProcessor.swift */; };
-		D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,12 +103,12 @@
 		D21352EF1F75423700B5375B /* Imaginary_tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Imaginary_tvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21352F31F75423700B5375B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D21353061F75487600B5375B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D273451B1F71448000BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
-		D27345201F71448000BF063D /* Decompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
+		D273451B1F71448000BF063D /* DecompressorUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecompressorUIKit.swift; sourceTree = "<group>"; };
+		D27345201F71448000BF063D /* DecompressorCocoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecompressorCocoa.swift; sourceTree = "<group>"; };
 		D273453B1F7148C100BF063D /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		D27345401F71619800BF063D /* MultipleImageFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImageFetcherTests.swift; sourceTree = "<group>"; };
-		D2AFA1C41F7259F4001963ED /* ImageViewDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewDisplayer.swift; sourceTree = "<group>"; };
-		D2AFA1C61F725A3A001963ED /* ImageViewDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewDisplayer.swift; sourceTree = "<group>"; };
+		D2AFA1C41F7259F4001963ED /* ImageViewDisplayerUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewDisplayerUIKit.swift; sourceTree = "<group>"; };
+		D2AFA1C61F725A3A001963ED /* ImageViewDisplayerCocoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewDisplayerCocoa.swift; sourceTree = "<group>"; };
 		D2AFA1C81F725CE1001963ED /* TintImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintImageProcessor.swift; sourceTree = "<group>"; };
 		D2AFA1CA1F726DEF001963ED /* SimpleImageDisplayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleImageDisplayerTests.swift; sourceTree = "<group>"; };
 		D2AFA1CC1F726F15001963ED /* ImageView+ImaginaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+ImaginaryTests.swift"; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDE8FBF61D1BFC8D00C5A212 /* Cache.framework in Frameworks */,
+				63CFCF49233F76B70040A04F /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21352EA1F7541D300B5375B /* Cache.framework in Frameworks */,
+				63CFCF4B233F76BC0040A04F /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DF75B21C403FBF00BF1AB6 /* Cache.framework in Frameworks */,
+				63CFCF47233F76770040A04F /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,8 +213,8 @@
 		D273451A1F71448000BF063D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D273451B1F71448000BF063D /* Decompressor.swift */,
-				D2AFA1C41F7259F4001963ED /* ImageViewDisplayer.swift */,
+				D273451B1F71448000BF063D /* DecompressorUIKit.swift */,
+				D2AFA1C41F7259F4001963ED /* ImageViewDisplayerUIKit.swift */,
 				D2AFA1C81F725CE1001963ED /* TintImageProcessor.swift */,
 				D21352B71F75266200B5375B /* ButtonDisplayer.swift */,
 				D21352B91F75266C00B5375B /* ButtonBackgroundDisplayer.swift */,
@@ -225,8 +225,8 @@
 		D273451F1F71448000BF063D /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				D27345201F71448000BF063D /* Decompressor.swift */,
-				D2AFA1C61F725A3A001963ED /* ImageViewDisplayer.swift */,
+				D27345201F71448000BF063D /* DecompressorCocoa.swift */,
+				D2AFA1C61F725A3A001963ED /* ImageViewDisplayerCocoa.swift */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -307,7 +307,9 @@
 				D5DF759C1C403E1000BF1AB6 /* Imaginary */,
 				D5DF75921C403D8200BF1AB6 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		D5DF75921C403D8200BF1AB6 /* Products */ = {
 			isa = PBXGroup;
@@ -381,6 +383,9 @@
 			dependencies = (
 			);
 			name = "Imaginary-Mac";
+			packageProductDependencies = (
+				63CFCF48233F76B70040A04F /* Cache */,
+			);
 			productName = "Imaginary-Mac";
 			productReference = BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */;
 			productType = "com.apple.product-type.framework";
@@ -399,6 +404,9 @@
 			dependencies = (
 			);
 			name = "Imaginary-tvOS";
+			packageProductDependencies = (
+				63CFCF4A233F76BC0040A04F /* Cache */,
+			);
 			productName = "Imaginary-tvOS";
 			productReference = D21352C21F7540E400B5375B /* Imaginary.framework */;
 			productType = "com.apple.product-type.framework";
@@ -455,6 +463,9 @@
 			dependencies = (
 			);
 			name = "Imaginary-iOS";
+			packageProductDependencies = (
+				63CFCF46233F76770040A04F /* Cache */,
+			);
 			productName = Imaginary;
 			productReference = D5DF75911C403D8200BF1AB6 /* Imaginary.framework */;
 			productType = "com.apple.product-type.framework";
@@ -494,7 +505,7 @@
 				};
 			};
 			buildConfigurationList = D5DF758B1C403D8200BF1AB6 /* Build configuration list for PBXProject "Imaginary" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -502,6 +513,9 @@
 				Base,
 			);
 			mainGroup = D5DF75871C403D8200BF1AB6;
+			packageReferences = (
+				63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */,
+			);
 			productRefGroup = D5DF75921C403D8200BF1AB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -611,12 +625,12 @@
 				D21352B61F7523BF00B5375B /* View+Imaginary.swift in Sources */,
 				D2E8C8181F7252C300D2B8EF /* ImageDownloader.swift in Sources */,
 				D2E8C8241F7252C300D2B8EF /* Result.swift in Sources */,
-				D27345381F71448900BF063D /* Decompressor.swift in Sources */,
+				D27345381F71448900BF063D /* DecompressorCocoa.swift in Sources */,
 				D2E8C8371F7257A800D2B8EF /* ImageProcessor.swift in Sources */,
 				D2E8C8221F7252C300D2B8EF /* Option.swift in Sources */,
 				D2E8C8261F7252C300D2B8EF /* Types.swift in Sources */,
 				D2E8C81A1F7252C300D2B8EF /* ImageFetcher.swift in Sources */,
-				D2AFA1C71F725A3A001963ED /* ImageViewDisplayer.swift in Sources */,
+				D2AFA1C71F725A3A001963ED /* ImageViewDisplayerCocoa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D21352DD1F7540F700B5375B /* ButtonBackgroundDisplayer.swift in Sources */,
-				D21352DA1F7540F700B5375B /* ImageViewDisplayer.swift in Sources */,
+				D21352DA1F7540F700B5375B /* ImageViewDisplayerUIKit.swift in Sources */,
 				D21352E51F75410100B5375B /* ImageDownloader.swift in Sources */,
 				D21352E21F7540FE00B5375B /* Option.swift in Sources */,
 				D21352E71F75410100B5375B /* MultipleImageFetcher.swift in Sources */,
@@ -634,7 +648,7 @@
 				D21352DC1F7540F700B5375B /* ButtonDisplayer.swift in Sources */,
 				D21352DE1F7540FE00B5375B /* ImageDisplayer.swift in Sources */,
 				D21352DF1F7540FE00B5375B /* ImageProcessor.swift in Sources */,
-				D21352D91F7540F700B5375B /* Decompressor.swift in Sources */,
+				D21352D91F7540F700B5375B /* DecompressorUIKit.swift in Sources */,
 				D21352E01F7540FE00B5375B /* Configuration.swift in Sources */,
 				D21352E11F7540FE00B5375B /* ImaginaryError.swift in Sources */,
 				D21352E61F75410100B5375B /* ImageFetcher.swift in Sources */,
@@ -682,10 +696,10 @@
 				D2E8C81B1F7252C300D2B8EF /* MultipleImageFetcher.swift in Sources */,
 				D2E8C8191F7252C300D2B8EF /* ImageFetcher.swift in Sources */,
 				D21352B81F75266200B5375B /* ButtonDisplayer.swift in Sources */,
-				D2AFA1C51F7259F4001963ED /* ImageViewDisplayer.swift in Sources */,
+				D2AFA1C51F7259F4001963ED /* ImageViewDisplayerUIKit.swift in Sources */,
 				D2E8C81D1F7252C300D2B8EF /* Configuration.swift in Sources */,
 				D2E8C81F1F7252C300D2B8EF /* ImaginaryError.swift in Sources */,
-				D273452B1F71448000BF063D /* Decompressor.swift in Sources */,
+				D273452B1F71448000BF063D /* DecompressorUIKit.swift in Sources */,
 				D2E8C8231F7252C300D2B8EF /* Result.swift in Sources */,
 				D21352B51F7523BF00B5375B /* View+Imaginary.swift in Sources */,
 				D2AFA1C91F725CE1001963ED /* TintImageProcessor.swift in Sources */,
@@ -718,14 +732,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/Mac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-Mac";
 				PRODUCT_NAME = Imaginary;
@@ -745,14 +760,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/Mac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-Mac";
 				PRODUCT_NAME = Imaginary;
@@ -777,14 +793,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-tvOS";
 				PRODUCT_NAME = Imaginary;
 				SDKROOT = appletvos;
@@ -811,14 +828,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-tvOS";
 				PRODUCT_NAME = Imaginary;
 				SDKROOT = appletvos;
@@ -839,13 +857,14 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T78DK947F2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Imaginary_tvOSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -866,13 +885,14 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T78DK947F2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Imaginary_tvOSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Imaginary-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -894,14 +914,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T78DK947F2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "ImaginaryTests-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.ImaginaryTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -922,14 +944,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T78DK947F2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "ImaginaryTests-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.ImaginaryTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1042,7 +1066,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1059,14 +1084,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.Imaginary;
 				PRODUCT_NAME = Imaginary;
 				SKIP_INSTALL = YES;
@@ -1082,14 +1108,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Imaginary/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.Imaginary;
 				PRODUCT_NAME = Imaginary;
 				SKIP_INSTALL = YES;
@@ -1155,6 +1182,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fassko/Cache.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63CFCF46233F76770040A04F /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
+			productName = Cache;
+		};
+		63CFCF48233F76B70040A04F /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
+			productName = Cache;
+		};
+		63CFCF4A233F76BC0040A04F /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
+			productName = Cache;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D5DF75881C403D8200BF1AB6 /* Project object */;
 }

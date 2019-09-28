@@ -1,3 +1,4 @@
+#if canImport(Cocoa)
 import Cocoa
 
 final class Decompressor {
@@ -47,3 +48,4 @@ final class Decompressor {
     return blendedImage
   }
 }
+#endif

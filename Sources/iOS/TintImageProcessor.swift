@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 
 /// Apply tint color to image
@@ -55,3 +56,4 @@ public class TintImageProcessor: ImageProcessor {
     context.draw(cgImage, in: rect)
   }
 }
+#endif
