@@ -10,7 +10,7 @@ let package = Package(
             targets: ["Imaginary"]),
     ],
     dependencies: [
-      .package(path: "/Users/kristaps/Documents/open-source/Cache")
+      .package(url: "https://github.com/fassko/Cache", .branch("master"))
     ],
     targets: [
         .target(
