@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 
 /// Used to set image onto ImageView
@@ -29,3 +30,4 @@ public class ImageViewDisplayer: ImageDisplayer {
     }, completion: nil)
   }
 }
+#endif

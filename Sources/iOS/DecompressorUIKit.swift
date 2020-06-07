@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 
 final class Decompressor {
@@ -37,3 +38,4 @@ final class Decompressor {
     return Image(cgImage: imageRefWithoutAlpha)
   }
 }
+#endif

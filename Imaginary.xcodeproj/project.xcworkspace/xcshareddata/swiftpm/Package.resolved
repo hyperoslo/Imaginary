@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Cache",
+        "repositoryURL": "https://github.com/fassko/Cache.git",
+        "state": {
+          "branch": "master",
+          "revision": "9e4ec388aada963cb6c3ce68fcac6abdcadd4320",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

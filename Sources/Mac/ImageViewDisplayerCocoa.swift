@@ -1,3 +1,4 @@
+#if canImport(AppKit)
 import AppKit
 
 /// Used to set image onto ImageView
@@ -45,3 +46,4 @@ fileprivate extension NSImage {
     return maskRef
   }
 }
+#endif
