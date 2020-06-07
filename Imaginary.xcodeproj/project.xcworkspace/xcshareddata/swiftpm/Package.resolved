@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "Cache",
-        "repositoryURL": "https://github.com/fassko/Cache.git",
+        "repositoryURL": "https://github.com/hyperoslo/Cache.git",
         "state": {
           "branch": "master",
-          "revision": "9e4ec388aada963cb6c3ce68fcac6abdcadd4320",
+          "revision": "042b2cd22d3c8c30fdcead0c613de94a1d648123",
           "version": null
         }
       }

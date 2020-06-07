@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63CFCF47233F76770040A04F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF46233F76770040A04F /* SwiftPackageProductDependency */; };
-		63CFCF49233F76B70040A04F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF48233F76B70040A04F /* SwiftPackageProductDependency */; };
-		63CFCF4B233F76BC0040A04F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF4A233F76BC0040A04F /* SwiftPackageProductDependency */; };
+		63CFCF47233F76770040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF46233F76770040A04F /* Cache */; };
+		63CFCF49233F76B70040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF48233F76B70040A04F /* Cache */; };
+		63CFCF4B233F76BC0040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF4A233F76BC0040A04F /* Cache */; };
 		D21352B51F7523BF00B5375B /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B41F7523BF00B5375B /* View+Imaginary.swift */; };
 		D21352B61F7523BF00B5375B /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B41F7523BF00B5375B /* View+Imaginary.swift */; };
 		D21352B81F75266200B5375B /* ButtonDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B71F75266200B5375B /* ButtonDisplayer.swift */; };
@@ -38,10 +38,8 @@
 		D21352FF1F75427000B5375B /* ImageView+ImaginaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1CC1F726F15001963ED /* ImageView+ImaginaryTests.swift */; };
 		D21353001F75427000B5375B /* Button+ImaginaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352BB1F7527F700B5375B /* Button+ImaginaryTests.swift */; };
 		D21353011F75429B00B5375B /* Imaginary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21352C21F7540E400B5375B /* Imaginary.framework */; };
-		D21353021F7542C800B5375B /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21352E91F7541D300B5375B /* Cache.framework */; };
 		D273452B1F71448000BF063D /* DecompressorUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273451B1F71448000BF063D /* DecompressorUIKit.swift */; };
 		D27345381F71448900BF063D /* DecompressorCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345201F71448000BF063D /* DecompressorCocoa.swift */; };
-		D273453A1F7147BE00BF063D /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DF75B11C403FBF00BF1AB6 /* Cache.framework */; };
 		D273453C1F7148C100BF063D /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273453B1F7148C100BF063D /* TestHelper.swift */; };
 		D27345411F71619800BF063D /* MultipleImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27345401F71619800BF063D /* MultipleImageFetcherTests.swift */; };
 		D2AFA1C51F7259F4001963ED /* ImageViewDisplayerUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA1C41F7259F4001963ED /* ImageViewDisplayerUIKit.swift */; };
@@ -135,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63CFCF49233F76B70040A04F /* BuildFile in Frameworks */,
+				63CFCF49233F76B70040A04F /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63CFCF4B233F76BC0040A04F /* BuildFile in Frameworks */,
+				63CFCF4B233F76BC0040A04F /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21353021F7542C800B5375B /* Cache.framework in Frameworks */,
 				D21353011F75429B00B5375B /* Imaginary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,7 +157,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D273453A1F7147BE00BF063D /* Cache.framework in Frameworks */,
 				D2E2E9851F7112CF001B4251 /* Imaginary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63CFCF47233F76770040A04F /* BuildFile in Frameworks */,
+				63CFCF47233F76770040A04F /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +380,7 @@
 			);
 			name = "Imaginary-Mac";
 			packageProductDependencies = (
-				63CFCF48233F76B70040A04F /* SwiftPackageProductDependency */,
+				63CFCF48233F76B70040A04F /* Cache */,
 			);
 			productName = "Imaginary-Mac";
 			productReference = BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */;
@@ -405,7 +401,7 @@
 			);
 			name = "Imaginary-tvOS";
 			packageProductDependencies = (
-				63CFCF4A233F76BC0040A04F /* SwiftPackageProductDependency */,
+				63CFCF4A233F76BC0040A04F /* Cache */,
 			);
 			productName = "Imaginary-tvOS";
 			productReference = D21352C21F7540E400B5375B /* Imaginary.framework */;
@@ -418,7 +414,6 @@
 				D21352EB1F75423700B5375B /* Sources */,
 				D21352EC1F75423700B5375B /* Frameworks */,
 				D21352ED1F75423700B5375B /* Resources */,
-				D21352FA1F75425600B5375B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -426,6 +421,8 @@
 				D21352F61F75423700B5375B /* PBXTargetDependency */,
 			);
 			name = Imaginary_tvOSTests;
+			packageProductDependencies = (
+			);
 			productName = Imaginary_tvOSTests;
 			productReference = D21352EF1F75423700B5375B /* Imaginary_tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -437,7 +434,6 @@
 				D2E2E97C1F7112CF001B4251 /* Sources */,
 				D2E2E97D1F7112CF001B4251 /* Frameworks */,
 				D2E2E97E1F7112CF001B4251 /* Resources */,
-				D27344E31F71148300BF063D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -445,6 +441,8 @@
 				D2E2E9871F7112CF001B4251 /* PBXTargetDependency */,
 			);
 			name = "ImaginaryTests-iOS";
+			packageProductDependencies = (
+			);
 			productName = "ImaginaryTests-iOS";
 			productReference = D2E2E9801F7112CF001B4251 /* ImaginaryTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -464,7 +462,7 @@
 			);
 			name = "Imaginary-iOS";
 			packageProductDependencies = (
-				63CFCF46233F76770040A04F /* SwiftPackageProductDependency */,
+				63CFCF46233F76770040A04F /* Cache */,
 			);
 			productName = Imaginary;
 			productReference = D5DF75911C403D8200BF1AB6 /* Imaginary.framework */;
@@ -514,7 +512,7 @@
 			);
 			mainGroup = D5DF75871C403D8200BF1AB6;
 			packageReferences = (
-				63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */,
+				63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */,
 			);
 			productRefGroup = D5DF75921C403D8200BF1AB6 /* Products */;
 			projectDirPath = "";
@@ -522,8 +520,8 @@
 			targets = (
 				D5DF75901C403D8200BF1AB6 /* Imaginary-iOS */,
 				BDE8FBE81D1BFB9F00C5A212 /* Imaginary-Mac */,
-				D2E2E97F1F7112CF001B4251 /* ImaginaryTests-iOS */,
 				D21352C11F7540E400B5375B /* Imaginary-tvOS */,
+				D2E2E97F1F7112CF001B4251 /* ImaginaryTests-iOS */,
 				D21352EE1F75423700B5375B /* Imaginary_tvOSTests */,
 			);
 		};
@@ -582,34 +580,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		D21352FA1F75425600B5375B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/tvOS/Cache.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		D27344E31F71148300BF063D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Cache.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1184,9 +1154,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */ = {
+		63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/fassko/Cache.git";
+			repositoryURL = "https://github.com/hyperoslo/Cache.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -1195,19 +1165,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		63CFCF46233F76770040A04F /* SwiftPackageProductDependency */ = {
+		63CFCF46233F76770040A04F /* Cache */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */;
+			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
 			productName = Cache;
 		};
-		63CFCF48233F76B70040A04F /* SwiftPackageProductDependency */ = {
+		63CFCF48233F76B70040A04F /* Cache */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */;
+			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
 			productName = Cache;
 		};
-		63CFCF4A233F76BC0040A04F /* SwiftPackageProductDependency */ = {
+		63CFCF4A233F76BC0040A04F /* Cache */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */;
+			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
 			productName = Cache;
 		};
 /* End XCSwiftPackageProductDependency section */
