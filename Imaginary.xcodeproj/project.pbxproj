@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63CFCF47233F76770040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF46233F76770040A04F /* Cache */; };
-		63CFCF49233F76B70040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF48233F76B70040A04F /* Cache */; };
-		63CFCF4B233F76BC0040A04F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF4A233F76BC0040A04F /* Cache */; };
+		63CFCF47233F76770040A04F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF46233F76770040A04F /* SwiftPackageProductDependency */; };
+		63CFCF49233F76B70040A04F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF48233F76B70040A04F /* SwiftPackageProductDependency */; };
+		63CFCF4B233F76BC0040A04F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 63CFCF4A233F76BC0040A04F /* SwiftPackageProductDependency */; };
 		D21352B51F7523BF00B5375B /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B41F7523BF00B5375B /* View+Imaginary.swift */; };
 		D21352B61F7523BF00B5375B /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B41F7523BF00B5375B /* View+Imaginary.swift */; };
 		D21352B81F75266200B5375B /* ButtonDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21352B71F75266200B5375B /* ButtonDisplayer.swift */; };
@@ -135,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63CFCF49233F76B70040A04F /* Cache in Frameworks */,
+				63CFCF49233F76B70040A04F /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63CFCF4B233F76BC0040A04F /* Cache in Frameworks */,
+				63CFCF4B233F76BC0040A04F /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63CFCF47233F76770040A04F /* Cache in Frameworks */,
+				63CFCF47233F76770040A04F /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +384,7 @@
 			);
 			name = "Imaginary-Mac";
 			packageProductDependencies = (
-				63CFCF48233F76B70040A04F /* Cache */,
+				63CFCF48233F76B70040A04F /* SwiftPackageProductDependency */,
 			);
 			productName = "Imaginary-Mac";
 			productReference = BDE8FBE91D1BFB9F00C5A212 /* Imaginary.framework */;
@@ -405,7 +405,7 @@
 			);
 			name = "Imaginary-tvOS";
 			packageProductDependencies = (
-				63CFCF4A233F76BC0040A04F /* Cache */,
+				63CFCF4A233F76BC0040A04F /* SwiftPackageProductDependency */,
 			);
 			productName = "Imaginary-tvOS";
 			productReference = D21352C21F7540E400B5375B /* Imaginary.framework */;
@@ -464,7 +464,7 @@
 			);
 			name = "Imaginary-iOS";
 			packageProductDependencies = (
-				63CFCF46233F76770040A04F /* Cache */,
+				63CFCF46233F76770040A04F /* SwiftPackageProductDependency */,
 			);
 			productName = Imaginary;
 			productReference = D5DF75911C403D8200BF1AB6 /* Imaginary.framework */;
@@ -514,7 +514,7 @@
 			);
 			mainGroup = D5DF75871C403D8200BF1AB6;
 			packageReferences = (
-				63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */,
+				63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = D5DF75921C403D8200BF1AB6 /* Products */;
 			projectDirPath = "";
@@ -1184,7 +1184,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */ = {
+		63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/fassko/Cache.git";
 			requirement = {
@@ -1195,19 +1195,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		63CFCF46233F76770040A04F /* Cache */ = {
+		63CFCF46233F76770040A04F /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
+			package = 63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */;
 			productName = Cache;
 		};
-		63CFCF48233F76B70040A04F /* Cache */ = {
+		63CFCF48233F76B70040A04F /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
+			package = 63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */;
 			productName = Cache;
 		};
-		63CFCF4A233F76BC0040A04F /* Cache */ = {
+		63CFCF4A233F76BC0040A04F /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 63CFCF45233F76770040A04F /* XCRemoteSwiftPackageReference "Cache" */;
+			package = 63CFCF45233F76770040A04F /* RemoteSwiftPackageReference */;
 			productName = Cache;
 		};
 /* End XCSwiftPackageProductDependency section */
