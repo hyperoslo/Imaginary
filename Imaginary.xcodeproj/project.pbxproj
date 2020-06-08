@@ -372,7 +372,6 @@
 				BDE8FBE51D1BFB9F00C5A212 /* Frameworks */,
 				BDE8FBE61D1BFB9F00C5A212 /* Headers */,
 				BDE8FBE71D1BFB9F00C5A212 /* Resources */,
-				BDE8FBF21D1BFBB300C5A212 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -564,24 +563,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BDE8FBF21D1BFBB300C5A212 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Cache.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BDE8FBE41D1BFB9F00C5A212 /* Sources */ = {
