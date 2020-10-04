@@ -3,7 +3,7 @@ import Cache
 @testable import Imaginary
 
 private final class ImageFetcherTests: XCTestCase {
-  var storage: Storage<Image>!
+  var storage: Storage<String, Image>!
   var fetcher: ImageFetcher!
   fileprivate var mockDownloader = MockDownloader(modifyRequest: { $0 })
   let url = URL(string: "https://no.hyper/imaginary.png")!
@@ -11,7 +11,7 @@ private final class ImageFetcherTests: XCTestCase {
   override func setUp() {
     super.setUp()
 
-    storage = try! Storage<Image>(diskConfig: DiskConfig(name: "Floppy"), memoryConfig: MemoryConfig(), transformer: TransformerFactory.forImage())
+    storage = try! Storage<String, Image>(diskConfig: DiskConfig(name: "Floppy"), memoryConfig: MemoryConfig(), transformer: TransformerFactory.forImage())
     fetcher = ImageFetcher(downloader: mockDownloader, storage: storage)
   }
 

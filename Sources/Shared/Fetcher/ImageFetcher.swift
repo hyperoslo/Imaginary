@@ -5,14 +5,14 @@ import Cache
 /// It can be fetched from storage or network.
 public class ImageFetcher {
   private let downloader: ImageDownloader
-  private let storage: Storage<Image>?
+  private let storage: Storage<String, Image>?
 
   /// Initialize ImageFetcehr
   ///
   /// - Parameters:
   ///   - downloader: Used to download images.
   ///   - storage: Used to store downloaded images. Pass nil to ignore cache
-  public init(downloader: ImageDownloader, storage: Storage<Image>?) {
+  public init(downloader: ImageDownloader, storage: Storage<String, Image>?) {
     self.downloader = downloader
     self.storage = storage
   }
