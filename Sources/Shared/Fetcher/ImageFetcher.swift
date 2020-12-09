@@ -45,9 +45,9 @@ public class ImageFetcher {
       }
 
       switch result {
-      case .value(let image):
+	case Cache.Result.value(let image):
         completion(.value(image))
-      case .error:
+	case Cache.Result.error:
         if url.isFileURL {
           self.fetchFromDisk(url: url, completion: completion)
         } else {
