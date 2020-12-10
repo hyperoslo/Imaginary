@@ -43,11 +43,11 @@ public class ImageFetcher {
       guard let `self` = self else {
         return
       }
-
+		
       switch result {
-      case .value(let image):
+	case .success(let image):
         completion(.value(image))
-      case .error:
+	case .failure:
         if url.isFileURL {
           self.fetchFromDisk(url: url, completion: completion)
         } else {
