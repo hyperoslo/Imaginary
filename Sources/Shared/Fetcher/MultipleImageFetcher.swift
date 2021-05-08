@@ -5,6 +5,7 @@ public class MultipleImageFetcher {
 
   private var fetchers: [ImageFetcher] = []
   private let fetcherMaker: () -> ImageFetcher
+  private let syncQueue: DispatchQueue = .init(label: "multiple.fetcher.queue")
 
   public init(fetcherMaker: @escaping () -> ImageFetcher) {
     self.fetcherMaker = fetcherMaker
@@ -26,11 +27,15 @@ public class MultipleImageFetcher {
     var results: [Result] = []
 
     zip(fetchers, urls).forEach { fetcher, url in
-      fetcher.fetch(url: url, completion: { result in
+      fetcher.fetch(url: url, completion: { [weak self] result in
+        guard let self = self else { return }
+        
         each?(result)
 
-        results.append(result)
-
+        self.syncQueue.sync {
+          results.append(result)
+        }
+        
         if results.count == urls.count {
           completion?(results)
         }
