@@ -10,7 +10,7 @@ let package = Package(
             targets: ["Imaginary"]),
     ],
     dependencies: [
-      .package(url: "https://github.com/hyperoslo/Cache", .branch("master"))
+        .package(url: "https://github.com/hyperoslo/Cache", .exactItem("5.0.0"))
     ],
     targets: [
         .target(
