@@ -48,7 +48,11 @@ public class ImageFetcher {
       case .value(let image):
           completion(.value(image))
       case .error(let error):
-          completion(.error(error))
+          if url.isFileURL {
+             self.fetchFromDisk(url: url, completion: completion)
+          } else {
+             self.fetchFromNetwork(url: url, completion: completion)
+          }
       }
     })
   }
