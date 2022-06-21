@@ -1,15 +1,16 @@
 //
-//  ContentView.swift
-//  ImaginarySwiftUIDemo
+//  SwiftUIViewController.swift
+//  ImaginaryDemo
 //
 //  Created by Arslan Rafique on 2022-06-21.
+//  Copyright © 2022 Ramon Gilabert Llop. All rights reserved.
 //
 
 import SwiftUI
 import Imaginary
 
 struct ContentView: SwiftUI.View {
-    
+
     struct Constants {
       static let imageWidth = 500
       static let imageHeight = 500
@@ -28,7 +29,7 @@ struct ContentView: SwiftUI.View {
 
       return array
       }()
-    
+
     var body: some SwiftUI.View {
         ScrollView {
             VStack {
@@ -41,8 +42,11 @@ struct ContentView: SwiftUI.View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some SwiftUI.View {
-        ContentView()
+class SwiftUIViewController: UITableViewController {
+    override func viewDidLoad() {
+        let hosting = UIHostingController(rootView: ContentView())
+        self.addChild(hosting)
+        self.view.addSubview(hosting.view)
+        hosting.view.frame = UIScreen.main.bounds
     }
 }

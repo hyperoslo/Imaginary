@@ -126,6 +126,7 @@
 		D5DF75911C403D8200BF1AB6 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DF759E1C403E1000BF1AB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DF75B11C403FBF00BF1AB6 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/iOS/Cache.framework; sourceTree = "<group>"; };
+		F560478B2862217B008ED0AC /* SwiftUI */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = SwiftUI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +245,7 @@
 		D2E8C8051F7252C300D2B8EF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F560478B2862217B008ED0AC /* SwiftUI */,
 				D2E8C8071F7252C300D2B8EF /* Extensions */,
 				D2E8C8091F7252C300D2B8EF /* Fetcher */,
 				D2E8C80D1F7252C300D2B8EF /* Library */,

@@ -2,19 +2,21 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  lazy var viewController: ViewController = ViewController()
-
-  var window: UIWindow?
-
+    lazy var viewController: ViewController = ViewController()
+    lazy var swiftUIViewController: SwiftUIViewController = SwiftUIViewController()
+    
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let navigationController = UINavigationController(rootViewController: viewController)
-    viewController.title = "Imaginary".uppercased()
-
-    window = UIWindow()
-    window?.rootViewController = navigationController
-    window?.makeKeyAndVisible()
-
-    return true
-  }
+        let tabVC = UITabBarController()
+        viewController.tabBarItem.title = "UIKit"
+        swiftUIViewController.tabBarItem.title = "SwiftUI"
+        tabVC.setViewControllers([viewController, swiftUIViewController], animated: true)
+        
+        window = UIWindow()
+        window?.rootViewController = tabVC
+        window?.makeKeyAndVisible()
+        
+        return true
+    }
 }
