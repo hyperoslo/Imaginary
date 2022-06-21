@@ -1,7 +1,7 @@
 PODS:
-  - Cache (5.3.0)
-  - Imaginary (4.3.0):
-    - Cache (~> 5.3.0)
+  - Cache (6.0.0)
+  - Imaginary (5.0.0):
+    - Cache (~> 6.0.0)
 
 DEPENDENCIES:
   - Imaginary (from `../../`)
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Cache: 48762993ec44e1d93483c4d4a13edd18452326f4
-  Imaginary: c3153bbdfadcf1736d736e307d80717b7a8c6040
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  Imaginary: cf5e3a7dd6ab1dcbd47ba8ce5edf2307c4e99eb3
 
-PODFILE CHECKSUM: 317cccf04e61f3f6f7e8a7e2dbc1ad0f7fa2beee
+PODFILE CHECKSUM: f44736d98f74418007761e4973f2c94b08d5db15
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.3
