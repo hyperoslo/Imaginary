@@ -76,6 +76,16 @@ imageView.setImage(url: imageUrl) { result in
 
 `result` is an enum `Result` that let you know if the operation succeeded or failed. The possible error is of `ImaginaryError`.
 
+## SwiftUI
+
+#### Set image with URL
+
+Simply pass `URL` to `ImageViewAdapter`.
+
+```swift
+ImageViewAdapter(url: "https://avatars2.githubusercontent.com/u/1340892?v=3&s=200")
+```
+
 ## Advanced
 
 ### Passing option
@@ -98,7 +108,6 @@ public protocol ImageProcessor {
 ```
 
 This is how you apply tint color before setting images.
-
 
 ```swift
 let option = Option(imagePreprocessor: TintImageProcessor(tintColor: .orange))
@@ -142,15 +151,15 @@ These are the buit in displayers. You need to supply the correct displayer for y
 
 ### Downloading
 
-`Imaginary` uses `ImageFetcher` under the hood, which has downloader and storage.  You can specify your own `ImageDownloader` together with a `modifyRequest` closure, there you can change request body or add more HTTP headers.
+`Imaginary` uses `ImageFetcher` under the hood, which has downloader and storage. You can specify your own `ImageDownloader` together with a `modifyRequest` closure, there you can change request body or add more HTTP headers.
 
 ```swift
 var option = Option()
 option.downloaderMaker = {
-  return ImageDownloader(modifyRequest: { 
+  return ImageDownloader(modifyRequest: {
     var request = $0
     request.addValue("Bearer 123", forHTTPHeaderField: "Authorization")
-    return request 
+    return request
   })
 }
 
@@ -219,7 +228,6 @@ multipleFetcher.fetch(urls: imageUrls, each: { result in
 ```
 
 This is ideal for the new [prefetching mode in UICollectionView](https://developer.apple.com/documentation/uikit/uicollectionview/1771771-prefetchingenabled)
-
 
 ## Installation
 

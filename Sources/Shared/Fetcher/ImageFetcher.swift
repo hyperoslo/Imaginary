@@ -44,10 +44,10 @@ public class ImageFetcher {
         return
       }
 		
-      switch result {
-	case .success(let image):
+    switch result {
+	case .value(let image):
         completion(.value(image))
-	case .failure:
+	case .error(_):
         if url.isFileURL {
           self.fetchFromDisk(url: url, completion: completion)
         } else {
