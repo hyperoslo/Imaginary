@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Cache",
+        "repositoryURL": "https://github.com/hyperoslo/Cache",
+        "state": {
+          "branch": null,
+          "revision": "c7f4d633049c3bd649a353bad36f6c17e9df085f",
+          "version": "6.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
